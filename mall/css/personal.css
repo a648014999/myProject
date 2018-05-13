@@ -1,0 +1,217 @@
+@charset "UTF-8";
+html {
+  font-size: 100px; }
+
+body {
+  width: 7.5rem;
+  padding-bottom: 1.22rem; }
+
+::-webkit-input-placeholder {
+  /* WebKit browsers */
+  font-family: "Microsoft YaHei";
+  font-size: 0.3rem;
+  color: #fff5c9; }
+
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  font-family: "Microsoft YaHei";
+  font-size: 0.3rem;
+  color: #fff5c9; }
+
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  font-family: "Microsoft YaHei";
+  font-size: 0.3rem;
+  color: #fff5c9; }
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  font-family: "Microsoft YaHei";
+  font-size: 0.3rem;
+  color: #fff5c9; }
+
+.header .bgcolor {
+  background: #fece02; }
+  .header .bgcolor .nav {
+    height: 1.04rem;
+    padding: 0.21rem 0rem; }
+    .header .bgcolor .nav .log {
+      width: 0.64rem;
+      margin-right: 0.48rem;
+      margin-left: 0.24rem; }
+    .header .bgcolor .nav .search {
+      position: relative; }
+      .header .bgcolor .nav .search .searchlog {
+        position: absolute;
+        left: 0.22rem;
+        top: 0.19rem;
+        width: 0.37rem;
+        height: 0.35rem; }
+      .header .bgcolor .nav .search input {
+        width: 4.3rem;
+        height: 0.68rem;
+        background: #ffe781;
+        border-radius: 0.34rem;
+        border: 0px;
+        outline: none;
+        text-indent: 0.84rem;
+        font-family: "Microsoft YaHei";
+        font-size: 0.3rem;
+        color: black;
+        margin-right: 0.28rem; }
+    .header .bgcolor .nav .log2 {
+      margin-top: 0.14rem;
+      width: 0.43rem;
+      height: 0.39rem; }
+    .header .bgcolor .nav .log3 {
+      margin-top: 0.14rem;
+      margin-left: 0.46rem;
+      width: 0.38rem;
+      height: 0.43rem; }
+
+.footer .flex {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 0.11rem;
+  padding-bottom: 0.15rem;
+  border-top: 2px solid #c3c3c3;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 7.5rem;
+  background: #ffffff; }
+  .footer .flex label:nth-of-type(1) .item {
+    text-align: center; }
+    .footer .flex label:nth-of-type(1) .item .img {
+      margin: auto;
+      width: 0.58rem;
+      height: 0.55rem; }
+      .footer .flex label:nth-of-type(1) .item .img img {
+        margin: auto; }
+      .footer .flex label:nth-of-type(1) .item .img img:last-child {
+        display: none; }
+    .footer .flex label:nth-of-type(1) .item > span {
+      font-family: "宋体";
+      font-size: 0.24rem;
+      color: #949494; }
+  .footer .flex label:nth-of-type(2) .item {
+    text-align: center; }
+    .footer .flex label:nth-of-type(2) .item .img {
+      margin: auto;
+      width: 0.58rem;
+      height: 0.55rem; }
+      .footer .flex label:nth-of-type(2) .item .img img {
+        margin: auto; }
+      .footer .flex label:nth-of-type(2) .item .img img:last-child {
+        display: none; }
+    .footer .flex label:nth-of-type(2) .item > span {
+      font-family: "宋体";
+      font-size: 0.24rem;
+      color: #949494; }
+  .footer .flex label:nth-of-type(2) .item .img {
+    width: 0.58rem;
+    height: 0.55rem; }
+  .footer .flex label:nth-of-type(3) .item {
+    text-align: center; }
+    .footer .flex label:nth-of-type(3) .item .img {
+      margin: auto;
+      width: 0.58rem;
+      height: 0.55rem; }
+      .footer .flex label:nth-of-type(3) .item .img img {
+        margin: auto; }
+      .footer .flex label:nth-of-type(3) .item .img img:last-child {
+        display: none; }
+    .footer .flex label:nth-of-type(3) .item > span {
+      font-family: "宋体";
+      font-size: 0.24rem;
+      color: #949494; }
+  .footer .flex label:nth-of-type(4) .item {
+    text-align: center; }
+    .footer .flex label:nth-of-type(4) .item .img {
+      margin: auto;
+      width: 0.58rem;
+      height: 0.55rem; }
+      .footer .flex label:nth-of-type(4) .item .img img {
+        margin: auto; }
+      .footer .flex label:nth-of-type(4) .item .img img:last-child {
+        display: none; }
+    .footer .flex label:nth-of-type(4) .item > span {
+      font-family: "宋体";
+      font-size: 0.24rem;
+      color: #949494; }
+  .footer .flex input[name="footerbtn"] {
+    display: none; }
+
+.header {
+  width: 7.5rem;
+  height: 2.73rem; }
+
+.content {
+  background: #f2f2f2; }
+  .content .myfunction {
+    background: #fff;
+    padding-top: 0.2rem;
+    padding-bottom: 0.37rem; }
+    .content .myfunction .flex {
+      display: flex;
+      justify-content: space-around; }
+      .content .myfunction .flex .item {
+        width: 2.52rem;
+        padding-top: 0.28rem;
+        padding-bottom: 0.15rem;
+        border-right: 1px solid #c2c2c2;
+        padding-left: 0.6rem;
+        padding-right: 0.6rem;
+        text-align: center; }
+        .content .myfunction .flex .item .img {
+          width: 0.4rem;
+          height: 0.45rem;
+          margin: auto;
+          margin-bottom: 0.21rem; }
+        .content .myfunction .flex .item span {
+          font-family: "Microsoft YaHei";
+          font-size: 0.3rem;
+          color: #302f2f; }
+      .content .myfunction .flex .item:nth-of-type(2) .img {
+        width: 0.49rem;
+        height: 0.42rem; }
+      .content .myfunction .flex .item:last-of-type {
+        border-right: none; }
+  .content .other {
+    padding-bottom: 2.27rem; }
+    .content .other .flex {
+      display: flex;
+      flex-direction: column; }
+      .content .other .flex .item {
+        margin-top: 0.25rem;
+        height: 0.91rem;
+        background: #fff;
+        padding-top: 0.16rem;
+        padding-bottom: 0.29rem;
+        border-top: 0.01rem solid #c6c6c6;
+        border-bottom: 0.01rem solid #c6c6c6; }
+        .content .other .flex .item .img {
+          width: 0.46rem;
+          height: 0.46rem;
+          margin-right: 0.21rem;
+          margin-left: 0.25rem; }
+        .content .other .flex .item span:first-of-type {
+          font-family: "Microsoft YaHei";
+          font-size: 0.3rem;
+          color: #302f2f; }
+        .content .other .flex .item span:last-of-type {
+          margin-right: 0.35rem;
+          font-size: 0.3rem;
+          color: #dadada; }
+      .content .other .flex .item:nth-of-type(4) {
+        margin-top: 0px; }
+
+.footer .flex > label:nth-of-type(3) .item .img img:first-child {
+  display: none !important; }
+.footer .flex > label:nth-of-type(3) .item .img img:last-child {
+  display: block !important; }
+.footer .flex > label:nth-of-type(3) .item span {
+  color: #fea31e !important; }
+
+/*# sourceMappingURL=personal.css.map */

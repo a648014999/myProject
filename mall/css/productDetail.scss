@@ -1,0 +1,204 @@
+
+@import "Myfunction.scss"; 
+@import "common.scss";
+
+body{
+    padding-bottom:0px;
+}
+html{
+    height:0px;
+}
+.header{
+    height:1.07rem;
+    padding-left:0.39rem;
+    padding-right:0.23rem;
+    border-bottom:0.04rem solid #d9d9d9;
+    span:first-of-type{
+        a{
+            @include fontset(0.72rem,#fd540e,"宋体");
+        }
+        
+    }
+    span:nth-of-type(2){
+        @include fontset(0.32rem,#000000);
+        margin-top:0.32rem;
+        margin-left:0.97rem;
+    }
+   
+    span:last-of-type{
+        display:inline-block;
+        width:0.69rem;
+        height:0.69rem;
+        margin-top:0.18rem;
+    }
+}
+.bigimg{
+    border-bottom:3px solid #dcdcdc;
+    .img{
+        width:2.76rem;
+        height:3.26rem;
+        margin:auto;
+        margin-top:0.5rem;
+        margin-bottom:0.5rem;
+    }
+
+}
+
+.price{
+    h3{
+        @include fontset(0.37rem,#000000);
+        margin-top:.23rem;
+        margin-left:0.33rem;
+        margin-bottom:.44rem;
+    }
+    span:first-of-type{
+        @include fontset(0.37rem,#e8470e);
+        
+        
+        display:inline-block;
+        margin-left:.4rem;
+        margin-right:0.31rem;
+    }
+    span:last-of-type{
+        @include fontset(0.37rem,#cecece);
+    }
+}
+
+.des{
+    margin-top:.09rem;
+    .item{
+        padding-top:.22rem;
+        padding-bottom:.26rem;
+        padding-left:.25rem;
+        border-top:2px solid #dedede;
+        border-bottom:2px solid #dedede;
+        background:#f8f8f8;
+        
+        span{
+            display:inline-block;
+            text-align:justify;
+            width:1.35rem;
+           
+
+        }
+        span:first-of-type{
+            @include fontset(.3rem,#9e9e9e);
+            height:.4rem;
+            float:left;
+            &:after{
+                content:"";
+                padding-left:100%;
+                display: inline-block;
+                
+            }
+        }
+        span:last-of-type{
+            @include fontset(.28rem,#000000);
+            margin-left:.55rem;
+        }
+        &:after{
+            content:"";
+            display:inline-block;
+            clear: both;
+        }
+    }
+}
+
+.bottombigimg{
+    background:#eaebef;
+    padding-top:.15rem;
+    padding-bottom:.16rem;
+    .bg{
+        height:3.82rem;
+        background:url("../images/productDetail_bottomBigimgBG.png")no-repeat left center;
+        background-size:100% 100%;
+        padding-top:1.08rem;
+        padding-bottom:.83rem;
+        .img{
+            width:4.05rem;
+            height:2.23rem;
+            margin:auto;
+
+        }
+    }
+}
+
+.footer{
+    border-top:.04rem solid #cecccc;
+    background:#f4f5f5;
+    position:relative;
+    z-index: 10;
+    height:1.09rem;
+    span{
+        float:left;
+    }
+    >span:nth-of-type(1){
+        @include fontset(.3rem,#232323);
+        padding:.30rem 0rem;
+    }
+    >span:nth-of-type(2){
+        @include fontset(.23rem,#fea31e);
+        font-weight: bold;
+        display:inline-block;
+        width:.61rem;
+        height:.61rem;
+        border:2px solid #cecccc;
+        border-radius:50%;
+        line-height:.51rem;
+        text-align:center;
+        margin-top:.19rem;
+    }
+    >span:nth-of-type(3){
+        @include fontset(.36rem,#727272);
+        margin-top:.25rem;
+        margin-left:.22rem;
+        margin-right:.22rem;
+    }
+    >span:nth-of-type(4){
+        @include fontset(.43rem,#fea31e);
+        font-weight: bold;
+        display:inline-block;
+        width:.61rem;
+        height:.61rem;
+        border:2px solid #cecccc;
+        border-radius:50%;
+        line-height:.51rem;
+        text-align:center;
+        margin-top:.19rem;
+    }
+    >div{
+        position:relative;
+        right:.18rem;
+        top:-.4743rem;
+        width:1.28rem;
+        height:1.28rem;
+        &:before{
+
+            content:"";
+            width:1.45rem;
+            height:1.45rem;
+            border:0.03rem solid #cecccc;
+            display:inline-block;
+            border-radius:50%;
+            background:#f4f5f5;
+            position:absolute;
+            left:50%;
+            top:-8%;
+            transform:translateX(-50%);
+            z-index: -2;
+        }
+        &:after{
+            content:"";
+            display:inline-block;
+            width:1.55rem;
+            height:.98rem;
+            position:absolute;
+            left:50%;
+            top:.4743rem;
+            background:#f4f5f5;
+            transform:translateX(-50%);
+            z-index: -1;
+        }
+    }
+   
+}

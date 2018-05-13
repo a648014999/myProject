@@ -1,0 +1,248 @@
+@charset "UTF-8";
+@import "Myfunction.scss"; 
+@import "commonMixin.scss"; 
+// 网页中间内容
+.content{
+    // 标题
+    .navtitle{
+        border-bottom:1px solid #babec4;
+        padding:18px 0px;
+        .left{
+            background:url("../images/Department_titleLog.png")no-repeat left center;
+            text-indent:25px;
+            a{
+                @include fontset(16px , #000000);
+            }
+        }
+        .center{
+            margin-left:83px;
+            >span{
+                @include fontset(14px , #000000);
+            }
+            .btn-group{
+                margin-left:5px;
+                a{
+                    @include fontset(14px , #565656);
+                    span{
+                        color:#565656;
+                    }
+                    &:hover{
+                        cursor:pointer;
+                    }
+                }
+            }
+        }
+        .right{
+            margin-left:51px;
+            >span{
+                @include fontset(14px , #000000);
+            }
+            .btn-group{
+                margin-left:5px;
+                a{
+                    @include fontset(14px , #565656);
+                    span{
+                        color:#565656;
+                    }
+                    &:hover{
+                        cursor:pointer;
+                    }
+                }
+            }
+        }
+        .glyphicon-menu-down{
+        
+            &:before{
+                font-size:10px;
+            }
+        }
+    }
+    
+    //最新消息内容
+    .newsnow{
+        padding-top:38px;
+        padding-bottom:78px;
+        // 标题
+        .title{
+            margin-bottom:60px;
+            h3{
+                @include fontset(24px,#010101);
+                
+                span{
+                    @include line();
+                }
+            }
+            >span{
+                @include fontset(16px,#cfcfcf);
+            }
+        }
+
+        //内容列表
+        .newslst{
+            .topflex{
+                display:flex;
+                justify-content:space-between;
+                margin-bottom:94px;
+                .item{
+                    width:45%;
+                    
+                }
+                .itemarticleflex{
+                    display:flex;
+                    flex-direction:column;
+                    justify-content:space-between;
+                    align-items:left;
+                    
+                    .itemarticleflex_item{
+                        h3{
+                            @include fontset(20px ,#010000);
+                        }
+                        span{
+                            @include fontset(12px,#989898);
+                        }
+                    }
+                    p{
+                        @include fontset(14px , #000000);
+                    }
+                    a{
+                        @include fontset(12px ,#bababa);
+                    }
+                }
+            }
+            .bottomflex{
+                display:flex;
+                flex-wrap:wrap;
+                justify-content:space-between;
+                align-content:space-around;
+                margin-bottom:104px;
+                .item{
+                    width:45%;
+                    display:flex;
+                    justify-content:space-between;
+                    >div{
+                        width:48%;
+                    }
+                    .item_right{
+                        display:flex;
+                        justify-content:space-between;
+                        flex-direction:column;
+                        .item_right_item{
+                            h3{
+                                margin-top:0px;
+                                @include fontset(16px,#000000);
+                            }
+                            span{
+                                @include fontset(12px,#bababa);
+                            }
+                        }
+                        p{
+                            @include fontset(12px ,#000000);
+                        }
+                        a{
+                            @include fontset(12px,#bababa);
+                        }
+                    }
+                    @for $i from 3 to 5{
+                        &:nth-of-type(#{$i}){
+                            margin-top:95px;
+                        }
+                    }
+                }
+            }
+            .pagebtn{
+                text-align:center;
+                a{
+                    display:inline-block;
+                    width:24px;
+                    line-height:22px;
+                    border:1px solid #acacac;
+                    text-align:center;
+                    color:#05162e;
+                    &:not(:first-of-type){
+                        margin-left:18px;
+                    }
+                   
+                    &:hover{
+                        background:#1a4c76;
+                        color:white;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:1040px){
+    .newsnow{
+        .newslst{
+            .bottomflex{
+                flex-direction:column;
+                align-items:center;
+                justify-content:between;
+                .item{
+                    width:100% !important;
+                    &:first-of-type{
+                        margin-bottom:94px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:660px){
+
+    .navtitle{
+        .container{
+            >div{
+                float:none;
+                margin-left:0px !important;
+                
+            }
+        }
+    }
+    .newsnow{
+        .newslst{
+            .topflex{
+                flex-direction:column;
+                align-items:center;
+                justify-content:between;
+                .itemarticleflex{
+                    p{
+                        margin-top:10px;
+                    }
+                }
+                .item{
+                    width:90% !important;
+                }
+            }
+            .bottomflex{
+                flex-direction:column;
+                align-items:center;
+                justify-content:between;
+                .item{
+                    width:100% !important;
+                    flex-direction:column;
+                    align-items:center;
+                    justify-content:between;
+                    &:first-of-type{
+                        margin-bottom:94px;
+                    }
+                    >div{
+                        width:90% !important;
+                    }
+                    .item_right{
+                        .item_right_item{
+                            h3{
+                                margin-top:20px !important;
+                            }
+                        }
+                        p{
+                            margin-top:10px !important;
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+}

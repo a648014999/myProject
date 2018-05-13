@@ -1,0 +1,41 @@
+@mixin fontscwlf($size:12px,$color:black,$fontweight:normal,$lineheight:normal,$family:"Microsoft YaHei"){
+    @if $lineheight == 1{
+        $lineheight:normal;
+    }
+    @if $family == 1{
+        $family:"Microsoft YaHei";
+    }
+    @if $fontweight == 1{
+        $fontweight:normal;
+    }
+    font-family:$family;
+    font-size:$size;
+    color:$color;
+    line-height:$lineheight;
+    font-weight: $fontweight;
+}
+
+@mixin plttXY($posi:absolute,$left:50%,$top:50%,$x:-50%,$y:-50%){
+
+    @if($posi==no){
+        $posi:absolute;
+    }
+    @if($left==no){
+        $left:50%;
+    }
+    @if($top==no){
+        $top:50%;
+    }
+    @if($x==no){
+        $x:-50%;
+    }
+    @if($y==no){
+        $y:-50%;
+    }
+    position:$posi;
+    left:$left;
+    top:$top;
+    transform:translateX($x) translateY($y);
+}
+
+@mixin flowidmarclear($width:auto){    float:none; width:$width; margin:auto; }

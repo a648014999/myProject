@@ -1,0 +1,204 @@
+.productDes1_box {
+  padding-top: 47px;
+}
+
+.productDes1_box .content .item {
+  padding-top: 17px;
+}
+
+.productDes1_box .content .item .describe p,
+.productDes1_box .content .item .describe h3 {
+  padding-left: 17px;
+}
+
+.productDes1_box .content .item .describe h3 {
+  font-family: "Microsoft YaHei";
+  font-size: 20px;
+  color: #55ab5a;
+  line-height: normal;
+  font-weight: normal;
+  border-bottom: 1px solid #cccccc;
+  margin-bottom: 14px;
+  padding-bottom: 16px;
+  margin-top: 13px;
+}
+
+.productDes1_box .content .item .describe p:nth-last-of-type(2) {
+  border-bottom: 1px solid #cccccc;
+  padding-bottom: 16px;
+  margin-bottom: 23px;
+}
+
+.productDes1_box .content .item .describe p:not(:last-of-type) {
+  font-family: "Microsoft YaHei";
+  font-size: 14px;
+  color: #ef5458;
+  line-height: normal;
+  font-weight: normal;
+}
+
+.productDes1_box .content .item .describe p:last-of-type {
+  font-family: "Microsoft YaHei";
+  font-size: 12px;
+  color: #848484;
+  line-height: normal;
+  font-weight: 24px;
+  width: 80%;
+}
+
+.productDes1_box .content .producDesttitle {
+  margin-top: 24px;
+  border-bottom: 1px solid #009944;
+}
+
+.productDes1_box .content .producDesttitle .title .fl {
+  font-family: "Microsoft YaHei";
+  font-size: 14px;
+  color: #fcf9f9;
+  line-height: normal;
+  font-weight: 18px;
+  padding: 6px 24px;
+  background: #009944;
+  border-radius: 5px;
+}
+
+.productDes1_box .content .producDesttitle .title .fr {
+  margin-top: 7px;
+  font-family: "Microsoft YaHei";
+  font-size: 14px;
+  color: #009944;
+  line-height: normal;
+  font-weight: 18px;
+}
+
+.productDes1_box .content .item2 {
+  padding-top: 38px;
+}
+
+.productDes1_box .content .item2 .top h3 {
+  font-family: "Microsoft YaHei";
+  font-size: 18px;
+  color: #343535;
+  line-height: normal;
+  font-weight: normal;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.productDes1_box .content .item2 .top p {
+  font-family: "Microsoft YaHei";
+  font-size: 14px;
+  color: #343535;
+  line-height: normal;
+  font-weight: normal;
+  margin-bottom: 14px;
+}
+
+.productDes1_box .content .item2 .rightarticle h3, .productDes1_box .content .item2 .rightarticle p, .productDes1_box .content .item2 .rightarticle ul {
+  padding-left: 23px;
+}
+
+.productDes1_box .content .item2 .rightarticle h3 {
+  font-family: "Microsoft YaHei";
+  font-size: 16px;
+  color: #343535;
+  line-height: normal;
+  font-weight: normal;
+}
+
+.productDes1_box .content .item2 .rightarticle h3:first-of-type {
+  margin-top: 47px;
+  margin-bottom: 14px;
+}
+
+.productDes1_box .content .item2 .rightarticle h3:last-of-type {
+  margin-top: 39px;
+  margin-bottom: 10px;
+}
+
+.productDes1_box .content .item2 .rightarticle p {
+  font-family: "Microsoft YaHei";
+  font-size: 12px;
+  color: #343535;
+  line-height: normal;
+  font-weight: normal;
+  width: 56%;
+}
+
+.productDes1_box .content .item2 .rightarticle ul li {
+  font-family: "Microsoft YaHei";
+  font-size: 12px;
+  color: #343535;
+  line-height: normal;
+  font-weight: normal;
+}
+
+.productDes1_box .content .title2 {
+  background: #009944;
+  padding: 40px 0px;
+  text-align: center;
+  margin-top: 18px;
+}
+
+.productDes1_box .content .title2 span {
+  font-family: "Microsoft YaHei";
+  font-size: 24px;
+  color: #f9fbfa;
+  line-height: normal;
+  font-weight: normal;
+}
+
+.productDes1_box .content .imglist {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 39px;
+  padding-bottom: 127px;
+}
+
+.productDes1_box .content .imglist .img_title {
+  flex-basis: 15%;
+}
+
+.productDes1_box .content .imglist .img_title h3 {
+  margin-top: 21px;
+  font-family: "Microsoft YaHei";
+  font-size: 16px;
+  color: #4a4c4b;
+  line-height: normal;
+  font-weight: normal;
+  text-align: center;
+}
+
+@media screen and (max-width: 1057px) {
+  .productDes1_box .leftnav {
+    float: none;
+    width: auto;
+    margin: auto;
+  }
+  .productDes1_box .rightcontent {
+    float: none;
+    width: 80%;
+    margin: auto;
+  }
+  .productDes1_box .rightcontent .content .item > .w8 {
+    float: none;
+    width: 80%;
+    margin: auto;
+  }
+  .productDes1_box .rightcontent .content .item > .w4 {
+    float: none;
+    width: 80%;
+    margin: auto;
+  }
+  .productDes1_box .rightcontent .content .item2 .w7 {
+    float: none;
+    width: 80%;
+    margin: auto;
+  }
+  .productDes1_box .rightcontent .content .item2 .w5 {
+    float: none;
+    width: 80%;
+    margin: auto;
+  }
+}

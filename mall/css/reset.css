@@ -1,0 +1,100 @@
+@charset "UTF-8";
+/*公共样式*/
+body {
+  margin: auto; }
+
+* {
+  margin: 0 0 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+.clearf:after {
+  content: "";
+  display: block;
+  clear: both;
+  zoom: 0; }
+
+ul, li, ol, dl {
+  list-style: none; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  margin-top: 0px;
+  margin-bottom: 0px; }
+
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+.w1 {
+  width: 8.33333%;
+  float: left; }
+
+.w2 {
+  width: 16.66667%;
+  float: left; }
+
+.w3 {
+  width: 25%;
+  float: left; }
+
+.w4 {
+  width: 33.33333%;
+  float: left; }
+
+.w5 {
+  width: 41.66667%;
+  float: left; }
+
+.w6 {
+  width: 50%;
+  float: left; }
+
+.w7 {
+  width: 58.33333%;
+  float: left; }
+
+.w8 {
+  width: 66.66667%;
+  float: left; }
+
+.w9 {
+  width: 75%;
+  float: left; }
+
+.w10 {
+  width: 83.33333%;
+  float: left; }
+
+.w11 {
+  width: 91.66667%;
+  float: left; }
+
+.w12 {
+  width: 100%;
+  float: left; }
+
+.container {
+  width: 98% !important;
+  margin: auto; }
+
+.mauto {
+  margin: auto; }
+
+a {
+  text-decoration: none; }
+  a:hover {
+    text-decoration: none; }
+
+label {
+  display: inline-block;
+  width: auto; }
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%; }
+
+/*# sourceMappingURL=reset.css.map */

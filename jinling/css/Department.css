@@ -1,0 +1,279 @@
+.content .navtitle {
+  border-bottom: 1px solid #babec4;
+  padding: 18px 0px;
+}
+
+.content .navtitle .left {
+  background: url("../images/Department_titleLog.png") no-repeat left center;
+  text-indent: 25px;
+}
+
+.content .navtitle .left a {
+  font-family: "Microsoft YaHei";
+  font-size: 16px;
+  color: #000000;
+}
+
+.content .navtitle .center {
+  margin-left: 83px;
+}
+
+.content .navtitle .center > span {
+  font-family: "Microsoft YaHei";
+  font-size: 14px;
+  color: #000000;
+}
+
+.content .navtitle .center .btn-group {
+  margin-left: 5px;
+}
+
+.content .navtitle .center .btn-group a {
+  font-family: "Microsoft YaHei";
+  font-size: 14px;
+  color: #565656;
+}
+
+.content .navtitle .center .btn-group a span {
+  color: #565656;
+}
+
+.content .navtitle .center .btn-group a:hover {
+  cursor: pointer;
+}
+
+.content .navtitle .right {
+  margin-left: 51px;
+}
+
+.content .navtitle .right > span {
+  font-family: "Microsoft YaHei";
+  font-size: 14px;
+  color: #000000;
+}
+
+.content .navtitle .right .btn-group {
+  margin-left: 5px;
+}
+
+.content .navtitle .right .btn-group a {
+  font-family: "Microsoft YaHei";
+  font-size: 14px;
+  color: #565656;
+}
+
+.content .navtitle .right .btn-group a span {
+  color: #565656;
+}
+
+.content .navtitle .right .btn-group a:hover {
+  cursor: pointer;
+}
+
+.content .navtitle .glyphicon-menu-down:before {
+  font-size: 10px;
+}
+
+.content .newsnow {
+  padding-top: 38px;
+  padding-bottom: 78px;
+}
+
+.content .newsnow .title {
+  margin-bottom: 60px;
+}
+
+.content .newsnow .title h3 {
+  font-family: "Microsoft YaHei";
+  font-size: 24px;
+  color: #010101;
+}
+
+.content .newsnow .title h3 span {
+  display: inline-block;
+  height: 2px;
+  width: 125px;
+  background: #9ccbe5;
+  margin-bottom: 6px;
+}
+
+.content .newsnow .title > span {
+  font-family: "Microsoft YaHei";
+  font-size: 16px;
+  color: #cfcfcf;
+}
+
+.content .newsnow .newslst .topflex {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 94px;
+}
+
+.content .newsnow .newslst .topflex .item {
+  width: 45%;
+}
+
+.content .newsnow .newslst .topflex .itemarticleflex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: left;
+}
+
+.content .newsnow .newslst .topflex .itemarticleflex .itemarticleflex_item h3 {
+  font-family: "Microsoft YaHei";
+  font-size: 20px;
+  color: #010000;
+}
+
+.content .newsnow .newslst .topflex .itemarticleflex .itemarticleflex_item span {
+  font-family: "Microsoft YaHei";
+  font-size: 12px;
+  color: #989898;
+}
+
+.content .newsnow .newslst .topflex .itemarticleflex p {
+  font-family: "Microsoft YaHei";
+  font-size: 14px;
+  color: #000000;
+}
+
+.content .newsnow .newslst .topflex .itemarticleflex a {
+  font-family: "Microsoft YaHei";
+  font-size: 12px;
+  color: #bababa;
+}
+
+.content .newsnow .newslst .bottomflex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-around;
+  margin-bottom: 104px;
+}
+
+.content .newsnow .newslst .bottomflex .item {
+  width: 45%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content .newsnow .newslst .bottomflex .item > div {
+  width: 48%;
+}
+
+.content .newsnow .newslst .bottomflex .item .item_right {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.content .newsnow .newslst .bottomflex .item .item_right .item_right_item h3 {
+  margin-top: 0px;
+  font-family: "Microsoft YaHei";
+  font-size: 16px;
+  color: #000000;
+}
+
+.content .newsnow .newslst .bottomflex .item .item_right .item_right_item span {
+  font-family: "Microsoft YaHei";
+  font-size: 12px;
+  color: #bababa;
+}
+
+.content .newsnow .newslst .bottomflex .item .item_right p {
+  font-family: "Microsoft YaHei";
+  font-size: 12px;
+  color: #000000;
+}
+
+.content .newsnow .newslst .bottomflex .item .item_right a {
+  font-family: "Microsoft YaHei";
+  font-size: 12px;
+  color: #bababa;
+}
+
+.content .newsnow .newslst .bottomflex .item:nth-of-type(3) {
+  margin-top: 95px;
+}
+
+.content .newsnow .newslst .bottomflex .item:nth-of-type(4) {
+  margin-top: 95px;
+}
+
+.content .newsnow .newslst .pagebtn {
+  text-align: center;
+}
+
+.content .newsnow .newslst .pagebtn a {
+  display: inline-block;
+  width: 24px;
+  line-height: 22px;
+  border: 1px solid #acacac;
+  text-align: center;
+  color: #05162e;
+}
+
+.content .newsnow .newslst .pagebtn a:not(:first-of-type) {
+  margin-left: 18px;
+}
+
+.content .newsnow .newslst .pagebtn a:hover {
+  background: #1a4c76;
+  color: white;
+}
+
+@media screen and (max-width: 1040px) {
+  .newsnow .newslst .bottomflex {
+    flex-direction: column;
+    align-items: center;
+    justify-content: between;
+  }
+  .newsnow .newslst .bottomflex .item {
+    width: 100% !important;
+  }
+  .newsnow .newslst .bottomflex .item:first-of-type {
+    margin-bottom: 94px;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .navtitle .container > div {
+    float: none;
+    margin-left: 0px !important;
+  }
+  .newsnow .newslst .topflex {
+    flex-direction: column;
+    align-items: center;
+    justify-content: between;
+  }
+  .newsnow .newslst .topflex .itemarticleflex p {
+    margin-top: 10px;
+  }
+  .newsnow .newslst .topflex .item {
+    width: 90% !important;
+  }
+  .newsnow .newslst .bottomflex {
+    flex-direction: column;
+    align-items: center;
+    justify-content: between;
+  }
+  .newsnow .newslst .bottomflex .item {
+    width: 100% !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: between;
+  }
+  .newsnow .newslst .bottomflex .item:first-of-type {
+    margin-bottom: 94px;
+  }
+  .newsnow .newslst .bottomflex .item > div {
+    width: 90% !important;
+  }
+  .newsnow .newslst .bottomflex .item .item_right .item_right_item h3 {
+    margin-top: 20px !important;
+  }
+  .newsnow .newslst .bottomflex .item .item_right p {
+    margin-top: 10px !important;
+  }
+}

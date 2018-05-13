@@ -1,0 +1,179 @@
+@charset "UTF-8";
+@import "Myfunction.scss"; 
+
+.content{
+    // 标题
+    .navtitle{
+        border-bottom:1px solid #babec4;
+        padding:18px 0px;
+        .left{
+            background:url("../images/Department_titleLog.png")no-repeat left center;
+            text-indent:25px;
+            a{
+                @include fontset(16px , #000000);
+            }
+        }
+        .center{
+            margin-left:83px;
+            >span{
+                @include fontset(14px , #000000);
+            }
+            .btn-group{
+                margin-left:5px;
+                a{
+                    @include fontset(14px , #565656);
+                    span{
+                        color:#565656;
+                    }
+                    &:hover{
+                        cursor:pointer;
+                    }
+                }
+            }
+        }
+        .right{
+            margin-left:51px;
+            >span{
+                @include fontset(14px , #000000);
+            }
+            .btn-group{
+                margin-left:5px;
+                a{
+                    @include fontset(14px , #565656);
+                    span{
+                        color:#565656;
+                    }
+                    &:hover{
+                        cursor:pointer;
+                    }
+                }
+            }
+        }
+        .glyphicon-menu-down{
+        
+            &:before{
+                font-size:10px;
+            }
+        }
+    }
+    .shool{
+        .title{
+            text-align:center;
+            margin-top:35px;
+            margin-bottom:35px;
+            h3{
+                @include fontset(24px ,#010000);
+                font-weight:bold;   
+            }
+            span{
+                @include fontset(18px ,#b4b4b4);
+            }
+        }
+        .video{
+            width:95%;
+            height:378px;
+            margin:auto;
+            >div{
+                width:100%;
+                height:100%;
+                
+            }
+            video{
+                width:100%;
+                height:100%;
+            }
+        }
+        .container
+        {
+            >p{
+                margin-top:26px;
+                @include fontset(16px ,#000000);
+            }
+            .contentlst{
+                .title{
+                    h3{
+                        @include fontset(24px , #010000);
+                        font-weight:bold;
+                    }
+                    span{
+                        @include fontset(12px ,#b4b4b4);
+                    }
+                }
+                margin-top:140px;
+                .lst{
+                    margin-top:60px;
+                    display:flex;
+                    justify-content:space-between;
+                    margin-bottom:88px;
+                    .item{
+                        width:30%;
+                        text-align:center;
+                        .img{
+                            
+                            width:109px;
+                            line-height:109px;
+                            background:#0188c8;
+                            border-radius:50%;
+                            margin:auto;
+                            margin-bottom:45px;
+                            @include fontset(37.48px,#fff);
+                        }
+                        h3{
+                            @include fontset(16px,#05162e);
+                        }
+                        p{
+                            @include fontset(12px,#000000);
+                        }
+                    }
+                }
+                .pagebtn{
+                   
+                    width:20%;
+                    margin:auto;
+                    margin-bottom:70px;
+                    a{
+                        @include fontset(16px,#000000);
+                    }
+                }
+            }
+        }
+        
+        
+    }
+}
+@media screen and (max-width:890px){
+    .shool{
+        .container{
+            .contentlst{
+                .lst{
+                    flex-direction:column;
+                    align-items:center;
+                    .item{
+                        width:90% !important;
+                        &:not(:first-of-type){
+                            margin-top:30px;
+                        }
+                    }
+                }
+                .pagebtn{
+                    width:50% !important;
+                }
+            }
+        }
+    }
+
+
+
+}
+@media screen and (max-width:660px){
+
+    .navtitle{
+        .container{
+            >div{
+                float:none;
+                margin-left:0px !important;
+                
+            }
+        }
+    }
+}

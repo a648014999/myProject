@@ -1,0 +1,236 @@
+@charset "UTF-8";
+// 标题线的样式
+.purpose {
+    padding-top: 72px;
+}
+
+.purpose_bgcolor {
+    background: url("../images/brand_culture_bg1.png")no-repeat 62% 5%;
+}
+
+.purpose .sdideas_title {
+    margin-bottom: 75px;
+}
+
+.purpose h3 {
+    font-size: 39.99px;
+}
+
+.purpose_content {
+    font-size: 16px;
+    line-height: 39.99px;
+    color: #969696;
+    width: 67.5%;
+    margin: auto;
+    text-indent: 50px;
+    text-align: center;
+}
+
+.purpose_brand {
+    background: url("../images/brand_culture_bg2.png")no-repeat 8% 35%;
+    margin-bottom: 37px;
+}
+
+.purpose_brand_title {
+    display: inline-block;
+    border: 1px solid #969696;
+    color: #969696;
+    margin-left: 190px;
+    text-align: center;
+    width: 168px;
+    height: 194px;
+}
+
+.purpose_brand_title .title {
+    font-size: 24px;
+    margin-top: 35px;
+    margin-bottom: 18px;
+}
+
+.purpose_brand_title .entitle {
+    font-size: 32px;
+    margin-top: 14px;
+    margin-bottom: 34px;
+    word-break: break-word;
+}
+
+.purpose_brand_title .line {
+    width: 100%;
+    height: 0;
+    border-top: 3px solid #969696;
+    margin: auto;
+    max-width: 60px;
+    margin-bottom: 50px;
+}
+
+.purpose_brand_article {
+    display: inline-block;
+    font-size: 16px;
+    color: #969696;
+    width: 38%;
+    text-indent: 40px;
+    margin-left: 65px;
+    line-height: 32px;
+    vertical-align: -30px;
+}
+.videowh{
+    /* width:1128px;
+    height:815px; */
+    width:100%;
+    height:815px;
+}
+@media screen and (max-width:1200px){
+    .videowh{
+        /* width:1128px;
+        height:815px; */
+        width:100%;
+        height:615px;
+    }
+}
+@media screen and (max-width:965px){
+    .videowh{
+        /* width:1128px;
+        height:815px; */
+        width:100%;
+        height:515px;
+    }
+}
+@media screen and (max-width:765px){
+    .videowh{
+        /* width:1128px;
+        height:815px; */
+        width:100%;
+        height:415px;
+    }
+}
+@media screen and (max-width:665px){
+    .videowh{
+        /* width:1128px;
+        height:815px; */
+        width:100%;
+        height:315px;
+    }
+}
+@media screen and (max-width:565px){
+    .videowh{
+        /* width:1128px;
+        height:815px; */
+        width:100%;
+        height:215px;
+    }
+}
+@media screen and (max-width:365px){
+    .videowh{
+        /* width:1128px;
+        height:815px; */
+        width:100%;
+        height:115px;
+    }
+}
+.video {
+    &:hover {
+        cursor: pointer;
+    }
+    width:80%;
+    padding:9px 12px;
+    border:2px solid #969696;
+    margin:auto;
+}
+
+.value {
+    padding-top: 77px;
+}
+
+.value .value_box .w6 p {
+    margin:auto;
+    font-size: 16px;
+    line-height: 39.99px;
+    margin-bottom: 30px;
+    color: #969696;
+    width:95%;
+    
+}
+
+.value .value_box .purpose_brand_title {
+    margin-top: 105px;
+    
+}
+
+.value .value_box {
+    background: url("../images/brand_value_bg1.png")no-repeat 89% 61%;
+}
+.history{
+    padding-bottom:80px;
+}
+.history .history_box .item:nth-of-type(1) {
+    background: url("../images/brand_history_bg1.png") no-repeat 0% 81%;
+}
+
+.history .purpose_brand_title {
+    margin-top: 80px;
+}
+
+.history .history_box .item {
+    margin-top: 40px;
+}
+
+.history .history_box .item h3 {
+    font-size: 24px;
+    line-height: 47.99px;
+    text-align: center;
+    margin: auto;
+    margin-top: 124px;
+    color: #646464;
+}
+
+.history .history_box .item p {
+    font-size: 16px;
+    line-height: 39.99px;
+    text-align: center;
+    width: 95%;
+    margin: auto;
+    color: #646464;
+}
+@media screen and (max-width:1000px){
+    .history{
+        .history_box{
+            .item{
+                >div{
+                    float:none;
+                    width:80%;
+                    margin:auto;
+                }
+                h3{
+                    margin-top:0px;
+                }
+                .history_box_title .purpose_brand_title{
+                    display:block;
+                    margin:auto;
+                    margin-bottom:10px;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:1060px){
+    .value{
+        .value_box .purpose_brand_title{
+            display: block;
+            margin:auto;
+        }
+    }
+
+}
+@media screen and (max-width:1200px){
+    .purpose .purpose_brand {
+        .purpose_brand_title{
+            display: block;
+            margin:30px auto;
+        }
+        .purpose_brand_article{
+            display: block;
+            margin:0px auto;
+        }
+    }
+    
+}

@@ -1,0 +1,136 @@
+@charset "UTF-8";
+@import "Myfunction.scss";
+$boxw:566px;
+$boxh:500px;
+$bigborderw:385px;
+$bigborderh:279px;
+$innerborderw:359px;
+$innerborderh:252px;
+$innerborder_input_w:222px;
+$innerborder_input_h:41px;
+$innerborder_input_a_w:84px;
+$innerborder_input_a_h:41px;
+.select{
+    .bgcolor{
+        background:#fefff9;
+        .select_box{
+            width:$boxw;
+            height:$boxh;
+            margin:auto;
+            background:url("../images/select_bg.png")no-repeat 15% 75%;
+            position:relative;
+
+            .bigborder{
+                width:$bigborderw;
+                height:$bigborderh;
+                position:relative;
+                margin:auto;
+                // background:#fff;
+                // border-radius:50%;  
+                @include plttXY();
+
+                .innerborder{
+                    @include plttXY(no,no,45%);
+                    
+                    width:$innerborderw;
+                    height:$innerborderh;
+                    // border:4px solid;
+                    // border-image-source: url
+                    // ("../images/select_innerborder_bg.png") ;
+                    // border-radius:50%;  
+
+                    text-align:center;
+                    position:relative;
+                    
+
+                    .inercontent{
+                        display:inline-block;
+                        @include plttXY(relative,0%,50%,0%,-50%);
+                        
+
+                        .innerborder_top{
+                            text-align:center;
+                            background:url("../images/select_log.png")no-repeat 12% -57%;
+                            margin-bottom:18px;
+
+                            .innerborder_box{
+                                display:inline-block;
+                                text-align:right;
+                                h3{
+                                    @include fontscwlf(24px,#139d53,bold);
+                                }
+                                h3:last-of-type{
+                                    @include fontscwlf(10px ,#0e7e6f);
+                                }
+                            }
+                            
+                        }
+                        
+                        .input{
+                            margin-bottom:12px;
+
+                            input{
+                                width:$innerborder_input_w;
+                                height:$innerborder_input_h;
+                                background:#edf0f0;
+                                @include fontscwlf(12px,#099c4e);
+                            }
+                            a{
+                                margin-left:4px;
+                                display:inline-block;
+                                width:$innerborder_input_a_w;
+                                height:$innerborder_input_a_h;
+                                background:#0e7e6f;
+                                text-align:center;
+                                @include fontscwlf(12px,#fff,1,$innerborder_input_a_h);
+                            }
+                        }
+    
+                        p{
+                            @include fontscwlf(12px ,#cdcdcd);
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:730px){
+    .select{
+        .select_box{
+            width:auto !important;
+            margin:auto !important;
+            background: none !important; 
+        }
+    }
+}
+@media screen and (max-width:375px){
+    .select{
+        .select_box{
+            .inercontent{
+                .input{
+                    .left{
+                        float:none;
+                        input{
+                            
+                        }
+                    }
+                    .right{
+                        padding-top:10px;
+                        float:none;
+                        a{
+                            display: block !important;
+                            float:none;
+                            margin:auto !important;
+                        }
+                    }
+                    
+                }
+            }
+            
+        }
+    }
+
+}

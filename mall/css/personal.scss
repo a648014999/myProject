@@ -1,0 +1,107 @@
+
+@import "Myfunction.scss"; 
+@import "common.scss";
+
+
+.header{
+    width:7.5rem;
+    height:2.73rem;
+}
+.content{
+    background:#f2f2f2;
+    .myfunction{
+        background:#fff;
+        padding-top:0.2rem;
+        padding-bottom:0.37rem;
+        .flex{
+           
+            display:flex;
+            justify-content:space-around;
+            .item{
+                
+                width:2.52rem;
+                padding-top:0.28rem;
+                padding-bottom:0.15rem;
+                border-right:1px solid #c2c2c2;
+                padding-left:0.6rem;
+                padding-right:0.6rem;
+                text-align:center;
+                .img{
+                    width:0.4rem;
+                    height:0.45rem;
+                    margin:auto;
+                    margin-bottom:0.21rem;
+                }
+                
+                span
+                {
+                    @include fontset(0.3rem,#302f2f);
+                }
+            }
+            .item:nth-of-type(2){
+                .img
+                {
+                    width:0.49rem;
+                    height:0.42rem;
+                }
+            }
+            .item:last-of-type{
+                border-right:none;
+            }
+        }
+    }
+    .other{
+        padding-bottom:2.27rem;
+        .flex{
+            display:flex;
+            flex-direction:column;
+            .item{
+                margin-top:0.25rem;
+                height:0.91rem;
+                background:#fff;
+                padding-top:0.16rem;
+                padding-bottom:0.29rem;
+                border-top:0.01rem solid #c6c6c6;
+                border-bottom:0.01rem solid #c6c6c6;
+                .img{
+                    width:0.46rem;
+                    height:0.46rem;
+                    margin-right:0.21rem;
+                    margin-left:0.25rem;
+                }
+                span:first-of-type{
+                    @include fontset(0.3rem,#302f2f);
+                }
+                span:last-of-type{
+                    margin-right:0.35rem;
+                    font-size:0.3rem;
+                    color:#dadada;
+                }
+            }
+            .item:nth-of-type(4){
+                margin-top:0px;
+            }
+        }
+    }
+
+
+
+
+}
+
+.footer{
+    .flex{
+        >label:nth-of-type(3)
+        {
+            .item .img img:first-child{
+                display:none !important;
+            }
+            .item .img img:last-child{
+                display:block !important;
+            }
+            .item span{
+                color:#fea31e !important;
+            }
+        }
+    }
+}

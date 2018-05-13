@@ -1,0 +1,129 @@
+.contact .contact_box {
+  padding-top: 66px;
+}
+
+.contact .contact_box .map_container, .contact .contact_box .submit_container {
+  width: 90%;
+  margin: auto;
+}
+
+.contact .contact_box .map_container {
+  padding-top: 25px;
+  margin-bottom: 39px;
+}
+
+.contact .contact_box .map_container .map_title {
+  font-family: "Microsoft YaHei";
+  font-size: 14px;
+  color: #d6ee74;
+  line-height: normal;
+  font-weight: normal;
+  margin-bottom: 35px;
+}
+
+.contact .contact_box .map_container .centerline {
+  width: 1px;
+  height: 231px;
+  background: #eeeeee;
+  margin: 0px 52px;
+  margin-top: 9px;
+}
+
+.contact .contact_box .map_container .contactinfo .contactinfo_box {
+  font-family: "Microsoft YaHei";
+  font-size: 14px;
+  color: #969696;
+  line-height: normal;
+  font-weight: normal;
+  margin-top: 17px;
+}
+
+.contact .contact_box .map_container .contactinfo .contactinfo_box p {
+  margin-bottom: 20px;
+}
+
+.contact .contact_box .map_container .contactinfo .contactinfo_box p:last-of-type {
+  margin-bottom: 0px;
+}
+
+.contact .contact_box .submit_container .submitcontent .submitcontent_box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.contact .contact_box .submit_container .submitcontent .submitcontent_box .name,
+.contact .contact_box .submit_container .submitcontent .submitcontent_box .phone,
+.contact .contact_box .submit_container .submitcontent .submitcontent_box .email {
+  flex-basis: 30%;
+  margin-top: 47px;
+  margin-bottom: 27px;
+}
+
+.contact .contact_box .submit_container .submitcontent .submitcontent_box .name input,
+.contact .contact_box .submit_container .submitcontent .submitcontent_box .phone input,
+.contact .contact_box .submit_container .submitcontent .submitcontent_box .email input {
+  width: 100%;
+  height: 34px;
+  font-family: "Microsoft YaHei";
+  font-size: 14px;
+  color: #c8c8c8;
+  line-height: normal;
+  font-weight: normal;
+}
+
+.contact .contact_box .submit_container .submitcontent .submitcontent_box .content textarea {
+  width: 100%;
+  font-family: "Microsoft YaHei";
+  font-size: 14px;
+  color: #c8c8c8;
+  line-height: normal;
+  font-weight: normal;
+}
+
+.contact .contact_box .submit_container .submitcontent .submitcontent_box .subbtn {
+  text-align: center;
+  margin-top: 47px;
+  margin-bottom: 68px;
+}
+
+.contact .contact_box .submit_container .submitcontent .submitcontent_box .subbtn a {
+  display: inline-block;
+  padding: 11px 37px;
+  background: #d6ee74;
+  border-radius: 10px;
+  text-align: center;
+}
+
+@media screen and (max-width: 1300px) {
+  .map_container .map {
+    float: none;
+    width: 80%;
+    margin: auto;
+  }
+  .map_container .centerline {
+    width: 100% !important;
+    height: 1px !important;
+    margin: 10px auto !important;
+  }
+  .map_container .contactinfo {
+    float: none;
+    width: 80%;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .submit_container .submitcontent_box {
+    flex-direction: column;
+    align-items: left !important;
+  }
+  .submit_container .submitcontent_box .w4 {
+    width: 80% !important;
+    margin-top: 0px !important;
+    margin-bottom: 20px !important;
+  }
+  .submit_container .submitcontent_box .w4:first-of-type {
+    margin-top: 20px !important;
+  }
+}

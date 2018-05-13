@@ -1,0 +1,205 @@
+.content .navtitle {
+  border-bottom: 1px solid #babec4;
+  padding: 18px 0px;
+}
+
+.content .navtitle .left {
+  background: url("../images/Department_titleLog.png") no-repeat left center;
+  text-indent: 25px;
+}
+
+.content .navtitle .left a {
+  font-family: "Microsoft YaHei";
+  font-size: 16px;
+  color: #000000;
+}
+
+.content .navtitle .center {
+  margin-left: 83px;
+}
+
+.content .navtitle .center > span {
+  font-family: "Microsoft YaHei";
+  font-size: 14px;
+  color: #000000;
+}
+
+.content .navtitle .center .btn-group {
+  margin-left: 5px;
+}
+
+.content .navtitle .center .btn-group a {
+  font-family: "Microsoft YaHei";
+  font-size: 14px;
+  color: #565656;
+}
+
+.content .navtitle .center .btn-group a span {
+  color: #565656;
+}
+
+.content .navtitle .center .btn-group a:hover {
+  cursor: pointer;
+}
+
+.content .navtitle .right {
+  margin-left: 51px;
+}
+
+.content .navtitle .right > span {
+  font-family: "Microsoft YaHei";
+  font-size: 14px;
+  color: #000000;
+}
+
+.content .navtitle .right .btn-group {
+  margin-left: 5px;
+}
+
+.content .navtitle .right .btn-group a {
+  font-family: "Microsoft YaHei";
+  font-size: 14px;
+  color: #565656;
+}
+
+.content .navtitle .right .btn-group a span {
+  color: #565656;
+}
+
+.content .navtitle .right .btn-group a:hover {
+  cursor: pointer;
+}
+
+.content .navtitle .glyphicon-menu-down:before {
+  font-size: 10px;
+}
+
+.content .shool .title {
+  text-align: center;
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+
+.content .shool .title h3 {
+  font-family: "Microsoft YaHei";
+  font-size: 24px;
+  color: #010000;
+  font-weight: bold;
+}
+
+.content .shool .title span {
+  font-family: "Microsoft YaHei";
+  font-size: 18px;
+  color: #b4b4b4;
+}
+
+.content .shool .video {
+  width: 95%;
+  height: 378px;
+  margin: auto;
+}
+
+.content .shool .video > div {
+  width: 100%;
+  height: 100%;
+}
+
+.content .shool .video video {
+  width: 100%;
+  height: 100%;
+}
+
+.content .shool .container > p {
+  margin-top: 26px;
+  font-family: "Microsoft YaHei";
+  font-size: 16px;
+  color: #000000;
+}
+
+.content .shool .container .contentlst {
+  margin-top: 140px;
+}
+
+.content .shool .container .contentlst .title h3 {
+  font-family: "Microsoft YaHei";
+  font-size: 24px;
+  color: #010000;
+  font-weight: bold;
+}
+
+.content .shool .container .contentlst .title span {
+  font-family: "Microsoft YaHei";
+  font-size: 12px;
+  color: #b4b4b4;
+}
+
+.content .shool .container .contentlst .lst {
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 88px;
+}
+
+.content .shool .container .contentlst .lst .item {
+  width: 30%;
+  text-align: center;
+}
+
+.content .shool .container .contentlst .lst .item .img {
+  width: 109px;
+  line-height: 109px;
+  background: #0188c8;
+  border-radius: 50%;
+  margin: auto;
+  margin-bottom: 45px;
+  font-family: "Microsoft YaHei";
+  font-size: 37.48px;
+  color: #fff;
+}
+
+.content .shool .container .contentlst .lst .item h3 {
+  font-family: "Microsoft YaHei";
+  font-size: 16px;
+  color: #05162e;
+}
+
+.content .shool .container .contentlst .lst .item p {
+  font-family: "Microsoft YaHei";
+  font-size: 12px;
+  color: #000000;
+}
+
+.content .shool .container .contentlst .pagebtn {
+  width: 20%;
+  margin: auto;
+  margin-bottom: 70px;
+}
+
+.content .shool .container .contentlst .pagebtn a {
+  font-family: "Microsoft YaHei";
+  font-size: 16px;
+  color: #000000;
+}
+
+@media screen and (max-width: 890px) {
+  .shool .container .contentlst .lst {
+    flex-direction: column;
+    align-items: center;
+  }
+  .shool .container .contentlst .lst .item {
+    width: 90% !important;
+  }
+  .shool .container .contentlst .lst .item:not(:first-of-type) {
+    margin-top: 30px;
+  }
+  .shool .container .contentlst .pagebtn {
+    width: 50% !important;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .navtitle .container > div {
+    float: none;
+    margin-left: 0px !important;
+  }
+}

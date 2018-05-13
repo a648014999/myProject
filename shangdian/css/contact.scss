@@ -1,0 +1,146 @@
+@charset "UTF-8";
+@import "Myfunction.scss";
+$centerlinewh: 1px,231px;
+.contact
+{
+    .contact_box
+    {
+        padding-top:66px;
+
+        // 容器的大小
+        .map_container,.submit_container{
+            width:90%;
+            margin:auto;
+        }
+        // 地图内容
+        .map_container
+        {
+            padding-top:25px;
+            margin-bottom:39px;
+            // 标题
+            .map_title
+            {
+                @include fontscwlf(14px ,#d6ee74);
+                margin-bottom:35px;
+
+            }
+
+            // 中间线
+            .centerline{
+                width:nth($centerlinewh,1);
+                height:nth($centerlinewh,2);
+                background:#eeeeee;
+                margin:0px 52px;
+                margin-top:9px;
+            }
+
+            // 联系信息
+            .contactinfo{
+                
+                .contactinfo_box{
+                    @include fontscwlf(14px ,#969696);
+                    margin-top:17px;
+                    p{
+                        margin-bottom:20px;
+                    }
+                    p:last-of-type{
+                        margin-bottom:0px;
+                    }
+                }
+            }
+        }
+        
+        // 提交内容容器
+        .submit_container{
+            // 提交内容
+            .submitcontent{
+                .submitcontent_box{
+                    display:flex;
+                    flex-wrap:wrap;
+                    justify-content:space-between;
+                    
+                    .name,
+                    .phone,
+                    .email{
+                        flex-basis:30%;
+                        margin-top:47px;
+                        margin-bottom:27px;
+                        input{
+                            width:100%;
+                            // margin:auto;
+                            height:34px;
+                            @include fontscwlf(14px ,#c8c8c8);
+                        }
+                    }
+                    .name{
+                        input{
+
+                        }
+                    }
+                    .phone{
+                        input{
+                            
+                        }
+                    }
+                    .email{
+                        input{
+                            
+                        }
+                    }
+                    .content{
+                        textarea{
+                            width:100%;
+                            @include fontscwlf(14px ,#c8c8c8);
+                        }
+                    }
+                    .subbtn{
+                        text-align:center;
+                        margin-top:47px;
+                        margin-bottom:68px;
+                        a{
+                            display:inline-block;
+                            padding:11px 37px;
+                            background:#d6ee74;
+                            border-radius:10px;
+                            text-align:center;
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:1300px){
+    .map_container {
+        .map{
+            @include flowidmarclear(80%);
+        }
+        .centerline{
+            width:100% !important;
+            height:1px !important;
+            margin:10px auto !important;
+        }
+        .contactinfo{
+            @include flowidmarclear(80%);
+        }
+    }
+}
+@media screen and (max-width:800px){
+    .submit_container{
+        .submitcontent_box {
+            flex-direction:column;
+            
+            align-items:left !important;
+            .w4{
+                width:80% !important;
+                margin-top:0px !important;
+                &:first-of-type{
+                    margin-top:20px !important;
+
+                }
+                margin-bottom:20px !important;
+            }
+        }
+    }
+}

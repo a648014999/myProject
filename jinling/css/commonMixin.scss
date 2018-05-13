@@ -1,0 +1,10 @@
+
+@charset "UTF-8";
+// 标题
+@mixin line($color:#9ccbe5){
+    display:inline-block;
+    height:2px;
+    width:125px;
+    background:$color;
+    margin-bottom:6px;
+}

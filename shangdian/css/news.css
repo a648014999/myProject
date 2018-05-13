@@ -1,0 +1,237 @@
+.news {
+  padding-top: 60px;
+}
+
+.news .news_box .leftnav {
+  text-align: center;
+}
+
+.news .news_box .leftnav h3 {
+  font-size: 24px;
+  color: #323232;
+  margin-bottom: 22px;
+}
+
+.news .news_box .leftnav .list a {
+  font-size: 16px;
+  color: #141414;
+  padding-top: 28px;
+  padding-left: 40px;
+  padding-bottom: 28px;
+  padding-right: 65px;
+  display: inline-block;
+  position: relative;
+}
+
+.news .news_box .leftnav .list a:hover {
+  background: #d6ee74;
+  color: white;
+}
+
+.news .news_box .leftnav .list a:after {
+  content: ">";
+  display: block;
+  color: white;
+  position: absolute;
+  right: 5%;
+  top: 35%;
+}
+
+.news .rightcontent .title .fl {
+  font-size: 18px;
+  color: #9d9d9d;
+  background: url("../images/news_title_log.png") no-repeat left center;
+  text-indent: 30px;
+}
+
+.news .rightcontent .title .fr,
+.news .rightcontent .title .fr a {
+  font-size: 12px;
+  color: #848484;
+}
+
+.news .rightcontent .title .fr a:hover {
+  color: white;
+}
+
+.news .rightcontent .line {
+  height: 1px;
+  background: #eeeeee;
+  margin-top: 10px;
+}
+
+.news .rightcontent .newlist .item {
+  padding-top: 15px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.news .rightcontent .newlist .item:hover > .w6 .headimg {
+  display: block;
+}
+
+.news .rightcontent .newlist .item:hover > .w6:first-of-type {
+  width: 50%;
+}
+
+.news .rightcontent .newlist .item:hover > .w6:last-of-type {
+  width: 50%;
+}
+
+.news .rightcontent .newlist .item > .w6 .headimg {
+  display: none;
+}
+
+.news .rightcontent .newlist .item > .w6:first-of-type {
+  width: 16.66667%;
+}
+
+.news .rightcontent .newlist .item > .w6:last-of-type {
+  width: 83.33333%;
+}
+
+.news .rightcontent .newlist .time {
+  color: #fff;
+  width: 95px;
+  height: 95px;
+  background: #d6ee74;
+  border-radius: 10px;
+  text-align: center;
+  padding-top: 10px;
+  margin-top: 33px;
+}
+
+@media screen and (max-width: 760px) {
+  .news .news_box .leftnav {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .news .news_box .rightcontent {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .news .rightcontent .newlist .item .item_left {
+    float: none;
+    margin: auto;
+    width: 80% !important;
+  }
+  .news .rightcontent .newlist .item .item_left .headimg .img {
+    margin: auto;
+    width: auto;
+    height: auto;
+  }
+  .news .rightcontent .newlist .item .item_left .bottomtime {
+    float: none;
+    margin: auto;
+    width: auto;
+  }
+  .news .rightcontent .newlist .item .item_left .bottomtime .time {
+    margin: auto;
+  }
+  .news .rightcontent .newlist .item:hover > .w6 .headimg {
+    display: block;
+    float: none;
+    margin: auto;
+    margin-bottom: 30px;
+  }
+  .news .rightcontent .newlist .item:hover > .w6:first-of-type {
+    width: 50%;
+    float: none;
+    margin: auto;
+  }
+  .news .rightcontent .newlist .item:hover > .w6:first-of-type .bottomtime {
+    float: none;
+    margin: auto;
+  }
+  .news .rightcontent .newlist .item:hover > .w6:last-of-type {
+    width: 50%;
+    float: none;
+    margin: auto;
+  }
+  .news .rightcontent .newlist .item .item_right {
+    float: none;
+    margin: auto;
+  }
+  .news .rightcontent .newlist .item .item_right .article h3 {
+    text-align: center;
+  }
+}
+
+.news .rightcontent .newlist .time h3 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.news .rightcontent .newlist .time .line {
+  width: 50px;
+  height: 1px;
+  background: white;
+  margin: auto;
+  margin-bottom: 11px;
+}
+
+.news .rightcontent .newlist .time span {
+  font-size: 14px;
+}
+
+.news .rightcontent .newlist .img {
+  width: 240px;
+  height: 140px;
+}
+
+.news .rightcontent .newlist .article {
+  margin-top: 40px;
+}
+
+.news .rightcontent .newlist .article h3 {
+  font-size: 18px;
+  color: #646464;
+  margin-bottom: 20px;
+}
+
+.news .rightcontent .newlist .article p {
+  font-size: 12px;
+  color: #aaaaaa;
+  text-overflow: ellipsis;
+}
+
+.news .rightcontent .newlist .article p a {
+  color: #d6ee74;
+}
+
+.news .rightcontent .newlist .article p a:hover {
+  color: white;
+}
+
+.news .rightcontent .pagebtn {
+  margin-top: 78px;
+  text-align: center;
+  margin-bottom: 78px;
+}
+
+.news .rightcontent .pagebtn a {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  font-size: 16px;
+  line-height: 30px;
+  text-align: center;
+  background: #eeeeee;
+  border-radius: 5px;
+  color: #969696;
+}
+
+.news .rightcontent .pagebtn a:hover {
+  background: #d6ee74;
+  color: white;
+}
+
+.news .rightcontent .pagebtn span {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  color: #969696;
+}

@@ -1,0 +1,141 @@
+@charset "UTF-8";
+@import "Myfunction.scss"; 
+@import "commonVariable.scss";
+
+
+
+
+
+::-webkit-input-placeholder { /* WebKit browsers */ 
+    @include fontset(30px / $fontsize * 1rem,#fff5c9);
+} 
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
+    @include fontset(30px / $fontsize * 1rem,#fff5c9);
+} 
+::-moz-placeholder { /* Mozilla Firefox 19+ */ 
+    @include fontset(30px / $fontsize * 1rem,#fff5c9);
+} 
+:-ms-input-placeholder { /* Internet Explorer 10+ */ 
+    @include fontset(30px / $fontsize * 1rem,#fff5c9);
+} 
+
+.header{
+
+    .bgcolor{
+        
+        background:#fece02;
+        .nav{
+            height:104px / $fontsize * 1rem;
+            padding:0.21rem 0rem;
+            .log{
+                width:64px / $fontsize * 1rem;
+                margin-right:48px / $fontsize * 1rem;
+                margin-left:24px / $fontsize * 1rem;
+            }
+            .search{
+                position:relative;
+                .searchlog{
+                    position:absolute;
+                    left:22px / $fontsize * 1rem;
+                    top:19px / $fontsize * 1rem;
+                    width:37px / $fontsize * 1rem;
+                    height:35px / $fontsize * 1rem;
+                }
+                input{                    
+                    width:430px / $fontsize *1rem;
+                    height:68px / $fontsize * 1rem;
+                    background:#ffe781;
+                    border-radius:(68px / $fontsize * 1rem) / 2 ;
+                    border:0px;
+                    outline:none;                                        
+                    text-indent:84px / $fontsize*1rem;
+                    @include fontset(30px / $fontsize * 1rem,black);           
+                    margin-right:28px / $fontsize * 1rem;
+                            
+                }
+                
+            }
+            .log2{
+                margin-top:14px / $fontsize * 1rem;
+                width:43px / $fontsize * 1rem;
+                height:39px /$fontsize * 1rem;
+            }
+            .log3{
+                margin-top:14px / $fontsize * 1rem;
+                margin-left:46px / $fontsize * 1rem;
+                width:38px / $fontsize * 1rem;
+                height:43px /$fontsize * 1rem;
+            }
+        }
+
+    }
+
+}
+
+
+.footer{
+    .flex{
+        display:flex;
+        justify-content:space-around;
+        padding-top:11px/$fontsize * 1rem; ;
+        padding-bottom:15px/$fontsize * 1rem;;
+        border-top:2px solid #c3c3c3;
+        position:fixed;
+        bottom:0;
+        left:50%;
+        transform:translateX(-50%);
+        width:750px / $fontsize * 1rem;
+        background:#ffffff;
+
+        @for $i from 1 to 5{
+            label:nth-of-type(#{$i}){
+                .item{
+                    text-align:center;
+                    .img{
+                        margin:auto;
+                        img{
+                            margin:auto;
+                        }
+                        img:last-child{
+                            display:none;
+                        }
+                        width:58px /$fontsize * 1rem;
+                        height:55px /$fontsize * 1rem;
+                    }
+                    >span{
+                        @include fontset(24px/$fontsize *1rem, #949494,"宋体");
+                    }
+                }
+            }
+            @if($i==2){
+                label:nth-of-type(#{$i}){
+                    .item{
+                        .img{
+                            width:58px /$fontsize * 1rem;
+                            height:55px /$fontsize * 1rem;
+                            
+                        }
+                    }
+                }
+            }
+        }
+        
+        input[name="footerbtn"]{
+            display:none;
+        }
+        
+    }
+
+}
+
+// @for $i from 1 to 5{
+//     #footerbtn#{$i}:checked  + label .item .img img:first-child{
+//         display: none;
+//     }
+//     #footerbtn#{$i}:checked  + label .item .img img:last-child{
+//         display: block;
+//     }
+//     #footerbtn#{$i}:checked  + label .item span{
+//         color:#fea31e;
+//     }
+// }

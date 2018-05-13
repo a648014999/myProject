@@ -1,0 +1,222 @@
+@charset "UTF-8";
+@import "Myfunction.scss"; 
+@import "commonVariable.scss";
+
+::-webkit-input-placeholder { /* WebKit browsers */ 
+    @include fontset(30px / $fontsize * 1rem,#fff5c9);
+} 
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
+    @include fontset(30px / $fontsize * 1rem,#fff5c9);
+} 
+::-moz-placeholder { /* Mozilla Firefox 19+ */ 
+    @include fontset(30px / $fontsize * 1rem,#fff5c9);
+} 
+:-ms-input-placeholder { /* Internet Explorer 10+ */ 
+    @include fontset(30px / $fontsize * 1rem,#fff5c9);
+} 
+.header{
+    padding-left:0.19rem;
+    padding-top:0.2rem;
+    background:#fece02;
+    padding-bottom:0.19rem;
+    .back{
+        font-size:0.5rem;
+        margin-top:0.05rem;
+        color:#fff5c9;
+    }
+    .search{
+        position:relative;
+        margin-left:1.03rem;
+        .searchlog{
+            position:absolute;
+            left:22px / $fontsize * 1rem;
+            top:19px / $fontsize * 1rem;
+            width:37px / $fontsize * 1rem;
+            height:35px / $fontsize * 1rem;
+        }
+        input{                    
+            width:430px / $fontsize *1rem;
+            height:68px / $fontsize * 1rem;
+            background:#ffe781;
+            border-radius:(68px / $fontsize * 1rem) / 2 ;
+            border:0px;
+            outline:none;                                        
+            text-indent:84px / $fontsize*1rem;
+            @include fontset(30px / $fontsize * 1rem,black);           
+            margin-right:28px / $fontsize * 1rem;
+                    
+        }
+        
+    }
+    .log{
+        width:64px / $fontsize * 1rem;
+        margin-right:25px / $fontsize * 1rem;
+       
+    }
+}
+
+@for $i from 1 to 4{
+    #searchcontent#{$i}:checked ~ .headlst .head >div:last-of-type div label:nth-of-type(#{$i}){
+        background:#fe9002;
+    }
+}
+@for $i from 2 to 4{
+    #searchcontent#{$i}:checked ~  .headlst .head:nth-of-type(#{$i}){
+        opacity: 1;
+        left:0%;
+        top:0%;
+    }
+    #searchcontent#{$i}:checked ~  .headlst .head:nth-of-type(1){
+        opacity:0;
+    }
+}
+
+
+.content{
+    background:#eeeeee;
+    padding-top:0.2rem;
+    padding-bottom:4.33rem;
+    >input[name="searchcontent"]{
+        display:none;
+    }
+    .headlst{
+        position:relative;
+    }
+    .head{
+        // 
+        transition:all .5s;
+        background:#fff;
+        margin-left:0.21rem;
+        margin-right:0.19rem;
+        >div{
+            
+            &:not(:last-of-type){
+                // height:0.85rem;
+                padding-top:0.15rem;
+                padding-bottom:0.15rem;
+            }
+            &:first-of-type{
+                span{
+                    display:inline-block;
+                    padding-top:0.14rem;
+                    padding-bottom:0.15rem;
+                    padding-right:0.09rem;
+                    border-right:1px solid #c2c2c2;
+                }
+                span:first-of-type{
+                    padding-left:0.12rem;
+                    @include fontset(0.3rem,#ff5b00);                   
+                }
+                span:nth-of-type(2){
+                    @include fontset(0.3rem,#303030);
+                    margin-left:0.1rem;
+                    padding-right:0.1rem;
+                }
+                span:last-of-type{
+                    @include fontset(0.3rem,#303030);
+                    border-right:none;
+                    margin-left:0.47rem;
+                }
+            }
+            
+
+            &:last-of-type{
+                height:0.56rem;
+                margin-left:0.19rem;
+                margin-right:0.27rem;
+                border-top:1px solid #c2c2c2;
+                text-align:center;
+                div{
+                    display:inline-block;
+                    margin-top:.16rem;
+                    label{
+                        display:inline-block;
+                        border-radius:50%;
+                        width:0.19rem;
+                        height:0.19rem;
+                        border:1px solid #ababab;
+                    }
+                }
+            }
+        }
+        .flex
+        { 
+            display:flex;
+            margin-left:0.19rem;
+            margin-right:0.27rem;
+            border-top:1px solid #c2c2c2;
+            span {
+                width: 50%;
+                text-align: center;
+                @include fontset(0.3rem,#303030);
+                border-right:1px solid #c2c2c2;
+                padding-top: 0.03rem;
+                padding-bottom: 0.23rem;
+                &:last-of-type{
+                    border-right: none;
+                }
+            }
+
+
+        }
+    }
+    @for $i from 2 to 4{
+        .head:nth-of-type(#{$i}){
+            position:absolute;
+            opacity:0;
+            left:100%;
+            top:0%;
+        }
+    }
+    .history{
+        margin-top:0.11rem;
+        .item{
+            padding-top:0.36rem;
+            padding-bottom:0.32rem;
+            padding-left:0.28rem;
+            background:#fff;
+            border-bottom:1px solid #c2c2c2;
+            .img{
+                float:left;
+                width:0.27rem;
+                height:0.27rem;
+                margin-right:0.15rem;
+                margin-top:0.08rem;
+            }
+            >span{
+                float:left;
+
+                @include fontset(0.3rem,#474747);
+            }
+            &:after{
+                content:"";
+                display:block;
+                clear: both;
+            }
+           
+        }
+        .item:last-of-type{
+            border-bottom:none;
+            text-align: center;
+            .contai{
+                display:inline-block;
+                .img{
+                    float:left;
+                }
+                >span{
+                    float:left;
+
+                    @include fontset(0.3rem,#a2a1a1);
+                }
+                &:after{
+                    content:"";
+                    display:block;
+                    clear: both;
+                }
+            }
+        }
+    }
+}
+
+
+

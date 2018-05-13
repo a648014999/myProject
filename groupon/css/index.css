@@ -1,0 +1,266 @@
+@charset "UTF-8";
+html {
+  font-size: 100px; }
+
+body {
+  width: 7.5rem;
+  padding-bottom: 1.22rem; }
+
+::-webkit-input-placeholder {
+  /* WebKit browsers */
+  font-family: "Microsoft YaHei";
+  font-size: 0.3rem;
+  color: #fff5c9; }
+
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  font-family: "Microsoft YaHei";
+  font-size: 0.3rem;
+  color: #fff5c9; }
+
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  font-family: "Microsoft YaHei";
+  font-size: 0.3rem;
+  color: #fff5c9; }
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  font-family: "Microsoft YaHei";
+  font-size: 0.3rem;
+  color: #fff5c9; }
+
+.header .bgcolor {
+  background: #fece02; }
+  .header .bgcolor .nav {
+    height: 1.04rem;
+    padding: 0.21rem 0rem; }
+    .header .bgcolor .nav .log {
+      width: 0.64rem;
+      margin-right: 0.48rem;
+      margin-left: 0.24rem; }
+    .header .bgcolor .nav .search {
+      position: relative; }
+      .header .bgcolor .nav .search .searchlog {
+        position: absolute;
+        left: 0.22rem;
+        top: 0.19rem;
+        width: 0.37rem;
+        height: 0.35rem; }
+      .header .bgcolor .nav .search input {
+        width: 4.3rem;
+        height: 0.68rem;
+        background: #ffe781;
+        border-radius: 0.34rem;
+        border: 0px;
+        outline: none;
+        text-indent: 0.84rem;
+        font-family: "Microsoft YaHei";
+        font-size: 0.3rem;
+        color: black;
+        margin-right: 0.28rem; }
+    .header .bgcolor .nav .log2 {
+      margin-top: 0.14rem;
+      width: 0.43rem;
+      height: 0.39rem; }
+    .header .bgcolor .nav .log3 {
+      margin-top: 0.14rem;
+      margin-left: 0.46rem;
+      width: 0.38rem;
+      height: 0.43rem; }
+
+.footer .flex {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 0.11rem;
+  padding-bottom: 0.15rem;
+  border-top: 2px solid #c3c3c3;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 7.5rem;
+  background: #ffffff; }
+  .footer .flex label:nth-of-type(1) .item {
+    text-align: center; }
+    .footer .flex label:nth-of-type(1) .item .img {
+      margin: auto;
+      width: 0.58rem;
+      height: 0.55rem; }
+      .footer .flex label:nth-of-type(1) .item .img img {
+        margin: auto; }
+      .footer .flex label:nth-of-type(1) .item .img img:last-child {
+        display: none; }
+    .footer .flex label:nth-of-type(1) .item > span {
+      font-family: "宋体";
+      font-size: 0.24rem;
+      color: #949494; }
+  .footer .flex label:nth-of-type(2) .item {
+    text-align: center; }
+    .footer .flex label:nth-of-type(2) .item .img {
+      margin: auto;
+      width: 0.58rem;
+      height: 0.55rem; }
+      .footer .flex label:nth-of-type(2) .item .img img {
+        margin: auto; }
+      .footer .flex label:nth-of-type(2) .item .img img:last-child {
+        display: none; }
+    .footer .flex label:nth-of-type(2) .item > span {
+      font-family: "宋体";
+      font-size: 0.24rem;
+      color: #949494; }
+  .footer .flex label:nth-of-type(2) .item .img {
+    width: 0.58rem;
+    height: 0.55rem; }
+  .footer .flex label:nth-of-type(3) .item {
+    text-align: center; }
+    .footer .flex label:nth-of-type(3) .item .img {
+      margin: auto;
+      width: 0.58rem;
+      height: 0.55rem; }
+      .footer .flex label:nth-of-type(3) .item .img img {
+        margin: auto; }
+      .footer .flex label:nth-of-type(3) .item .img img:last-child {
+        display: none; }
+    .footer .flex label:nth-of-type(3) .item > span {
+      font-family: "宋体";
+      font-size: 0.24rem;
+      color: #949494; }
+  .footer .flex label:nth-of-type(4) .item {
+    text-align: center; }
+    .footer .flex label:nth-of-type(4) .item .img {
+      margin: auto;
+      width: 0.58rem;
+      height: 0.55rem; }
+      .footer .flex label:nth-of-type(4) .item .img img {
+        margin: auto; }
+      .footer .flex label:nth-of-type(4) .item .img img:last-child {
+        display: none; }
+    .footer .flex label:nth-of-type(4) .item > span {
+      font-family: "宋体";
+      font-size: 0.24rem;
+      color: #949494; }
+  .footer .flex input[name="footerbtn"] {
+    display: none; }
+
+.function {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 0.28rem;
+  padding-bottom: 0.26rem;
+  border-bottom: 1px solid #d3d3d3;
+  background: #fff; }
+  .function .item {
+    text-align: center; }
+    .function .item .img {
+      width: 0.92rem;
+      height: 0.9rem;
+      margin: auto;
+      margin-bottom: 0.15rem; }
+    .function .item span {
+      font-family: "Microsoft YaHei";
+      font-size: 0.24rem;
+      color: #393939; }
+  .function .item:nth-of-type(3) .img {
+    background: #f6699e;
+    position: relative;
+    border-radius: 50%; }
+    .function .item:nth-of-type(3) .img img {
+      width: 0.58rem;
+      height: 0.58rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%); }
+    .function .item:nth-of-type(3) .img:after {
+      content: "hot";
+      font-family: "Microsoft YaHei";
+      font-size: 0.2rem;
+      color: white;
+      display: block;
+      background: #fe0000;
+      width: 0.58rem;
+      line-height: 0.28rem;
+      position: absolute;
+      left: 0.59rem;
+      top: -0.09rem;
+      border-radius: 0.1rem; }
+
+.commodity {
+  display: flex;
+  flex-direction: column;
+  background: #f8f8f8;
+  padding: 0px 0.18rem; }
+  .commodity .item {
+    margin-right: 0px;
+    margin-left: 0px;
+    padding-top: 0.37rem;
+    padding-left: 0.4rem;
+    padding-bottom: 0.32rem;
+    border: 1px solid #d3d3d3;
+    background: #fdfbfe;
+    margin-top: 0.22rem !important; }
+    .commodity .item > div:first-of-type h3 {
+      font-family: "宋体";
+      font-size: 0.42rem;
+      color: #f04e92;
+      font-weight: bold; }
+    .commodity .item > div:first-of-type p {
+      font-family: "宋体";
+      font-size: 0.27rem;
+      color: #3e3e3e; }
+      .commodity .item > div:first-of-type p span:first-of-type {
+        font-family: "Microsoft YaHei";
+        font-size: 0.6rem;
+        color: #eb4f89; }
+      .commodity .item > div:first-of-type p span {
+        font-family: "宋体";
+        font-size: 0.3rem;
+        color: #eb4f89; }
+    .commodity .item > div:first-of-type > span {
+      font-family: "宋体";
+      font-size: 0.26rem;
+      color: #818181; }
+    .commodity .item > div:last-of-type > div {
+      margin-left: 0.11rem !important; }
+    .commodity .item > div:last-of-type > .img {
+      width: 0.72rem;
+      height: 2.13rem; }
+    .commodity .item > div:last-of-type > div:nth-of-type(1) .img {
+      width: 0.91rem;
+      height: 0.91rem;
+      background: #f04e92;
+      border-radius: 50%;
+      text-align: center;
+      transform: rotate(-30deg); }
+      .commodity .item > div:last-of-type > div:nth-of-type(1) .img span {
+        display: inline-block;
+        font-family: "宋体";
+        font-size: 0.3rem;
+        color: #fff;
+        line-height: 0.28rem;
+        margin-top: 0.18rem !important;
+        font-weight: bold; }
+    .commodity .item > div:last-of-type > div:nth-of-type(3) {
+      font-family: "Microsoft YaHei";
+      font-size: 0.36rem;
+      color: #f44e94;
+      margin-top: 0.9rem !important; }
+  .commodity .item:nth-of-type(2n) > div:first-of-type h3 {
+    color: #66cee6; }
+  .commodity .item:nth-of-type(2n) > div:first-of-type p span {
+    color: #66cee6; }
+  .commodity .item:nth-of-type(2n) > div:last-of-type > div {
+    width: 2.71rem;
+    height: 1.53rem;
+    margin-left: 0.57rem !important;
+    margin-top: 0.41rem !important; }
+
+.footer .flex > label:nth-of-type(1) .item .img img:first-child {
+  display: none; }
+.footer .flex > label:nth-of-type(1) .item .img img:last-child {
+  display: block; }
+.footer .flex > label:nth-of-type(1) .item span {
+  color: #fea31e; }
+
+/*# sourceMappingURL=index.css.map */

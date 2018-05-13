@@ -1,0 +1,106 @@
+@charset "UTF-8";
+@import "Myfunction.scss"; 
+.productDes1_box { padding-top: 47px; }
+// 第一个内容
+.productDes1_box {
+    .content {        
+        // 第一个内容
+        .item { padding-top: 17px; 
+            .describe {
+                p,
+                h3 { padding-left: 17px; }
+                h3 {
+                    @include fontscwlf(20px, #55ab5a); border-bottom: 1px solid #cccccc; margin-bottom: 14px; padding-bottom: 16px; margin-top: 13px; }
+                p:nth-last-of-type(2) { border-bottom: 1px solid #cccccc; padding-bottom: 16px; margin-bottom:23px; }
+                p:not(:last-of-type) {
+                    @include fontscwlf(14px, #ef5458); }
+                p:last-of-type{                   @include fontscwlf(12px ,#848484,24px); width:80%; }
+            }
+        }
+        // 标题
+        .producDesttitle{            
+            margin-top:24px; border-bottom:1px solid #009944; 
+            .title{
+                .fl{
+                    @include fontscwlf(14px,#fcf9f9,18px); padding:6px 24px; background:#009944; border-radius:5px; }
+                .fr{                    margin-top:7px; 
+                    @include fontscwlf(14px,#009944,18px); }
+
+            }
+        }
+        // 第二个内容
+        .item2{           
+             padding-top:38px; 
+             
+            .top{          
+                  
+                h3{
+                    @include fontscwlf(18px,#343535); text-align:center; font-weight: bold; margin-bottom:20px; }
+                p{
+                    @include fontscwlf(14px,#343535); margin-bottom:14px; }
+                
+            }
+            .rightarticle{                
+                h3,p,ul{                    padding-left:23px; }
+                h3{
+                    @include fontscwlf(16px , #343535); }
+                h3:first-of-type{                    margin-top:47px; margin-bottom:14px; }
+                h3:last-of-type{                    margin-top:39px; margin-bottom:10px; }
+                p{
+                    @include fontscwlf(12px , #343535); width:56%; }
+                ul{                    
+                    li{
+                        @include fontscwlf(12px , #343535); }
+
+                }
+                
+            }
+        }
+        // 大标题
+        .title2{            background:#009944; padding:40px 0px; text-align:center; margin-top:18px; 
+
+            span{
+                @include fontscwlf(24px,#f9fbfa); }
+
+        }
+        //最下面的图片列
+        .imglist{            display:flex; justify-content:space-around; padding-top:39px; padding-bottom:127px; 
+
+            .img_title{                flex-basis:15%; 
+                
+
+                h3{                    margin-top:21px; 
+                    @include fontscwlf(16px,#4a4c4b); text-align:center; }
+            }
+
+        }
+    }
+}
+
+@media screen and (max-width:1057px){
+    .productDes1_box{
+        .leftnav{
+            @include flowidmarclear(); }
+        .rightcontent{
+            @include flowidmarclear(80%);
+            .content{
+                .item{
+                    >.w8{
+                        @include flowidmarclear(80%); }
+                    >.w4{
+                        @include flowidmarclear(80%); 
+                    }
+                }
+                .item2{
+                    .w7{
+                        @include flowidmarclear(80%);
+                    }
+                    .w5{
+                        @include flowidmarclear(80%);
+                    }
+                }
+
+            }
+        }
+    }
+}

@@ -1,0 +1,145 @@
+
+@import "Myfunction.scss"; 
+@import "common.scss";
+
+
+.content{
+    display:flex;
+    input[id^="commoditylstSwitch"]{
+        display:none;
+    }
+    .left{
+        width:1.77rem;
+        .titlelst{
+            text-align:center;
+            >label{
+                margin-bottom:0px;
+                width:100%;
+                border-top:3px solid #d4d4d4;
+                background:#f8f8f8;
+                .item{
+                    
+                    @include fontset(0.3rem,#fea31e);
+                    padding-top:0.27rem;
+                    padding-bottom:0.27rem;
+                    
+                    // border-bottom:3px solid #d4d4d4;
+                }
+                &:hover{
+                    cursor:pointer;
+                }
+            }
+            >label:first-of-type{
+                border-top:none;
+            }
+            
+        }
+    }
+
+    .right{
+        width:7.5rem - 1.77rem;
+        .commoditylst{
+            .title{
+                padding:0.1rem 0rem;
+                @include fontset(0.3rem,#565656);
+                text-indent:0.1rem;
+                background:#f8f8f8;
+                
+            }
+            .item{
+                margin-top:0.16rem;
+                width:5.49rem;
+                float:right;
+                border-bottom:1px solid #a1a1a1;
+                .img{
+                    width:1.68rem;
+                    height:1.22rem;
+                    float:left;
+                    margin-top:0.35rem;
+                    margin-right:0.2rem;
+
+                }
+                .info{
+                    >h3{
+                        @include fontset(0.28rem,#404040);
+                        span{
+                            // margin-top:0.11rem;
+                            @include fontset(0.23rem,#ff4100,"宋体");
+                            display:inline-block;
+                            padding-top:0.06rem;
+                            padding-bottom:0.05rem;
+                            border:0.02rem solid #ff4100;
+                            border-radius: 0.1rem;
+                        }
+                    }
+                    >p{
+                        margin-top:0.11rem;
+                        @include fontset(0.22rem,#fff,"宋体");
+                        padding:0.12rem 0.08rem;
+                        border-radius:0.1rem;
+                        background:#f85252;
+                        display:inline-block;
+                    }
+                    .price{
+                        >div:nth-of-type(1){
+                            float:left;
+                            h3{
+                                @include fontset(0.3rem,#929091);
+                            }
+                            p{
+                                // display:inline-block;
+                                @include fontset(0.36rem,#ff4100);
+                            }
+                        }
+                        >div:nth-of-type(2){
+                            float:right;
+                            width:0.65rem;
+                            height:0.65rem;
+                            line-height:0.65rem;
+                            font-size:0.25rem;
+                            text-align:center;
+                            border:0.02rem solid #dfdfdf;
+                            color:#fc4100;
+                            border-radius:50%;
+
+                        }
+                        
+                    }
+                }
+            }
+        }
+
+        @for $i from 1 to 8{
+            .commoditylst:nth-of-type(#{$i}){
+                display:none;
+            }
+        }
+    }
+}
+
+@for $i from 1 to 8{
+    #commoditylstSwitch#{$i}:checked ~ .left .titlelst >label:nth-of-type(#{$i}) 
+    {
+        background:#fff;
+    }
+    #commoditylstSwitch#{$i}:checked ~ .right .commoditylst:nth-of-type(#{$i}){
+        display:block;
+    }
+}
+
+.footer{
+    .flex{
+        >label:nth-of-type(2)
+        {
+            .item .img img:first-child{
+                display:none !important;
+            }
+            .item .img img:last-child{
+                display:block !important;
+            }
+            .item span{
+                color:#fea31e !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,127 @@
+.product {
+  background: #fdfcf9;
+}
+
+.product_box {
+  padding-top: 46px;
+}
+
+@media screen and (max-width: 950px) {
+  .product_box .leftnav {
+    float: none;
+    margin: auto;
+    width: auto;
+  }
+  .product_box .rightcontent {
+    float: none;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .product_box .itemlist .item .w5 {
+    float: none;
+    width: 100%;
+    margin: auto;
+    margin-top: 30px;
+  }
+  .product_box .itemlist .item .firstgreen {
+    float: none;
+    width: 100%;
+    margin: auto;
+    padding: 30px 0px;
+  }
+  .product_box .itemlist .item .firstgreen h3 {
+    margin-top: 0px !important;
+  }
+  .product_box .itemlist .item .w7 {
+    float: none;
+    width: 100%;
+    margin: auto;
+  }
+}
+
+.product_box .rightcontent .item {
+  margin-bottom: 45px;
+}
+
+.product_box .rightcontent .item .firstgreen {
+  background: #d6ee74;
+  padding-bottom: 30px;
+  margin-top: 15px;
+}
+
+.product_box .rightcontent .item .article {
+  width: 50%;
+  margin: auto;
+}
+
+.product_box .rightcontent .item .article h3 {
+  font-size: 16px;
+  color: #fcfcfc;
+  margin-top: 53px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.product_box .rightcontent .item .article p {
+  font-size: 12px;
+  color: #fcfcfc;
+  text-align: left;
+  line-height: 18px;
+}
+
+.product_box .rightcontent .item .article .btn {
+  width: 130px;
+  height: 47px;
+  border: 1px solid #fff;
+  margin: auto;
+  margin-top: 35px;
+}
+
+.product_box .rightcontent .item .article .btn .inner {
+  display: block;
+  margin: auto;
+  margin-top: 5px;
+  width: 120px;
+  height: 36px;
+  line-height: 36px;
+  background: #fff;
+  font-size: 14px;
+  color: #515050;
+  text-align: center;
+}
+
+.product_box .rightcontent .item:not(:first-of-type) h3 {
+  color: #4a4c4b;
+}
+
+.product_box .rightcontent .item:not(:first-of-type) p {
+  color: #555555;
+}
+
+.product_box .rightcontent .item:not(:first-of-type) .article .btn {
+  border: 1px solid #d6ee74;
+}
+
+.product_box .rightcontent .item:not(:first-of-type) .article .btn .inner {
+  background: #d6ee74;
+}
+
+.product_box .product_pagebtn {
+  text-align: center;
+  margin-bottom: 55px;
+}
+
+.product_box .product_pagebtn .btn {
+  color: #b5b5b5;
+  font-size: 12px;
+  height: auto;
+  width: auto;
+  margin: auto;
+  display: inline-block;
+}
+
+.product_box .product_pagebtn .btn a {
+  padding: 10px;
+}
