@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/jquery-2.1.1.js"></script>
+    <style>
+        #windowshow {
+            padding: 10px;
+            width: 800px;
+            border: 1px solid black;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 10px;
+            margin-left: 30px;
+        }
+
+        span {
+            
+        }
+
+
+        .img {
+            display: block;
+            margin:auto;
+            width: 50px;
+            height: 30px;
+            background-size: 100% 100%;
+        }
+        
+        .index {
+            padding: 10px;
+        }
+
+        .flex {
+            display: flex;
+            justify-content: space-around;
+        }
+        .box{
+            width:30%;
+        }
+        .imgs {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    请输入城市名称：
+    <input type="text" id="userinput" placeholder="北京" value="上海">
+    <input type="button" value="查看天气" id="sub">
+    <div id="windowshow">
+        <h3 id="datetime"></h3>
+        <h3 id="currentCity"></h3>
+        <p id="pm25"> </p>
+        <h3 id="date"></h3>
+        <div class="flex">
+            <!-- <div class="box">
+                <h3>周二 05月15日 (实时：28℃)</h3>
+                <div class="imgs">
+                    <div class="left">
+                        <div class="img"></div>
+                        <span>多云</span>
+                    </div>
+                    <div class="right">
+                        <div class="img"></div>
+                        <span>南风微风</span>
+                    </div>
+                </div>
+                <h3>34 ~ 25℃</h3>
+            </div> -->
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    //定义对象
+    var daydata = function () {
+        this.date;
+        this.currentCity;
+        this.pm25;
+    };
+    daydata.prototype.index = function () {
+        this.des;
+        this.tipt;
+        this.title;
+        this.zs;
+    }
+    daydata.prototype.weather_data = function () {
+        this.date;
+        this.dayPictureUrl;
+        this.nightPictureUrl;
+        this.weather;
+        this.wind;
+        this.temperature;
+    }
+    var daydatabox = new daydata();
+    var sub = $('#sub');
+    sub.click(function () {
+        var loca = $('#userinput').val();
+        // console.log(loca);
+        //跨域请求
+        $.ajax({
+            url: "http://api.map.baidu.com/telematics/v3/weather", //服务器地址要注意是ipv4的，ipv6测试暂时没成功。
+            type: 'get',
+            data: "location=" + loca + "&output=json&ak=xbbPh7m3me5BlWUrCttGLNYz",
+            async: false,
+            dataType: "jsonP",
+            jsonp: "callback",
+            success: function (result) {
+                // console.log("$.ajax成功："+result);
+                // console.log(result);
+                daydatabox.date = result.date;
+                daydatabox.currentCity = result.results[0].currentCity;
+                daydatabox.index = result.results[0].index;
+                daydatabox.pm25 = result.results[0].pm25;
+                daydatabox.weather_data = result.results[0].weather_data;
+                parseData();
+            },
+            error: function (err, msg) {
+                console.log("$.ajax失败：" + msg);
+            }
+        });
+    });
+
+    //转换数据
+    function parseData() {
+        //设置数据外层
+
+        $("#datetime").text(daydatabox.date);
+        $("#currentCity").text(daydatabox.currentCity);
+        $("#pm25").text("pm25:" + daydatabox.pm25);
+        
+        $('.box').remove();
+        for (var k in daydatabox.weather_data) {
+            for (var j in daydatabox.weather_data[k]) {
+                var box;
+                var imgs;
+                var left;
+                var right;
+                if (j == "date") {
+                    box = $('<div class="box weather_data"></box>');
+                    var h3 = $('<h3></h3>').text(daydatabox.weather_data[k][j]);
+
+                    box.append(h3);
+                } else
+                if (j == "dayPictureUrl") {
+                    imgs = $('<div class="imgs"></div>');
+                    left = $('<div></div>');
+                    right = $('<div></div>');
+                    var div = $('<div class="img"></div>').css("background-image", "url(" + daydatabox.weather_data[k]
+                        [j] +
+                        ")");
+                    imgs.append(left);
+                    imgs.append(right);
+                    left.append(div);
+                } else
+                if (j == "nightPictureUrl") {
+                    div = $('<div class="img"></div>').css("background-image", "url(" + daydatabox.weather_data[k]
+                        [j] +
+                        ")");
+                    right.append(div);
+                } else
+                if (j == "weather") {
+                    var span = $('<span></span>').text(daydatabox.weather_data[k]
+                        [j]);
+                    left.append(span);
+                    
+                } else
+                if (j == "wind") {
+                    var span = $('<span></span>').text(daydatabox.weather_data[k]
+                        [j]);
+                    right.append(span);
+                    box.append(imgs);
+                } else
+                if (j == "temperature") {
+                    var h3 = $('<h3></h3>').text(daydatabox.weather_data[k][j]);
+                    box.append(h3);
+                    $(".flex").append(box);
+                }
+
+            }
+        }
+
+        $(".index").remove();
+        //设置数据内层index
+        for (var key in daydatabox) {
+
+            if (key == "index") {
+
+                for (var k in daydatabox[key]) {
+
+                    for (var j in daydatabox[key][k]) {
+
+                        var div = $("<div class='index'></div>").text(daydatabox[key][k][j]);
+                        $('#windowshow').append(div);
+                        // console.log(daydatabox[key][k][j]);
+                    }
+                }
+
+            }
+        }
+    }
+
+  
+
+    //ajax 异步请求数据
+    //json 统一数据类型的转化
+    //在js当中 必须要创建的一个对象的是 XMLHttpRequest 对象
+    //在jQuery 中 用到的方法是 $.get  $.post  $.getJSON  $.ajax
+    //jsonp json(请求)
+
+    //jsonp 是一个请求方式
+    //作用：解决如何跨域请求
+    //www.a.com 
+    //www.b.com
+</script>
