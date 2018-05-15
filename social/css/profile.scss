@@ -15,14 +15,16 @@
         margin-top:.61rem;
         margin-bottom:.22rem;
         // box-shadow:0rem .03rem .02rem #c07459;
-       
-        span{
-            display:block;
-            width:.25rem;
-            height:.48rem;
-            background:url(../images/profile_back.png)no-repeat left top;
+        a{
+            span{
+                display:block;
+                width:.25rem;
+                height:.48rem;
+                background:url(../images/profile_back.png)no-repeat left top;
 
+            }
         }
+        
         
     }
     >h3{

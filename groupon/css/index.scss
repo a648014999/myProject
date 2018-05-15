@@ -3,163 +3,122 @@
 @import "common.scss";
 
 
-.function{
-    display:flex;
-    justify-content:space-around;
-    padding-top:28px / $fontsize * 1rem;
-    padding-bottom:26px / $fontsize * 1rem;
-    border-bottom:1px solid #d3d3d3;
-    background:#fff;
-    .item{
-       
-        text-align:center;
-        
-        .img{
-            width:92px / $fontsize *1rem;
-            height:90px / $fontsize *1rem;
-            margin:auto;
-            margin-bottom:15px / $fontsize * 1rem;
-        }
-        span{
-            @include fontset(24px / $fontsize * 1rem, #393939);
-        }
-        
+.header{
+    padding-bottom:.1rem;
+    .log{
+        width:1.23rem;
+        height:1.23rem;
+        margin-left:.23rem;
+        margin-top:.17rem;
     }
-    .item:nth-of-type(3){
-        .img{
-            // width:92px / $fontsize *1rem;
-            // height:90px / $fontsize *1rem;
-            background:#f6699e;
-            position:relative;
-            border-radius:50%;
-            img{
-                width:58px / $fontsize * 1rem;
-                height:58px / $fontsize * 1rem;
-                @include HVmiddle();
-
-            }
-            &:after{
-                content:"hot";
-                @include fontset(20px / $fontsize * 1rem , white);
-                display:block;
-                background:#fe0000;
-                width:58px / $fontsize * 1rem;
-                line-height:28px / $fontsize * 1rem;
-                position:absolute;
-                left:59px / $fontsize * 1rem;
-                top:-9px / $fontsize * 1rem;
-                border-radius:10px / $fontsize * 1rem;
-            }
+    .search{
+        position:relative;
+        width:2.70rem;
+        height:.55rem;
+        margin-left:.72rem;
+        margin-top:.51rem;
+        input{
+            width:2.70rem;
+            height:.55rem;
+            outline:none;
+            border:.03rem solid #ff9344;
+            border-radius:.35rem;
+            @include fontset(.24rem,#777777);
+            text-indent:.32rem;
         }
-        
+        img{
+            position:absolute;
+            right:.19rem;
+            top:.1rem;
+            width:.36rem;
+            height:.34rem;
+        }
     }
+    @include citylststyle();
 }
 
-.commodity{
-    display:flex;
-    flex-direction:column;
-    background:#f8f8f8;
-    padding:0px 18px / $fontsize * 1rem;
-    .item{
-        margin-right:0px;
-        margin-left:0px;
-        padding-top:37px/ $fontsize * 1rem;
-        padding-left:40px/ $fontsize * 1rem;
-        padding-bottom:32px /$fontsize *1rem;
-        border:1px solid #d3d3d3;
-        background:#fdfbfe;
-        margin-top:22px /$fontsize * 1rem !important;
-        >div:first-of-type{
-            h3{
-                @include fontset(42px / $fontsize * 1rem,#f04e92,"宋体");
-                font-weight:bold;
-            }
-            p{
-                @include fontset(27px / $fontsize * 1rem , #3e3e3e,"宋体");
-                span:first-of-type{
-                    @include fontset(60px / $fontsize * 1rem,#eb4f89);
-                }
-                span{
-                    @include fontset(30px /$fontsize * 1rem ,#eb4f89,"宋体");
-                }
-            }
-            >span{
-                @include fontset(26px / $fontsize * 1rem ,#818181,"宋体");
-            }
-        }
-        >div:last-of-type{
-            >div{
-                margin-left:11px / $fontsize *1rem !important;
-            }
-            >.img{
-                width:72px / $fontsize * 1rem;
-                height:213px / $fontsize *1rem;
+.content{
+    
+    .bigimg{
 
-            }    
-            >div:nth-of-type(1){
-                .img{
-                    width:91px /$fontsize *1rem;
-                    height:91px /$fontsize *1rem;
-                    background:#f04e92;
-                    border-radius:50%;
-                    text-align:center;
-                    transform:rotate(-30deg);
-                    span{
-                        display: inline-block;
-                        @include fontset(30px /$fontsize * 1rem,#fff,"宋体");
-                        line-height:28px /$fontsize * 1rem;
-                        margin-top:18px /  $fontsize * 1rem !important;
-                        font-weight: bold;
+    }
+    .middle{
+        @include titlestyle();
+        .middle_contentflex{
+            display:flex;
+            justify-content:space-between;
+            padding-left:.79rem;
+            padding-right:.89rem;
+            flex-wrap:wrap;
+            .item{
+                width:2.39rem;
+                height:.93rem;
+                @for $i from 1 to 3{
+                    &:nth-of-type(#{$i}){
+                        margin-bottom:.3rem;
                     }
-                }   
+                }
             }
-        
-            >div:nth-of-type(3){
-                @include fontset(36px /$fontsize * 1rem,#f44e94);
-                margin-top:90px /$fontsize * 1rem !important;
-            }
-                
-            
-            
         }
     }
-
-    .item:nth-of-type(2n){
-        >div:first-of-type{
-            h3{
-                color:#66cee6;
-            }
-            p{
-                span{
-                    color:#66cee6;
+    .bottom{
+        // .title{
+        //     .lefttitle{}
+        //     .more{}
+        // }
+        @include titlestyle("../images/index_logtitle2.png");
+        .footlstflex{
+            display:flex;
+            flex-direction:column;
+            .item{
+                padding-left:.21rem;
+                height:1.64rem;
+                margin-bottom:.3rem;
+                .left{
+                    width:2.1rem;
+                    height:1.64rem;
                 }
-            }
-        }
-        >div:last-of-type{
-            >div{
-                width:271px/ $fontsize * 1rem;
-                height:153px/ $fontsize * 1rem;
-                margin-left:57px / $fontsize * 1rem !important;
-                margin-top:41px / $fontsize * 1rem !important;
+                .right{
+                    width:5.19rem;
+                    padding-top:.28rem;
+                    padding-left:.21rem;
+                    padding-right:.14rem;
+                    padding-bottom:.16rem;
+                    >div:nth-of-type(1){
+                        span:nth-of-type(1){
+                            @include fontset(.3rem,#000000);
+                        }
+                        span:nth-of-type(2){
+                            @include fontset(.22rem,#494949);
+                        }
+                    }
+                    >div:nth-of-type(2){
+                        margin:.05rem 0rem;
+                        @include fontset(.22rem,#494949);
+                        span{
+                            @include fontset(.22rem,#494949);
+                        }
+                    }
+                    >div:nth-of-type(3){
+                        span:nth-of-type(1){
+                            @include fontset(.32rem,#ff9344);
+                        }
+                        span:nth-of-type(2){
+                            @include fontset(.22rem,#494949);
+                        }
+                    }
+                }
             }
         }
     }
 }
 
 .footer{
-    .flex{
-        >label:nth-of-type(1)
-        {
-            .item .img img:first-child{
-                display:none;
+    .item:nth-of-type(1){
+       a{
+            .img{
+                background:url(../images/footer_btn1Selected.png)no-repeat center center;
             }
-            .item .img img:last-child{
-                display:block;
-            }
-            .item span{
-                color:#fea31e;
-            }
-        }
+       } 
     }
 }
-

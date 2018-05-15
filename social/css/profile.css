@@ -23,7 +23,7 @@ body {
   margin-bottom: .22rem;
 }
 
-.header .back span {
+.header .back a span {
   display: block;
   width: .25rem;
   height: .48rem;

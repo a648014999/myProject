@@ -1,141 +1,93 @@
-@charset "UTF-8";
+
 @import "Myfunction.scss"; 
 @import "commonVariable.scss";
 
 
-
-
-
-::-webkit-input-placeholder { /* WebKit browsers */ 
-    @include fontset(30px / $fontsize * 1rem,#fff5c9);
-} 
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ 
-    @include fontset(30px / $fontsize * 1rem,#fff5c9);
-} 
-::-moz-placeholder { /* Mozilla Firefox 19+ */ 
-    @include fontset(30px / $fontsize * 1rem,#fff5c9);
-} 
-:-ms-input-placeholder { /* Internet Explorer 10+ */ 
-    @include fontset(30px / $fontsize * 1rem,#fff5c9);
-} 
-
-.header{
-
-    .bgcolor{
-        
-        background:#fece02;
-        .nav{
-            height:104px / $fontsize * 1rem;
-            padding:0.21rem 0rem;
-            .log{
-                width:64px / $fontsize * 1rem;
-                margin-right:48px / $fontsize * 1rem;
-                margin-left:24px / $fontsize * 1rem;
-            }
-            .search{
-                position:relative;
-                .searchlog{
-                    position:absolute;
-                    left:22px / $fontsize * 1rem;
-                    top:19px / $fontsize * 1rem;
-                    width:37px / $fontsize * 1rem;
-                    height:35px / $fontsize * 1rem;
-                }
-                input{                    
-                    width:430px / $fontsize *1rem;
-                    height:68px / $fontsize * 1rem;
-                    background:#ffe781;
-                    border-radius:(68px / $fontsize * 1rem) / 2 ;
-                    border:0px;
-                    outline:none;                                        
-                    text-indent:84px / $fontsize*1rem;
-                    @include fontset(30px / $fontsize * 1rem,black);           
-                    margin-right:28px / $fontsize * 1rem;
-                            
-                }
-                
-            }
-            .log2{
-                margin-top:14px / $fontsize * 1rem;
-                width:43px / $fontsize * 1rem;
-                height:39px /$fontsize * 1rem;
-            }
-            .log3{
-                margin-top:14px / $fontsize * 1rem;
-                margin-left:46px / $fontsize * 1rem;
-                width:38px / $fontsize * 1rem;
-                height:43px /$fontsize * 1rem;
-            }
-        }
-
-    }
-
+body{
+    width:7.5rem;
 }
-
-
+@mixin titlestyle($url:"../images/index_logtitle1.png",$url1:"../images/index_logmore.png"){
+    .title{
+        height:1.05rem;
+        .lefttitle{
+            background:url($url)no-repeat left center;
+            background-size:.56rem .54rem;
+            height:.6rem;
+            line-height:.6rem;
+            @include fontset(.3rem,#000000);
+            
+            text-indent:.74rem;
+            margin-top:.34rem;
+            margin-left:.21rem;
+        }
+        .more{
+            background:url($url1)no-repeat right center;
+            background-size:.25rem .26rem;
+            @include fontset(.24rem , #000000);
+            
+            padding-right:.33rem;
+            margin-right:.21rem;
+            margin-top:.54rem;
+        }
+    }
+}
+@mixin citylststyle(){
+    .citylst{
+        @include fontset(.26rem,#000000);
+        padding-left:.14rem;
+        padding-right:.11rem;
+        line-height:.6rem;
+        height:.65rem;
+        border:.03rem solid #ff9344;
+        margin-top:.47rem;
+        margin-right:.21rem;
+        span{
+            display:inline-block;
+            width:0;
+            height:0;
+            border-top:.16rem solid #ff9344;
+            border-left:.16rem solid transparent;
+            border-right:.16rem solid transparent;
+            margin-top:.22rem;
+        }
+    }
+}
+.content{
+    padding-bottom:1.36rem;
+}
 .footer{
-    .flex{
-        display:flex;
-        justify-content:space-around;
-        padding-top:11px/$fontsize * 1rem; ;
-        padding-bottom:15px/$fontsize * 1rem;;
-        border-top:2px solid #c3c3c3;
-        position:fixed;
-        bottom:0;
-        left:50%;
-        transform:translateX(-50%);
-        width:750px / $fontsize * 1rem;
-        background:#ffffff;
-
-        @for $i from 1 to 5{
-            label:nth-of-type(#{$i}){
-                .item{
-                    text-align:center;
-                    .img{
-                        margin:auto;
-                        img{
-                            margin:auto;
-                        }
-                        img:last-child{
-                            display:none;
-                        }
-                        width:58px /$fontsize * 1rem;
-                        height:55px /$fontsize * 1rem;
-                    }
-                    >span{
-                        @include fontset(24px/$fontsize *1rem, #949494,"宋体");
-                    }
-                }
+    position:fixed;
+    bottom:0;
+    width:7.5rem ;
+    padding-top:.07rem;
+    background:#fff;
+    display:flex;
+    height:1.36rem;
+    justify-content: space-around;
+    .item{
+        height:1.09rem;
+        width:.77rem;
+        @include fontset(.26rem,#000000);
+        text-align: center;
+        a{
+            color:#000;
+            .img{   
+                background-size:100% 100% !important;
             }
-            @if($i==2){
-                label:nth-of-type(#{$i}){
-                    .item{
-                        .img{
-                            width:58px /$fontsize * 1rem;
-                            height:55px /$fontsize * 1rem;
-                            
-                        }
-                    }
-                }
-            }
-        }
-        
-        input[name="footerbtn"]{
-            display:none;
         }
         
     }
-
+    @for $i from 1 to 5{
+        .item:nth-of-type(#{$i}){
+            &:hover .img{
+                background:url(../images/footer_btn#{$i}Selected.png)no-repeat center center;
+            }
+            .img{
+                width:.77rem;
+                height:.77rem;
+                background:url(../images/footer_btn#{$i}.png)no-repeat center center;
+            }
+    
+        }
+    }
 }
-
-// @for $i from 1 to 5{
-//     #footerbtn#{$i}:checked  + label .item .img img:first-child{
-//         display: none;
-//     }
-//     #footerbtn#{$i}:checked  + label .item .img img:last-child{
-//         display: block;
-//     }
-//     #footerbtn#{$i}:checked  + label .item span{
-//         color:#fea31e;
-//     }
-// }
