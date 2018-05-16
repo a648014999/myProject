@@ -3,8 +3,24 @@
 @import "common.scss";
 
 .header{
-    .back{
+    @include fontset(.26rem,#000000);
+    text-align:center;
 
+    a{
+        @include fontset(.26rem,#000000);
+    }
+    .back{
+       width:1.23rem;
+       height:.57rem;
+       line-height:.52rem;
+       border:.02rem solid #ff9344;
+       border-radius:.15rem;
+       margin-top:.48rem;
+       margin-left:.23rem;
+    }
+    span{
+        display:inline-block;
+        margin-top:.65rem;
     }
     @include citylststyle();
 }
