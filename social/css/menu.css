@@ -39,6 +39,7 @@ body {
   width: .25rem;
   height: .25rem;
   background: url(../images/menu_searchlog.png);
+  background-size: .25rem .25rem;
 }
 
 .menu .search img:hover {
@@ -49,7 +50,16 @@ body {
   margin-top: .32rem;
 }
 
-.menu .sideshow .item .headportrait {
+.menu .sideshow .itembox {
+  position: relative;
+}
+
+.menu .sideshow .itembox .item {
+  width: 100%;
+  transition: all .5s;
+}
+
+.menu .sideshow .itembox .item .headportrait {
   border: 0.1rem solid #5b534b;
   width: 1.9rem;
   height: 1.9rem;
@@ -57,7 +67,7 @@ body {
   margin: auto;
 }
 
-.menu .sideshow .item h3 {
+.menu .sideshow .itembox .item h3 {
   margin-top: .28rem;
   font-family: "AvenirMedium";
   font-size: 0.3rem;
@@ -65,13 +75,21 @@ body {
   margin-bottom: .1rem;
 }
 
-.menu .sideshow .item span {
+.menu .sideshow .itembox .item span {
   display: inline-block;
   font-family: "AvenirBook";
   font-size: 0.24rem;
   color: #a49f99;
   background: url(../images/log_position.png) no-repeat left center;
+  background-size: .14rem .18rem;
   text-indent: 0.25rem;
+}
+
+.menu .sideshow .itembox .item:not(:first-of-type) {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
 }
 
 .menu .sideshow .btns {
@@ -102,22 +120,28 @@ body {
 
 .menu ul li:nth-of-type(1) {
   background: url(../images/menu_logFunction1.png) no-repeat 0.31rem 0.27rem;
+  background-size: .44rem .42rem;
 }
 
 .menu ul li:nth-of-type(2) {
   background: url(../images/menu_logFunction2.png) no-repeat 0.31rem 0.27rem;
+  background-size: .44rem .42rem;
 }
 
 .menu ul li:nth-of-type(3) {
   background: url(../images/menu_logFunction3.png) no-repeat 0.31rem 0.27rem;
+  background-size: .44rem .42rem;
+  background-size: .43rem .32rem;
 }
 
 .menu ul li:nth-of-type(4) {
   background: url(../images/menu_logFunction4.png) no-repeat 0.31rem 0.27rem;
+  background-size: .44rem .42rem;
 }
 
 .menu ul li:nth-of-type(5) {
   background: url(../images/menu_logFunction5.png) no-repeat 0.31rem 0.27rem;
+  background-size: .44rem .42rem;
 }
 
 .menu ul li {

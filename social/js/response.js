@@ -6,3 +6,7 @@ if (deviceWidth > 750) deviceWidth = 750; {
     // window.onload(){
         // location.reload();
 }
+$(window).resize(function(){
+    // console.log(123123);
+    location.reload();
+});

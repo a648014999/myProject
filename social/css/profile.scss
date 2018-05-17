@@ -5,6 +5,7 @@
     background:#eb8c69;
     text-align:center;
     position:fixed;
+    z-index: 999;
     width:6.4rem;
     opacity:.8;
     border-bottom:0.04rem solid #aea9a2;
@@ -21,7 +22,7 @@
                 width:.25rem;
                 height:.48rem;
                 background:url(../images/profile_back.png)no-repeat left top;
-
+                background-size:.25rem .48rem;
             }
         }
         
@@ -48,27 +49,39 @@
             background-size:100% 100%;
             padding-top:.4rem;
             .sideshow{
-                .item{
-                    text-align:center;
-                    .img{
-                        width:1.9rem;
-                        height:1.9rem;
-                        border-radius:50%;
-                        border:0.1rem solid rgba(179,177,169,.8);
-                        margin:auto;
-                        margin-bottom:.29rem;
-                        
+                .itembox{
+                    position:relative;
+                    .item{
+                        text-align:center;
+                        .img{
+                            width:1.9rem;
+                            height:1.9rem;
+                            border-radius:50%;
+                            border:0.1rem solid rgba(179,177,169,.8);
+                            margin:auto;
+                            margin-bottom:.29rem;
+                            
+                        }
+                        h3{
+                            @include fontset(.3rem,#fff,"AvenirMedium");
+                        }
+                        span{
+                            display:inline-block;
+                            background:url(../images/log_position.png)no-repeat left center;
+                            background-size:.14rem .18rem;
+                            @include fontset(.24rem,#a49f99,"AvenirBook");
+                            text-indent:.25rem;
+                        }
                     }
-                    h3{
-                        @include fontset(.3rem,#fff,"AvenirMedium");
-                    }
-                    span{
-                        display:inline-block;
-                        background:url(../images/log_position.png)no-repeat left center;
-                        @include fontset(.24rem,#a49f99,"AvenirBook");
-                        text-indent:.25rem;
+                    .item:not(:first-of-type) {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width:100%;
+                        opacity:0;
                     }
                 }
+                
                 .btns{
                     text-align:center;
                     margin-top:.35rem;

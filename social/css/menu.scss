@@ -5,8 +5,10 @@
 .menu{
     background:#685e55;
     width:4.94rem;
+    // width:0rem;
     text-align:center;
     padding-top:.67rem;
+    // position:fixed;
     //搜索框
     .search{
         position:relative;
@@ -31,6 +33,7 @@
             width:.25rem;
             height:.25rem;
             background:url(../images/menu_searchlog.png);
+            background-size:.25rem .25rem;
             &:hover{
                 cursor:pointer;
             }
@@ -41,30 +44,42 @@
     //轮播图
     .sideshow{
         margin-top:.32rem;
-        
-        .item{
-            .headportrait{
-                border:0.1rem solid #5b534b;
-                width:1.9rem;
-                height:1.9rem;
-                border-radius:50%;
-                margin:auto;
-                img{
-                    
+        .itembox{
+            position:relative;
+            .item{
+                width:100%;
+                transition:all .5s;
+                .headportrait{
+                    border:0.1rem solid #5b534b;
+                    width:1.9rem;
+                    height:1.9rem;
+                    border-radius:50%;
+                    margin:auto;
+                    img{
+                        
+                    }
+                }
+                h3{
+                    margin-top:.28rem;
+                    @include fontset(0.3rem,#fff,"AvenirMedium");
+                    margin-bottom:.1rem;
+                }
+                span{
+                    display:inline-block;
+                    @include fontset(.24rem,#a49f99,"AvenirBook");
+                    background:url(../images/log_position.png)no-repeat left center;
+                    background-size:.14rem .18rem;
+                    text-indent:0.25rem;
                 }
             }
-            h3{
-                margin-top:.28rem;
-                @include fontset(0.3rem,#fff,"AvenirMedium");
-                margin-bottom:.1rem;
-            }
-            span{
-                display:inline-block;
-                @include fontset(.24rem,#a49f99,"AvenirBook");
-                background:url(../images/log_position.png)no-repeat left center;
-                text-indent:0.25rem;
+            .item:not(:first-of-type){
+                position:absolute;
+                left:0;
+                top:0;
+                opacity:0;
             }
         }
+        
         .btns{
             margin-top:0.3rem;
             span{
@@ -91,6 +106,11 @@
         @for $i from 1 to 6{
             li:nth-of-type(#{$i}){
                 background:url(../images/menu_logFunction#{$i}.png)no-repeat .31rem .27rem;
+                background-size:.44rem .42rem;
+                @if($i == 3)
+                {
+                    background-size:.43rem .32rem;
+                }
             }
         }
         li{

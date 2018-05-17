@@ -46,11 +46,29 @@
 html{
     padding-bottom:1.02rem;
 }
+body{
+    overflow: hidden;
+    // position:relative;
+}
+body .openmenu {
+    overflow: hidden;
+  }
+  
+#hamburgermenu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: .63rem;
+    z-index: 101;
+    overflow: hidden;
+  }
 .header{
     // padding-top:.57rem;
     background:#eb8c69;
     text-align:center;
     position:fixed;
+    z-index: 50;
     width:6.4rem;
     opacity:.8;
     .nav{
@@ -59,6 +77,7 @@ html{
         margin-left:.26rem;
         margin-top:.66rem;
         margin-bottom:.23rem;
+        cursor:pointer;
         position:relative;
         span{
             display:block;
@@ -85,6 +104,14 @@ html{
             top:-.17rem;
         }
     }
+    .overlay {
+        position: fixed;
+        z-index: 99;
+        background-color: rgba(0,0,0,0.5);
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
     >h3{
         display:inline-block;
         @include fontset(.72rem,#fff,"MetroScript");
@@ -95,6 +122,8 @@ html{
 .content{
     padding:0rem .08rem;
     background:#dbd4cc;
+    width:6.4rem;
+    padding-top:1.35rem;
     .top{
         background:url(../images/feed_HeadPortrait1_bg.png)no-repeat left top;
         background-size:6.24rem 2.95rem;
@@ -160,8 +189,8 @@ html{
 }
 .footer{
     position:fixed;
-    bottom:0;
-    
+    z-index: 55;
+    bottom: 0;
     .shade{
         width:6.4rem;
         height:.04rem;

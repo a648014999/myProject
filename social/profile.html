@@ -27,13 +27,23 @@
         <div class="top">
             <div class="topimg">
                 <div class="sideshow">
-                    <div class="item">
-                        <div class="img">
-                            <img src="./images/profile_HeadPortrait.png" alt="">
+                    <div class="itembox">
+                        <div class="item">
+                            <div class="img">
+                                <img src="./images/profile_HeadPortrait.png" alt="">
+                            </div>
+                            <h3>Jesica Alba</h3>
+                            <span>Los Angeles, CA</span>
                         </div>
-                        <h3>Jesica Alba</h3>
-                        <span>Los Angeles, CA</span>
+                        <div class="item">
+                            <div class="img">
+                                <img src="./images/profile_HeadPortrait.png" alt="">
+                            </div>
+                            <h3>Jesica </h3>
+                            <span>Los , CA</span>
+                        </div>
                     </div>
+
                     <div class="btns">
                         <span></span>
                         <span></span>
@@ -109,3 +119,42 @@
 <script src="js/jquery-3.1.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/response.js"></script>
+<script>
+    var itemlst = $(".sideshow .itembox .item");
+    var sideshowbtns = $(".sideshow .itembox ~ .btns");
+    var btnInitBgcolor = '#696172';
+    var selectBgcolor = '#fff';
+
+    function sideshow(items, sidebtns) {
+        sidebtns.children().click(function () {
+            clearInterval(T);
+            var currindex = $(this).index();
+            i = currindex;
+            $(items[currindex]).siblings().css('opacity', '0');
+            $(items[currindex]).css('opacity', '1');
+            $(this).css('background', selectBgcolor);
+            $(this).siblings().css('background', btnInitBgcolor);
+            T = setInterval(function () {
+                autosideshow(itemlst, sideshowbtns)
+            }, 2000);
+        });
+
+    }
+    sideshow(itemlst, sideshowbtns);
+    var i = 0;
+
+    function autosideshow(items, sidebtns) {
+        i++;
+        $(items[i]).siblings().css('opacity', '0');
+        $(items[i]).css('opacity', '1');
+        $(sidebtns.children()[i]).siblings().css('background', btnInitBgcolor);
+        $(sidebtns.children()[i]).css('background', selectBgcolor);
+        // console.log(i);
+        if (i >= items.length - 1) {
+            i = -1;
+        }
+    }
+    var T = setInterval(function () {
+        autosideshow(itemlst, sideshowbtns)
+    }, 2000);
+</script>

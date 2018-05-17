@@ -10,10 +10,29 @@ html {
   padding-bottom: 1.02rem;
 }
 
+body {
+  overflow: hidden;
+}
+
+body .openmenu {
+  overflow: hidden;
+}
+
+#hamburgermenu {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: .63rem;
+  z-index: 101;
+  overflow: hidden;
+}
+
 .header {
   background: #eb8c69;
   text-align: center;
   position: fixed;
+  z-index: 50;
   width: 6.4rem;
   opacity: .8;
 }
@@ -24,6 +43,7 @@ html {
   margin-left: .26rem;
   margin-top: .66rem;
   margin-bottom: .23rem;
+  cursor: pointer;
   position: relative;
 }
 
@@ -56,6 +76,15 @@ html {
   top: -.17rem;
 }
 
+.header .overlay {
+  position: fixed;
+  z-index: 99;
+  background-color: rgba(0, 0, 0, 0.5);
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+
 .header > h3 {
   display: inline-block;
   font-family: "MetroScript";
@@ -68,6 +97,8 @@ html {
 .content {
   padding: 0rem .08rem;
   background: #dbd4cc;
+  width: 6.4rem;
+  padding-top: 1.35rem;
 }
 
 .content .top {
@@ -239,6 +270,7 @@ html {
 
 .footer {
   position: fixed;
+  z-index: 55;
   bottom: 0;
 }
 

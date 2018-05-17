@@ -10,6 +10,7 @@ body {
   background: #eb8c69;
   text-align: center;
   position: fixed;
+  z-index: 999;
   width: 6.4rem;
   opacity: .8;
   border-bottom: 0.04rem solid #aea9a2;
@@ -28,6 +29,7 @@ body {
   width: .25rem;
   height: .48rem;
   background: url(../images/profile_back.png) no-repeat left top;
+  background-size: .25rem .48rem;
 }
 
 .header > h3 {
@@ -57,11 +59,15 @@ body {
   padding-top: .4rem;
 }
 
-.content .top .topimg .sideshow .item {
+.content .top .topimg .sideshow .itembox {
+  position: relative;
+}
+
+.content .top .topimg .sideshow .itembox .item {
   text-align: center;
 }
 
-.content .top .topimg .sideshow .item .img {
+.content .top .topimg .sideshow .itembox .item .img {
   width: 1.9rem;
   height: 1.9rem;
   border-radius: 50%;
@@ -70,19 +76,28 @@ body {
   margin-bottom: .29rem;
 }
 
-.content .top .topimg .sideshow .item h3 {
+.content .top .topimg .sideshow .itembox .item h3 {
   font-family: "AvenirMedium";
   font-size: 0.3rem;
   color: #fff;
 }
 
-.content .top .topimg .sideshow .item span {
+.content .top .topimg .sideshow .itembox .item span {
   display: inline-block;
   background: url(../images/log_position.png) no-repeat left center;
+  background-size: .14rem .18rem;
   font-family: "AvenirBook";
   font-size: 0.24rem;
   color: #a49f99;
   text-indent: .25rem;
+}
+
+.content .top .topimg .sideshow .itembox .item:not(:first-of-type) {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  opacity: 0;
 }
 
 .content .top .topimg .sideshow .btns {
