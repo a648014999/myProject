@@ -1,0 +1,134 @@
+@import "Myfunction.scss"; 
+@import "common.scss";
+
+@include findheadstyle();
+.header{
+    margin-bottom:.19rem;
+    .email{
+        width:.62rem;
+        height:.43rem;
+        margin-right:.18rem;
+        margin-top:.58rem;
+    }
+}
+.content{
+    padding-left:.23rem;
+    padding-right:.21rem;
+    .tophead{
+        margin-bottom:.26rem;
+        .img{
+            width:1.69rem;
+            height:1.68rem;
+            border-radius:100%;
+        }
+        .articla{
+            @include fontset(.3rem,#000);
+            margin-left:.25rem;
+            h3{
+                margin-top:.32rem;
+                margin-bottom:.1rem;
+            }
+            span{
+                display:inline-block;
+                @include fontset(.26rem,#9d9d9d);
+            }
+        }
+        .goto{
+            @include fontset(.8711rem , #010101);
+            display:inline-block;
+            margin-top:.15rem;
+        }
+    }
+    .functionsflex{
+        display:flex;
+        justify-content:space-between;
+        .item{
+            width:1.94rem;
+            height:1.5rem;
+            @include fontset(.26rem , #000000);
+            text-align:center;            
+            span{
+                display:inline-block;
+                margin-top:.1rem;
+            }
+            &:nth-of-type(1){
+                background:#b2e0a0;
+                .img{
+                    width:.78rem;
+                    height:.82rem;
+                    margin:auto;
+                    margin-top:.2rem;
+                }
+                
+            }
+            &:nth-of-type(2){
+                background:#a0dce0;
+                .img{
+                    width:.83rem;
+                    height:.79rem;
+                    margin:auto;
+                    margin-top:.2rem;
+                }
+            }
+            &:nth-of-type(3){
+                background:#e0b7a0;
+                .img{
+                    width:1.24rem;
+                    height:.79rem;
+                    margin:auto;
+                    margin-top:.2rem;
+                }
+            }
+        }
+    }
+    .titles{
+        margin-top:.33rem;
+        .title:nth-of-type(1){
+            @include titlestyleNoClasstitle_hforyou("../images/myself_column1.png",.57rem,.73rem,.98rem);
+            margin-bottom:.33rem;
+        }
+        .title:nth-of-type(2){
+            @include titlestyleNoClasstitle_hforyou("../images/myself_column2.png",.71rem,.74rem,.98rem);
+            margin-bottom:.33rem;
+        }
+        .title:nth-of-type(3){
+            @include titlestyleNoClasstitle_hforyou("../images/myself_column3.png",.93rem,.58rem,.98rem);
+            margin-bottom:.33rem;
+        }
+        .title:nth-of-type(4){
+            @include titlestyleNoClasstitle_hforyou("../images/myself_column4.png",.59rem,.59rem,.98rem);
+            margin-bottom:.75rem;
+        }
+        .title:nth-of-type(5){
+            @include titlestyleNoClasstitle_hforyou("../images/myself_column5.png",.78rem,.79rem,.98rem);
+            margin-bottom:.33rem;
+        }
+        .title:nth-of-type(6){
+            @include titlestyleNoClasstitle_hforyou("../images/myself_column6.png",.84rem,.59rem,.98rem);
+            margin-bottom:.33rem;
+        }
+    }
+    .btns{
+        display:flex;
+        justify-content:space-between;
+        padding:0rem .87rem;
+        margin-bottom:.16rem;
+        a{
+            display:inline-block;
+            background:#ff9344;
+            border-radius:.35rem;
+            width:1.47rem;
+            height:.75rem;
+            line-height:.75rem;
+            text-align:center;
+            @include fontset(.24rem,#ffffff);
+            &:hover{
+                background:rgba(255,147,68,.5);
+            }
+        }
+    }
+}
+
+.footer{
+    @include currpagebtnselected(4);
+}

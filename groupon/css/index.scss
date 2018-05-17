@@ -4,6 +4,7 @@
 
 
 .header{
+    
     padding-bottom:.1rem;
     .log{
         width:1.23rem;
@@ -12,36 +13,12 @@
         margin-top:.17rem;
     }
     .search{
-        position:relative;
-        width:2.70rem;
-        height:.55rem;
-        margin-left:.72rem;
-        margin-top:.51rem;
-        input{
-            width:2.70rem;
-            height:.55rem;
-            outline:none;
-            border:.03rem solid #ff9344;
-            border-radius:.35rem;
-            @include fontset(.24rem,#777777);
-            text-indent:.32rem;
-        }
-        img{
-            position:absolute;
-            right:.19rem;
-            top:.1rem;
-            width:.36rem;
-            height:.34rem;
-        }
+        @include searchstyle();
     }
-    @include citylststyle();
+    @include citySelectStyle();
 }
 
 .content{
-    
-    .bigimg{
-
-    }
     .middle{
         @include titlestyle();
         .middle_contentflex{
@@ -114,11 +91,5 @@
 }
 
 .footer{
-    .item:nth-of-type(1){
-       a{
-            .img{
-                background:url(../images/footer_btn1Selected.png)no-repeat center center;
-            }
-       } 
-    }
+    @include currpagebtnselected(1);
 }

@@ -82,36 +82,49 @@ body {
       width: .36rem;
       height: .34rem; }
   .header .citylst {
-    font-family: "Microsoft YaHei";
-    font-size: 0.26rem;
-    color: #000000;
-    padding-left: .14rem;
-    padding-right: .11rem;
-    line-height: .6rem;
-    height: .65rem;
     border: .03rem solid #ff9344;
     margin-top: .47rem;
-    margin-right: .21rem; }
+    margin-right: .21rem;
+    width: 1.63rem;
+    height: .60rem;
+    position: relative; }
+    .header .citylst select {
+      font-family: "Microsoft YaHei";
+      font-size: 0.26rem;
+      color: #000000;
+      width: 100%;
+      height: 100%;
+      padding-left: .16rem;
+      border: none;
+      outline: none;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none; }
     .header .citylst span {
+      position: absolute;
+      right: 0;
+      top: 0;
       display: inline-block;
       width: 0;
       height: 0;
       border-top: .16rem solid #ff9344;
       border-left: .16rem solid transparent;
       border-right: .16rem solid transparent;
-      margin-top: .22rem; }
+      margin-top: .22rem;
+      margin-right: .14rem;
+      pointer-events: none; }
 
 .content .middle .title {
   height: 1.05rem; }
   .content .middle .title .lefttitle {
     background: url("../images/index_logtitle1.png") no-repeat left center;
-    background-size: .56rem .54rem;
+    background-size: 0.56rem 0.54rem;
     height: .6rem;
     line-height: .6rem;
     font-family: "Microsoft YaHei";
     font-size: 0.3rem;
     color: #000000;
-    text-indent: .74rem;
+    text-indent: 0.74rem;
     margin-top: .34rem;
     margin-left: .21rem; }
   .content .middle .title .more {
@@ -123,6 +136,9 @@ body {
     padding-right: .33rem;
     margin-right: .21rem;
     margin-top: .54rem; }
+    .content .middle .title .more:hover {
+      cursor: pointer;
+      opacity: .5; }
 .content .middle .middle_contentflex {
   display: flex;
   justify-content: space-between;
@@ -140,13 +156,13 @@ body {
   height: 1.05rem; }
   .content .bottom .title .lefttitle {
     background: url("../images/index_logtitle2.png") no-repeat left center;
-    background-size: .56rem .54rem;
+    background-size: 0.56rem 0.54rem;
     height: .6rem;
     line-height: .6rem;
     font-family: "Microsoft YaHei";
     font-size: 0.3rem;
     color: #000000;
-    text-indent: .74rem;
+    text-indent: 0.74rem;
     margin-top: .34rem;
     margin-left: .21rem; }
   .content .bottom .title .more {
@@ -158,6 +174,9 @@ body {
     padding-right: .33rem;
     margin-right: .21rem;
     margin-top: .54rem; }
+    .content .bottom .title .more:hover {
+      cursor: pointer;
+      opacity: .5; }
 .content .bottom .footlstflex {
   display: flex;
   flex-direction: column; }

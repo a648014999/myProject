@@ -1,0 +1,93 @@
+@import "Myfunction.scss"; 
+@import "common.scss";
+
+@include findheadstyle();
+.header{
+    @include citySelectStyle();
+}
+.content{
+    .search{
+        @include searchstyle();
+        // margin-left:0rem;
+        margin:auto;
+        margin-top:.33rem;
+    }
+    >h3{
+        @include fontset(.26rem,#000000);
+        text-align:center;
+        margin-top:.31rem;
+        margin-bottom:.15rem;
+    }
+    .searchflex{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:space-between;
+        padding-left:1.12rem;
+        padding-right:1.25rem;
+        .item{
+            width:1.25rem;
+            height:.64rem;
+            line-height:.64rem;
+            background:#dcdcdc;
+            @include fontset(.2rem,#898989);
+            text-align:center;
+            @for $i from 1 to 5{
+                &:nth-of-type(#{$i}){
+                    margin-bottom:0.03rem;
+                }
+            }
+            &:hover{
+                cursor:pointer;
+                background:rgba(220,220,220,.5);
+            }
+        }
+    }
+    .imgflex{
+        padding-left:.18rem;
+        padding-right:.23rem;
+        display:flex;
+        flex-direction:column;
+        .item:nth-of-type(1){
+            @include titlestyle('../images/find_logtitle.png',.32rem,.47rem,.5rem);
+            .imgs{
+                >.left{
+                    width:2.78rem;
+                    height:3.51rem;
+                    margin-right:.10rem;
+                }
+                >.right{
+                    .top{
+                        width:4.20rem;
+                        height:1.47rem;
+                        margin-bottom:.08rem;
+                    }
+                    .bottom{
+                        .left{
+                            width:1.95rem;
+                            height:1.97rem;
+                            margin-right:.11rem;
+                        }
+                        .right{
+                            width:2.11rem;
+                            height:1.97rem;
+                        }
+                    }
+                }
+            }
+        }
+        .item:nth-of-type(2){
+            @include titlestyle('../images/particular_loghead.png',.41rem,.39rem,.5rem);
+            .imsflex{
+                display:flex;
+                justify-content:space-between;
+                .img{
+                    width:2.11rem;
+                    height:2rem;
+                }
+            }
+        }
+    }
+}
+.footer{
+    @include currpagebtnselected(3);
+}

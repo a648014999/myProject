@@ -1,3 +1,216 @@
+html {
+  font-size: 100px; }
 
+body {
+  width: 7.5rem; }
+
+.content {
+  padding-bottom: 1.36rem; }
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 7.5rem;
+  padding-top: .07rem;
+  background: #fff;
+  display: flex;
+  height: 1.36rem;
+  justify-content: space-around; }
+  .footer .item {
+    height: 1.09rem;
+    width: .77rem;
+    font-family: "Microsoft YaHei";
+    font-size: 0.26rem;
+    color: #000000;
+    text-align: center; }
+    .footer .item a {
+      color: #000; }
+      .footer .item a .img {
+        background-size: 100% 100% !important; }
+  .footer .item:nth-of-type(1):hover .img {
+    background: url(../images/footer_btn1Selected.png) no-repeat center center; }
+  .footer .item:nth-of-type(1) .img {
+    width: .77rem;
+    height: .77rem;
+    background: url(../images/footer_btn1.png) no-repeat center center; }
+  .footer .item:nth-of-type(2):hover .img {
+    background: url(../images/footer_btn2Selected.png) no-repeat center center; }
+  .footer .item:nth-of-type(2) .img {
+    width: .77rem;
+    height: .77rem;
+    background: url(../images/footer_btn2.png) no-repeat center center; }
+  .footer .item:nth-of-type(3):hover .img {
+    background: url(../images/footer_btn3Selected.png) no-repeat center center; }
+  .footer .item:nth-of-type(3) .img {
+    width: .77rem;
+    height: .77rem;
+    background: url(../images/footer_btn3.png) no-repeat center center; }
+  .footer .item:nth-of-type(4):hover .img {
+    background: url(../images/footer_btn4Selected.png) no-repeat center center; }
+  .footer .item:nth-of-type(4) .img {
+    width: .77rem;
+    height: .77rem;
+    background: url(../images/footer_btn4.png) no-repeat center center; }
+
+.header {
+  padding-right: .22rem;
+  margin-bottom: .29rem; }
+  .header .rightimg {
+    width: .51rem;
+    height: .48rem;
+    margin-top: .54rem; }
+
+.header {
+  font-family: "Microsoft YaHei";
+  font-size: 0.26rem;
+  color: #000000;
+  text-align: center; }
+  .header a {
+    font-family: "Microsoft YaHei";
+    font-size: 0.26rem;
+    color: #000000; }
+  .header .back {
+    width: 1.23rem;
+    height: .57rem;
+    line-height: .52rem;
+    border: .02rem solid #ff9344;
+    border-radius: .15rem;
+    margin-top: .48rem;
+    margin-left: .23rem; }
+  .header span {
+    display: inline-block;
+    margin-top: .65rem; }
+
+.content .topcommodity .img {
+  width: 7.05rem;
+  height: 2.6rem;
+  margin: auto; }
+.content .topcommodity .buy {
+  padding-left: .44rem;
+  padding-right: .4rem;
+  margin-top: .1rem; }
+  .content .topcommodity .buy span {
+    display: inline-block;
+    font-family: "Microsoft YaHei";
+    font-size: 0.72rem;
+    color: #ff9344; }
+  .content .topcommodity .buy a {
+    display: inline-block;
+    width: 1.11rem;
+    height: .59rem;
+    line-height: .59rem;
+    text-align: center;
+    background: #ff9344;
+    border-radius: .15rem;
+    font-family: "Microsoft YaHei";
+    font-size: 0.3rem;
+    color: #ffffff;
+    margin-top: .18rem; }
+.content .topcommodity .estimate {
+  padding-left: .44rem;
+  padding-right: .4rem;
+  margin-top: .35rem;
+  margin-bottom: .35rem; }
+  .content .topcommodity .estimate h3 {
+    font-family: "Microsoft YaHei";
+    font-size: 0.3rem;
+    color: #000000;
+    background: url(../images/particular_loghead.png) no-repeat left center;
+    background-size: .37rem .36rem;
+    text-indent: .51rem; }
+    .content .topcommodity .estimate h3 span {
+      font-family: "Microsoft YaHei";
+      font-size: 0.3rem;
+      color: #ff9344; }
+  .content .topcommodity .estimate a {
+    font-family: "Microsoft YaHei";
+    font-size: 0.26rem;
+    color: #8e8e8e; }
+.content .commoditylst {
+  padding-left: .44rem;
+  padding-right: .4rem; }
+  .content .commoditylst .title {
+    height: .67rem;
+    line-height: .67rem;
+    background: #ff9344;
+    padding: 0rem .11rem;
+    margin-bottom: .1rem; }
+    .content .commoditylst .title h3 {
+      font-family: "Microsoft YaHei";
+      font-size: 0.3rem;
+      color: #ffffff; }
+    .content .commoditylst .title span {
+      font-family: "Microsoft YaHei";
+      font-size: 0.4672rem;
+      color: #fff; }
+  .content .commoditylst .comlsflex .item {
+    margin-bottom: .09rem; }
+    .content .commoditylst .comlsflex .item .img {
+      position: relative;
+      width: 1.77rem;
+      height: 1.76rem;
+      margin-right: .25rem; }
+      .content .commoditylst .comlsflex .item .img .storename {
+        position: absolute;
+        top: .92rem;
+        width: 100%;
+        font-family: "Microsoft YaHei";
+        font-size: 0.24rem;
+        color: #000000;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.7); }
+    .content .commoditylst .comlsflex .item .articla {
+      font-family: "Microsoft YaHei";
+      font-size: 0.2rem;
+      color: #ff9344; }
+      .content .commoditylst .comlsflex .item .articla h3 {
+        font-family: "Microsoft YaHei";
+        font-size: 0.3rem;
+        color: #000000;
+        margin-top: .12rem; }
+      .content .commoditylst .comlsflex .item .articla .star_grade {
+        margin: .1rem 0rem; }
+        .content .commoditylst .comlsflex .item .articla .star_grade:after {
+          content: "";
+          display: block;
+          clear: both; }
+        .content .commoditylst .comlsflex .item .articla .star_grade .left {
+          float: left; }
+          .content .commoditylst .comlsflex .item .articla .star_grade .left .star {
+            width: .35rem;
+            height: .34rem;
+            float: left;
+            margin-right: .06rem; }
+            .content .commoditylst .comlsflex .item .articla .star_grade .left .star:last-of-type {
+              margin-right: 0rem; }
+        .content .commoditylst .comlsflex .item .articla .star_grade .right {
+          float: left;
+          font-family: "Microsoft YaHei";
+          font-size: 0.26rem;
+          color: #929292;
+          margin-left: .13rem; }
+      .content .commoditylst .comlsflex .item .articla .distance {
+        font-family: "Microsoft YaHei";
+        font-size: 0.24rem;
+        color: #929292; }
+      .content .commoditylst .comlsflex .item .articla > a {
+        margin-top: .05rem;
+        display: inline-block;
+        font-family: "Microsoft YaHei";
+        font-size: 0.2rem;
+        color: #ff9344; }
+    .content .commoditylst .comlsflex .item > a {
+      display: inline-block;
+      width: 1.11rem;
+      height: .59rem;
+      line-height: .59rem;
+      text-align: center;
+      background: #ff9344;
+      border-radius: .15rem;
+      font-family: "Microsoft YaHei";
+      font-size: 0.3rem;
+      color: #ffffff;
+      display: inline-block;
+      margin-top: .67rem; }
 
 /*# sourceMappingURL=particular.css.map */

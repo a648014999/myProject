@@ -2,55 +2,57 @@
 @import "Myfunction.scss"; 
 @import "common.scss";
 
+
+@include findheadstyle();
 .header{
-    @include fontset(.26rem,#000000);
-    text-align:center;
-
-    a{
-        @include fontset(.26rem,#000000);
-    }
-    .back{
-       width:1.23rem;
-       height:.57rem;
-       line-height:.52rem;
-       border:.02rem solid #ff9344;
-       border-radius:.15rem;
-       margin-top:.48rem;
-       margin-left:.23rem;
-    }
-    span{
-        display:inline-block;
-        margin-top:.65rem;
-    }
-    @include citylststyle();
+    @include citySelectStyle();
 }
-
 .content{
     .sideshow{
         margin-top:.15rem;
         .flex{
-            display:flex;
-            justify-content:space-between;
-            padding:0rem .26rem;
-            .item{
-                @include fontset(.26rem,#000000);
-                text-align: center;
-                .img{
-                    width:1.49rem;
-                    height:1.49rem;
+            position:relative;
+            .itembox{
+
+                width:100%;
+                display:flex;
+                justify-content:space-between;
+                padding:0rem .26rem;
+                transition:all .5s;
+                opacity:1;
+                .item{
+                    @include fontset(.26rem,#000000);
+                    text-align: center;
+                    .img{
+                        width:1.49rem;
+                        height:1.49rem;
+                    }
+                    span{
+                        display: inline-block;
+                    }
                 }
-                span{
-                    display: inline-block;
+                &:not(:first-of-type){
+                    position:absolute;
+                    left:0;
+                    top:0;
+                    opacity:0;
                 }
-            }
+            }    
         }
         .btns{
+            font-size: 0%;
+            text-align:center;
+            margin-top:.16rem;
             span{
+                display:inline-block;
                 width:.18rem;
                 height:.18rem;
+                border-radius:100%; 
                 background:#ffc9a1;
+                margin-left:.07rem;
                 &:first-of-type{
                     background:#ff9344;
+                    margin-left:0rem;
                 }
             }
         }
@@ -73,11 +75,5 @@
     }
 }
 .footer{
-    .item:nth-of-type(2){
-       a{
-            .img{
-                background:url(../images/footer_btn2Selected.png)no-repeat center center;
-            }
-       } 
-    }
+    @include currpagebtnselected(2);
 }

@@ -12,5 +12,9 @@
     left:50%;
     transform: translateY(-50%) translateX(-50%);
 }
-
-
+//垂直居中
+@mixin Vmiddle{
+    position:absolute;
+    top:50%;
+    transform: translateY(-50%);
+}

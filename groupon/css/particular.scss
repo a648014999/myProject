@@ -1,0 +1,132 @@
+@import "Myfunction.scss"; 
+@import "common.scss";
+.header{
+    padding-right:.22rem;
+    margin-bottom:.29rem;
+    .rightimg{
+        width:.51rem;
+        height:.48rem;
+        margin-top:.54rem;
+    }
+    
+}
+@include findheadstyle();
+.content{
+    .topcommodity{
+        .img{
+            width:7.05rem;
+            height:2.6rem;
+            margin:auto;
+        }
+        .buy{
+            padding-left:.44rem;
+            padding-right:.4rem;
+            margin-top:.1rem;
+            span{
+                display:inline-block;
+                @include fontset(.72rem,#ff9344);
+            }
+            a{
+                @include buybtnstyle();
+                margin-top:.18rem;
+            }
+        }
+        .estimate{
+            padding-left:.44rem;
+            padding-right:.4rem;
+            margin-top:.35rem;
+            margin-bottom:.35rem;
+            h3{
+                @include fontset(.3rem,#000000);
+                background:url(../images/particular_loghead.png)no-repeat left center;
+                background-size:.37rem .36rem;
+                text-indent:.51rem;
+                span{
+                    @include fontset(.3rem,#ff9344);
+                }
+            }
+            a{
+                @include fontset(.26rem,#8e8e8e);
+            }
+        }
+    }
+    .commoditylst{
+        padding-left:.44rem;
+        padding-right:.4rem;
+        .title{
+            height:.67rem;
+            line-height:.67rem;
+            background:#ff9344;
+            padding:0rem .11rem;
+            margin-bottom:.1rem;
+            h3{
+                @include fontset(.3rem,#ffffff);
+            }
+            span{
+                @include fontset(.4672rem,#fff);
+            }
+        }
+        .comlsflex{
+            .item{
+                margin-bottom:.09rem;
+                .img{
+                    position:relative;
+                    width:1.77rem;
+                    height:1.76rem;
+                    margin-right:.25rem;
+                    .storename{
+                        position:absolute;
+                        top:.92rem;
+                        width:100%;
+                        @include fontset(.24rem,#000000);
+                        text-align:center;
+                        background:rgba(255,255,255,.7);
+                    }
+                }
+                .articla{
+                    @include fontset(.2rem,#ff9344);
+                    h3{
+                        @include fontset(.3rem,#000000);
+                        margin-top:.12rem;
+                    }
+                    .star_grade{
+                        margin:.1rem 0rem;
+                        @include clearf();
+                        .left{
+                            float:left;
+                            .star{
+                                width:.35rem;
+                                height:.34rem;
+                                float:left;
+                                margin-right:.06rem;
+                                &:last-of-type{
+                                    margin-right:0rem;
+                                }
+                            }
+                        }
+                        .right{
+                            float:left;
+                            @include fontset(.26rem,#929292);
+                            margin-left:.13rem;
+                        }
+                    }
+                    .distance{
+                        @include fontset(.24rem,#929292);
+                    }
+                    >a{
+                        margin-top:.05rem;
+                        display: inline-block;
+                        @include fontset(.2rem,#ff9344);
+                    }
+                }
+                >a{
+                    @include buybtnstyle();
+                    display:inline-block;
+                    margin-top:.67rem;
+                }
+            }
+        }
+    }
+   
+    
+}
