@@ -186,72 +186,61 @@
 </script>
 <!-- 左侧弹出菜单 -->
 <script>
-        $(function () {
-            //主页面
-            var page = $('#page');
-            //左侧菜单
-            var leftmenu = $('#leftmenu');
-            //弹出菜单按钮
-            var navbtn = $('#navbtn');
-            //右侧内容
-            var rightcontent = $('#rightcontent');
-            //遮罩
-            var overlay = $('#overlay');
-            //设定过渡时间
-            var anispeed = .3;
-            //左侧菜单宽度
-            var leftmenuWidth = '4.94rem';
-            //右侧内容宽度
-            var rightcontentWidth = '6.4rem';
-            //遮罩颜色
-            var overlaycolor = 'rgba(0,0,0,.5)';
-            page.css({
-                'display': 'inline-block',
-                'overflow': 'hidden',
-                'position': 'relative',
-            });
-            leftmenu.css({
-                'width': leftmenuWidth,
-                'position': 'absolute',
-                'top': '0px',
-                'transform': 'translateX(-' + leftmenuWidth + ')',
-                'height': '100%',
-            });
-            rightcontent.css({
-                'width': rightcontentWidth,
-                'position': 'relative',
-            });
-    
-            navbtn.click(function () {
-                if (leftmenu.position().left < 0) {
-                    leftmenu.css({
-                        'transition': 'all ' + anispeed + 's linear',
-                        'transform': 'translateX(0px)',
-                    });
-                    rightcontent.css({
-                        'transition': 'all ' + anispeed + 's linear',
-                        'transform': 'translateX(' + leftmenuWidth + ')',
-                    });
-                    overlay.css({
-                        'position': 'absolute',
-                        'top': '0',
-                        'left': '0',
-                        'width': rightcontentWidth,
-                        'height': '100%',
-                        'background': overlaycolor,
-                    });
-                } else {
-                    console.log(123);
-                    leftmenu.css({
-                        'transform': 'translateX(-' + leftmenuWidth + ')',
-                    });
-                    rightcontent.css({
-                        'transform': '',
-                    });
-    
-                }
-            });
-            overlay.click(function () {
+    $(function () {
+        //主页面
+        var page = $('#page');
+        //左侧菜单
+        var leftmenu = $('#leftmenu');
+        //弹出菜单按钮
+        var navbtn = $('#navbtn');
+        //右侧内容
+        var rightcontent = $('#rightcontent');
+        //遮罩
+        var overlay = $('#overlay');
+        //设定过渡时间
+        var anispeed = .3;
+        //左侧菜单宽度
+        var leftmenuWidth = '4.94rem';
+        //右侧内容宽度
+        var rightcontentWidth = '6.4rem';
+        //遮罩颜色
+        var overlaycolor = 'rgba(0,0,0,.5)';
+        page.css({
+            'display': 'inline-block',
+            'overflow': 'hidden',
+            'position': 'relative',
+        });
+        leftmenu.css({
+            'width': leftmenuWidth,
+            'position': 'absolute',
+            'top': '0px',
+            'transform': 'translateX(-' + leftmenuWidth + ')',
+            'height': '100%',
+        });
+        rightcontent.css({
+            'width': rightcontentWidth,
+            'position': 'relative',
+        });
+
+        navbtn.click(function () {
+            if (leftmenu.position().left < 0) {
+                leftmenu.css({
+                    'transition': 'all ' + anispeed + 's linear',
+                    'transform': 'translateX(0px)',
+                });
+                rightcontent.css({
+                    'transition': 'all ' + anispeed + 's linear',
+                    'transform': 'translateX(' + leftmenuWidth + ')',
+                });
+                overlay.css({
+                    'position': 'absolute',
+                    'top': '0',
+                    'left': '0',
+                    'width': rightcontentWidth,
+                    'height': '100%',
+                    'background': overlaycolor,
+                });
+            } else {
                 leftmenu.css({
                     'transform': 'translateX(-' + leftmenuWidth + ')',
                 });
@@ -259,7 +248,6 @@
                     'transform': '',
                 });
                 overlay.css({
-                    // 'transition': 'all ' + anispeed + 's linear',
                     'position': 'absolute',
                     'top': '0',
                     'left': '0',
@@ -267,6 +255,24 @@
                     'height': '0',
                     'background': 'none',
                 });
+            }
+        });
+        overlay.click(function () {
+            leftmenu.css({
+                'transform': 'translateX(-' + leftmenuWidth + ')',
+            });
+            rightcontent.css({
+                'transform': '',
+            });
+            overlay.css({
+                // 'transition': 'all ' + anispeed + 's linear',
+                'position': 'absolute',
+                'top': '0',
+                'left': '0',
+                'width': '0',
+                'height': '0',
+                'background': 'none',
             });
         });
-    </script>
+    });
+</script>
