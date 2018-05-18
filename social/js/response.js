@@ -1,8 +1,9 @@
 var deviceWidth = document.documentElement.clientWidth;
 // alert(deviceWidth);
-if (deviceWidth > 750) deviceWidth = 750; {
+var maxwidth = 640;
+if (deviceWidth > maxwidth) deviceWidth = maxwidth; {
 
-    document.documentElement.style.fontSize = deviceWidth / 7.5 + 'px';
+    document.documentElement.style.fontSize = deviceWidth / (maxwidth/100) + 'px';
     // window.onload(){
         // location.reload();
 }

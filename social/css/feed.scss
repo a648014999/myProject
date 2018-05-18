@@ -46,11 +46,8 @@
 html{
     padding-bottom:1.02rem;
 }
-body{
-    overflow: hidden;
-    // position:relative;
-}
 body .openmenu {
+    position: fixed;
     overflow: hidden;
   }
   
@@ -59,7 +56,8 @@ body .openmenu {
     width: 0;
     position: fixed;
     top: 0;
-    left: .63rem;
+    // left: .63rem;
+    left: 0rem;
     z-index: 101;
     overflow: hidden;
   }
