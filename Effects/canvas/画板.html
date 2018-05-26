@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+      button{
+        width:100px;
+        height:50px;
+        margin-bottom:10px;
+      }
+  </style>
+</head>
+<body>
+  <canvas id="canvas" width="600" height="300"></canvas>
+  <div>
+      <button data-color="yellow" style="background-color:yellow">yellow</button>
+      <button data-color="red" style="background-color:red">red</button>
+      <button data-color="white" style="background-color:white">white</button>
+      <button data-color="blue" style="background-color:blue">blue</button>
+      <button data-color="green" style="background-color:green">green</button>
+  </div>
+  <div>
+    <button data-linewidth="4">4px</button>
+    <button data-linewidth="8">8px</button>
+    <button data-linewidth="16">16px</button>
+  </div>
+  <div>
+    <button data-background="black" style="background-color:black;color:white">背景黑色</button>
+    <button data-background="pink" style="background-color:pink">背景粉色</button>
+  </div>
+</body>
+</html>
+<script>
+  var canvas = document.getElementById("canvas");
+  var ctx = canvas.getContext("2d");
+  var isDraw = false;   //是否绘画
+  var oldX = 0;
+  var oldY = 0;
+  var lineColor = "white";   //线的颜色
+  var lineWidth = 4;    //线的粗细
+
+  //画一个背景
+  ctx.fillStyle="black";
+  ctx.fillRect(0,0,canvas.width,canvas.height);
+
+  canvas.addEventListener("mousedown",down);
+  canvas.addEventListener("mousemove",move);
+  canvas.addEventListener("mouseup",up);
+
+
+  //鼠标按下方法
+  function down(e)
+  {
+    e.preventDefault();  //阻止默认事件
+     isDraw = true;  //开始绘画
+     oldX = e.pageX-10;
+     oldY = e.pageY-10;
+  }
+
+  //鼠标弹起
+  function up(e)
+  {
+    // e.preventDefault();  //阻止默认事件
+    isDraw = false;
+  }
+
+  //鼠标移动
+  function move(e)
+  {
+    e.preventDefault();  //阻止默认事件
+      if(isDraw)
+      {
+        var newX = e.pageX-10;
+        var newY = e.pageY-10;
+        ctx.beginPath();
+        ctx.moveTo(oldX,oldY);
+        ctx.lineTo(newX,newY);
+        ctx.lineWidth = lineWidth;
+        ctx.strokeStyle = lineColor;
+        ctx.lineCap = "round";
+        ctx.stroke();
+        ctx.closePath();
+        oldX = newX;
+        oldY = newY;
+      }
+  }
+
+
+  var buttons = document.getElementsByTagName("button");
+
+  for(var i=0;i< buttons.length;i++)
+  {
+    buttons[i].addEventListener('click',function(){
+      var line_color = this.dataset.color;
+      var line_width = this.dataset.linewidth;
+      var line_background = this.dataset.background;
+
+      if(line_color != undefined)
+      {
+        lineColor = line_color;
+        return;
+      }
+
+      if(line_width != undefined)
+      {
+        lineWidth = line_width;
+        return;
+      }
+
+      if(line_background != undefined)
+      {
+        ctx.beginPath();
+        ctx.fillStyle = line_background;
+        ctx.fillRect(0,0,canvas.width,canvas.height);
+        ctx.closePath();
+        return;
+      }
+
+
+    });
+  }
+</script>

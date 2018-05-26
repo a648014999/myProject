@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <canvas id="canvas" width="400" height="400" style="background-color:blue"></canvas>
+</body>
+</html>
+<script>
+  var canvas = document.getElementById("canvas");
+  var ctx = canvas.getContext("2d");
+
+  ctx.fillStyle = "#fff";
+  ctx.beginPath();
+    ctx.arc(200,200,150,Math.PI*1.5,Math.PI*0.5);
+    ctx.fill();
+  ctx.closePath();
+
+  ctx.fillStyle = "#000";
+  ctx.beginPath();
+    ctx.arc(200,200,150,Math.PI*0.5,Math.PI*1.5);
+    ctx.fill();
+  ctx.closePath();
+
+  ctx.fillStyle = "#fff";
+  ctx.beginPath();
+    ctx.arc(200,125,75,0,Math.PI*2);
+    ctx.fill();
+  ctx.closePath();
+
+
+  ctx.fillStyle = "#000";
+  ctx.beginPath();
+    ctx.arc(200,275,75,0,Math.PI*2);
+    ctx.fill();
+  ctx.closePath();
+
+  ctx.fillStyle = "#000";
+  ctx.beginPath();
+    ctx.arc(200,125,10,0,Math.PI*2);
+    ctx.fill();
+  ctx.closePath();
+
+  ctx.fillStyle = "#fff";
+    ctx.beginPath();
+    ctx.arc(200, 275, 10, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.closePath();
+
+  ctx.font = "40px Arial";
+  ctx.fillStyle = "red";
+  ctx.globalAlpha = 0.5;
+  ctx.fillText("Hello",150,150);
+
+
+  ctx.font = "40px Arial";
+  ctx.fillStyle = "red";
+  ctx.globalAlpha = 0.5;
+  ctx.fillText("CANVAS", 150, 350);
+
+
+</script>

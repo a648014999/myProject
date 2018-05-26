@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="myCanvas">
+        您的浏览器不支持canvas
+    </canvas>
+
+</body>
+
+</html>
+<script>
+    var canvas = document.getElementById("myCanvas");
+    var context = canvas.getContext('2d');
+    canvas.width = 1800;
+    canvas.height = 1800;
+
+    function drawRightTriangle(x, y, a, b, color, scaleX = false, scaleY = false) {
+        context = this.context;
+        context.beginPath();
+        context.moveTo(x, y);
+        // 上下翻转
+        if (scaleX) {
+            context.lineTo(x, y - a);
+            context.lineTo(x + b, y);
+        }
+        
+        else if (scaleY) {//左右翻转
+            context.lineTo(x, y + a);
+            context.lineTo(x - b, y);
+        }
+        if(scaleX && scaleY){
+            context.lineTo(x, y - a);
+            context.lineTo(x - b, y);
+        }
+        if (!scaleX && !scaleY) {//都不翻转
+            context.lineTo(x, y + a);
+            context.lineTo(x + b, y);
+        }
+
+        context.closePath();
+        context.fillStyle = color;
+        context.fill();
+
+    }
+    //旗帜参数
+    var originX = 100;
+    var originY = 100;
+    var bannerWidth = 600;
+    var bannerHeight = 300;
+
+    //四个小方块
+    var blockWidth = 250;
+    var blockHeight =100;
+
+    //中间的两个大红条
+    var redline1Height = 60;
+    var redline2Width = 60;
+
+    //画国旗大小
+    context.beginPath();
+    context.rect(originX,originY,bannerWidth,bannerHeight);
+    // context.clip();
+    context.fillStyle = "white";
+    context.fill();
+    context.closePath();
+
+    
+
+    //画三角形部分
+    //左上角
+    //小三角
+    drawRightTriangle(originX, originY+100, 67, 133, "blue", true, false);
+    //大三角
+    drawRightTriangle(originX+250, originY, 92, 183, "blue", false, true);
+
+    //左下角
+    //小三角
+    drawRightTriangle(originX, originY+200, 67, 133, "blue", false, false);
+    //大三角
+    drawRightTriangle(originX+250, originY+300, 92, 183, "blue", true, true);
+
+
+    //右上角
+    //小三角
+    drawRightTriangle(originX+600, originY+100, 67, 133, "blue", true, true);
+    //大三角
+    drawRightTriangle(originX+350, originY, 92, 183, "blue", false, false);
+
+    //右下角
+    //小三角
+    drawRightTriangle(originX+600, originY+200, 67, 133, "blue", false, true);
+    //大三角
+    drawRightTriangle(originX+350, originY+300, 92, 183, "blue", true, false);
+
+    //画小红条
+    //左上角
+    context.beginPath();
+    context.moveTo(originX,originY);
+    context.lineTo(originX+200,originY+100);
+    context.lineTo(originX+200-47,originY+100);
+    context.lineTo(originX,originY+23);
+    context.fillStyle = "red";
+    context.fill();
+    context.closePath();
+
+    //左下角
+    context.beginPath();
+    context.moveTo(originX,(originY+bannerHeight));
+    context.lineTo(originX+198,(originY+bannerHeight)-100);
+    context.lineTo(originX+198+47,(originY+bannerHeight)-100);
+    context.lineTo(originX+47,(originY+bannerHeight));
+    context.fillStyle = "red";
+    context.fill();
+    context.closePath();
+
+    //右上角
+    context.beginPath();
+    context.moveTo((originX+bannerWidth),originY);
+    context.lineTo((originX+bannerWidth)-198,originY+100);
+    context.lineTo((originX+bannerWidth)-198-47,originY+100);
+    context.lineTo((originX+bannerWidth)-47,originY);
+    context.fillStyle = "red";
+    context.fill();
+    context.closePath();
+    //右下角
+    context.beginPath();
+    context.moveTo((originX+bannerWidth),originY+bannerHeight);
+    context.lineTo((originX+bannerWidth)-200,originY+bannerHeight-100);
+    context.lineTo((originX+bannerWidth)-200+47,originY+bannerHeight-100);
+    context.lineTo((originX+bannerWidth),originY+bannerHeight-23);
+    context.fillStyle = "red";
+    context.fill();
+    context.closePath();
+
+    // 画大红条
+    context.beginPath();
+    context.rect(originX,originY+(bannerHeight-(bannerHeight/2)-(redline1Height/2)),bannerWidth,redline1Height);
+    context.fillStyle = "red";
+    context.fill();
+    context.closePath();
+
+    context.beginPath();
+    context.rect(originX+bannerWidth-(bannerWidth/2)-(redline2Width/2),originY,redline2Width,bannerHeight);
+    context.fillStyle = "red";
+    context.fill();
+    context.closePath();
+</script>

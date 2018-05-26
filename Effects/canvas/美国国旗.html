@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="myCanvas">
+        您的浏览器不支持canvas
+    </canvas>
+
+</body>
+
+</html>
+<script>
+    var canvas = document.getElementById("myCanvas");
+    var context = canvas.getContext('2d');
+    canvas.width = 1800;
+    canvas.height = 1800;
+
+    var rect_x = 100;
+    var rect_y = 100;
+    var rect_width = 741;
+    var rect_height = 30;
+
+    var star = [8 / 2, 23 / 2]; //星星大小
+    var offsetX = 10;
+    var offsetY = 11;
+    //最外层星星
+    var star_originX = 113 + offsetX;
+    var star_originY = 108 + offsetY;
+    var star_Xdis = 49;
+    var star_Ydis = 42;
+
+    //内部星星
+    var star_originX1 = 137 + offsetX;
+    var star_originY1 = 129 + offsetY;
+    var star_Xdis1 = 49;
+    var star_Ydis1 = 42;
+
+    //画7条红色的条条
+    context.beginPath();
+    for (let i = 0; i < 7; i++) {
+        var curr_y = i * rect_height * 2 + rect_y;
+        context.rect(rect_x, curr_y, rect_width, rect_height);
+    }
+
+    context.closePath();
+    context.fillStyle = "red";
+    context.fill();
+
+    //画蓝色的矩形画布
+    context.beginPath();
+    context.rect(rect_x, rect_y, 297, 210);
+    context.closePath();
+    context.fillStyle = "#000066";
+    context.fill();
+
+    //画星星
+    for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < 6; j++) {
+            let x = j * star_Xdis + star_originX;
+            // console.log(curr_y);
+            let y = i * star_Ydis + star_originY;
+            drawStar(context, ...star, x, y, 1, "white", "white");
+        }
+    }
+    for (let i = 0; i < 4; i++) {
+        for (let j = 0; j < 5; j++) {
+            let x = j * star_Xdis1 + star_originX1;
+            // console.log(curr_y);
+            let y = i * star_Ydis1 + star_originY1;
+            drawStar(context, ...star, x, y, 1, "white", "white");
+        }
+    }
+
+
+    function drawStar(cxt, r, R, x, y, borderWidth, borderStyle, fillStyle) {
+        cxt.beginPath();
+        for (var i = 0; i < 5; i++) {
+            cxt.lineTo(Math.cos((18 + 72 * i) / 180 * Math.PI) * R + x, -Math.sin((18 + 72 * i) / 180 * Math.PI) * R +
+                y);
+            cxt.lineTo(Math.cos((54 + 72 * i) / 180 * Math.PI) * r + x, -Math.sin((54 + 72 * i) / 180 * Math.PI) * r +
+                y);
+        }
+        cxt.closePath();
+
+        cxt.lineWidth = borderWidth;
+        cxt.strokeStyle = borderStyle;
+        cxt.fillStyle = fillStyle;
+
+        cxt.fill();
+        cxt.stroke();
+    }
+</script>

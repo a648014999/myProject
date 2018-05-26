@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <canvas id="myCanvas">
+        您的浏览器不支持canvas
+    </canvas>
+
+</body>
+
+</html>
+<script>
+    var canvas = document.getElementById("myCanvas");
+    var context = canvas.getContext('2d');
+    canvas.width = 1800;
+    canvas.height = 1800;
+    var rect_x = 100;
+    var rect_y = 100;
+    var rect_width = (500 + rect_x);
+    var rect_height = (300 + rect_y);
+
+    var bigstar = [13, 35, 200, 200];
+    var smstar1 = [6, 16, 300, 150];
+    var smstar2 = [6, 16, 330, 190];
+    var smstar3 = [6, 16, 330, 240];
+    var smstar4 = [6, 16, 300, 280];
+    //画星星函数
+    function drawStar(cxt, r, R, x, y,deg, borderWidth, borderStyle, fillStyle) {
+        cxt.beginPath();
+        for (var i = 0; i < 5; i++) {
+            cxt.lineTo(Math.cos((18 + 72 * i -deg) / 180 * Math.PI) * R + x, -Math.sin((18 + 72 * i-deg) / 180 * Math.PI) * R +
+                y);
+            cxt.lineTo(Math.cos((54 + 72 * i-deg) / 180 * Math.PI) * r + x, -Math.sin((54 + 72 * i-deg) / 180 * Math.PI) * r +
+                y);
+        }
+        cxt.closePath();
+
+        cxt.lineWidth = borderWidth;
+        cxt.strokeStyle = borderStyle;
+        cxt.fillStyle = fillStyle;
+
+        cxt.fill();
+        cxt.stroke();
+    }
+
+    //画阴影
+    context.shadowColor = 'black';
+    context.shadowBlur = 10;
+    context.shadowOffsetX = 10;
+    context.shadowOffsetY = 10;
+
+    //红色的旗面
+    context.beginPath();
+    context.rect(rect_x, rect_y, rect_width, rect_height);
+
+    context.closePath();
+    context.fillStyle = "red";
+    context.fill();
+
+    //去除阴影
+    context.shadowColor = 'black';
+    context.shadowBlur = 0;
+    context.shadowOffsetX = 0;
+    context.shadowOffsetY = 0;
+
+    //画星星
+    drawStar(context, ...bigstar,0, 1, "yellow", "yellow");
+    drawStar(context, ...smstar1,11, 1, "yellow", "yellow");
+    drawStar(context, ...smstar2,-22, 1, "yellow", "yellow");
+    drawStar(context, ...smstar3,0, 1, "yellow", "yellow");
+    drawStar(context, ...smstar4,44, 1, "yellow", "yellow");
+</script>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/lufylegend-1.10.1.min.js"></script>
+    <script src="js/lufylegend.ui.js"></script>
+</head>
+<body>
+    <canvas id="mycanvas"></canvas>
+</body>
+</html>
+<script>
+    //定义图片资源
+    var imgDataSource = [
+        {path:"./images/o_hero.png",name:"hero1"},
+        {path:"./images/o_hero1.png",name:"hero2"},
+        {path:"./images/o_startbg.jpg",name:"startBg"},
+        {path:"./images/o_bullet.png",name:"bullet"},
+        {path:"./images/o_bullet1.png",name:"bullet1"},
+        {path:"./images/o_bullet2.png",name:"bullet2"},
+        {path:"./images/o_enemy.png",name:"enemy"},
+        {path:"./images/o_gamebg0",name:"gameBg1"},
+        {path:"./images/o_gamebg1.png",name:"gameBg2"},
+        {path:"./images/o_startNormal.png",name:"startBtn1"},
+        {path:"./images/o_startSelected.png",name:"startBtn2"}
+    ];
+
+    //游戏开始的初始化
+    Linit(50,'mycanvas',850,480,main);
+
+    //游戏开始的初始化函数
+    function main(){
+        //先整个进度条层
+        loadingLayer = new LoadingSample5();
+        //把进度条层加入舞台让进度条层显示出来
+        addChild(loadingLayer);
+        //加载游戏数据，显示进度条，加载完成后要干嘛
+        LLoadManage.load(
+            imgDataSource, //要载入的图片数据
+            function(progress){   
+                loadingLayer.setProgress(progress);  //告诉进度条层当前加载到哪里了。
+            },
+            gameStart //加载完成后，就调用gameStart函数
+        );
+    }   
+
+    //游戏开始
+    function gameStart(getLoadData){
+        removeChild(loadingLayer); //把之前的进度条层删除掉
+        imgData = getLoadData;  //加载完成后，拿到的结果给imgData
+        gameStartBgLayer = new LSprite(); //游戏开始的时候显示的层
+        SelectHeroLayer = new LSprite(); //选择英雄的层
+        addChild(gameStartBgLayer); //把开始游戏背景层添加到舞台上
+        gameStartBgLayer.addChild(SelectHeroLayer);  //选择英雄在背景上面显示
+        
+    }
+
+    //游戏开始时的背景层
+    function gameStartBg(){
+        var bitmapData = new LBitmapData(imgData['startBg']);
+        var bitmap;
+    }
+</script>
