@@ -12,14 +12,11 @@
     <div id="gameframes"></div>
 </body>
 </html>
-<script src="js/jquery-3.1.1.min.js"></script>
 <script>
-    $(window).resize(function(){
-        // console.log(123123);
-        // location.reload();
+    window.onresize = function(){
         LGlobal.stageScale = LStageScaleMode.SHOW_ALL;
         LGlobal.screen(LStage.FULL_SCREEN);
-    });
+    }
 </script>
 <script>
 
@@ -46,12 +43,14 @@
     //英雄和敌人的移动速度
     var hero,heroRunSpeed = 20,enemyRunSpeed = 15;
 
-    //子弹飞行速度
-    var bulletSpeed = 40;
+    //子弹飞行速度 以及子弹发射间隔
+    var bulletSpeed = 60 ,bulletShootTime = 1 ,bulletShowIndex = 0;
 
     //敌人出现的间隔
     var enemyShowTime = 30,enemyShowIndex = 0;
 
+    //出现的所有敌人
+    var enemyArray = [];
     //-----------------游戏初始化-----------------
 
     //游戏开始的初始化
@@ -389,9 +388,9 @@
     
     //英雄移动
     Hero.prototype.run = function(){
-        
         var self = this;
 
+        //当松开键盘的时候，让英雄不动
         if (self.runMode == "static"){
                 self.x = self.x;
                 self.y = self.y;
@@ -432,11 +431,17 @@
         //让子弹飞
         var bulletRun = setInterval(function(){
             bullet.x += 10;
+            //检测子弹有没有撞到敌人
+
+            //如果没有撞到敌人，子弹飞出屏幕外就销毁
             if(bullet.x > LGlobal.width + bullet.bitmap.getWidth())
             {
                 clearInterval(bulletRun);
+                startBattleLayer.removeChild(bullet);
             }
         },1000/bulletSpeed);
+
+        return bullet;
     }
     //添加英雄
     function addHero(){
@@ -464,6 +469,9 @@
         keyCodeArry = deletKeyCodeArry(e.keyCode,keyCodeArry);
         if(e.keyCode == 87 || e.keyCode == 83 || e.keyCode == 65 || e.keyCode == 68){
             hero.runMode = "static";
+        }
+        if(e.keyCode == 74){
+            isShoot = false;
         }
     }
     
@@ -509,24 +517,14 @@
     function Enemy(){
         base(this,LSprite,[]);
         var self = this;    
-        self.runSpeed = enemyRunSpeed || 10;
+        self.runSpeed = enemyRunSpeed;
 
         //获取图片
         var bitmapData = new LBitmapData(imgData['enemy']);
         var bitmap = new LBitmap(bitmapData);
-        
-        //设置敌人初始位置
-        bitmap.x = LGlobal.width ;
-        bitmap.y = Math.random()*LGlobal.height;
-        
-        //如果敌人的位置超过屏幕下边，让他重新随机在指定范围内出现。
-        if(bitmap.y >= LGlobal.height-bitmap.y)
-        {
-            bitmap.y = LGlobal.height-bitmap.getHeight()-Math.random()*(LGlobal.height);
-        }
 
-        self.size = bitmap;
-        self.addChild(bitmap);
+        self.bitmap = bitmap;
+        self.addChild(self.bitmap);
     }
     //敌人移动
     Enemy.prototype.run = function(){
@@ -539,18 +537,30 @@
         
         //添加敌人
         var enemy = new Enemy();        
+
+        //设置敌人初始位置
+        enemy.x = LGlobal.width ;
+        enemy.y = Math.random()*LGlobal.height;
+        
+        //如果敌人的位置超过屏幕下边，让他重新随机在指定范围内出现。
+        // console.log(enemy.y);
+        if(enemy.y > LGlobal.height-enemy.bitmap.getHeight())
+        {
+            enemy.y = LGlobal.height-enemy.bitmap.getHeight()-Math.random()*(LGlobal.height/2);
+        }
         startBattleLayer.addChild(enemy);
 
         //让敌人不断行走
         var enemyRun = setInterval(function(){
             enemy.run();
             //如果敌人超出屏幕范围后，销毁
-            if(enemy.x <= -(LGlobal.width + enemy.size.width)){
+            if(enemy.x <= -(LGlobal.width + enemy.bitmap.getWidth())){
                 startBattleLayer.removeChild(enemy);
                 clearInterval(enemyRun);
             }
-        },1000/(enemyRunSpeed || enemy.runSpeed));
+        },1000/(enemy.runSpeed));
         
+        return enemy;
     }
 
     //-----------------设置事件-----------------
@@ -567,10 +577,11 @@
     function onRuning(){
        //英雄的移动实时运行
         hero.run();
+
        //生成敌人
        if(enemyShowIndex++ > enemyShowTime){
             enemyShowIndex = 0;
-            addEnemy();
+            var generateEnemy = addEnemy();
        }
     }
 
