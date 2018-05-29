@@ -12,7 +12,17 @@
     <div id="gameframes"></div>
 </body>
 </html>
+<script src="js/jquery-3.1.1.min.js"></script>
 <script>
+    $(window).resize(function(){
+        // console.log(123123);
+        // location.reload();
+        LGlobal.stageScale = LStageScaleMode.SHOW_ALL;
+        LGlobal.screen(LStage.FULL_SCREEN);
+    });
+</script>
+<script>
+
     //定义图片资源
     var imgDataSource = [
         {path:"./images/o_hero.png",name:"hero1"},
@@ -27,7 +37,7 @@
         {path:"./images/o_startNormal.png",name:"startBtn1"},
         {path:"./images/o_startSelected.png",name:"startBtn2"}
     ];
-
+    
     //-----------------变量的声明-----------------
 
     //图片数据、游戏开始背景层、游戏开始战斗层
@@ -35,6 +45,9 @@
 
     //英雄和敌人的移动速度
     var hero,heroRunSpeed = 20,enemyRunSpeed = 15;
+
+    //子弹飞行速度
+    var bulletSpeed = 40;
 
     //敌人出现的间隔
     var enemyShowTime = 30,enemyShowIndex = 0;
@@ -46,6 +59,8 @@
 
     //游戏开始的初始化函数
     function main(){
+        LGlobal.stageScale = LStageScaleMode.SHOW_ALL;
+        LGlobal.screen(LStage.FULL_SCREEN);
         //先整个进度条层
         loadingLayer = new LoadingSample5();
         //把进度条层加入舞台让进度条层显示出来
@@ -336,9 +351,6 @@
     function Hero(){
         base(this,LSprite,[]);
         var self = this;
-        
-        //设置开始时的位置参数
-        var initTopOffset = 0;
 
         //判断玩家选择的英雄是1号还是2号
         if(selectHero == "hero1"){
@@ -357,6 +369,24 @@
             self.addChild(self.bitmap);
         }
     }
+    //子弹类
+    function Bullet(){
+        base(this,LSprite,[]);
+        var self = this;
+        if(selectHero == "hero1"){
+            var bitmapData1 = new LBitmapData(imgData['bullet1']);
+            var bitmap1 = new LBitmap(bitmapData1);
+            self.bitmap = bitmap1;
+            self.addChild(self.bitmap);
+        }else if(selectHero == "hero2"){
+            var bitmapData2 = new LBitmapData(imgData['bullet2']);
+            var bitmap2 = new LBitmap(bitmapData2);
+            self.bitmap = bitmap2;
+            self.addChild(self.bitmap);
+        }
+        
+    }
+    
     //英雄移动
     Hero.prototype.run = function(){
         
@@ -370,23 +400,43 @@
         //判断按下的键有哪些，并且移动
         keyCodeArry.forEach(element => {
             if(element == "W"){
-                if(self.y > 5){
-                    self.y -= heroRunSpeed || 10;
-                }
+                if(self.y > 5)
+                    self.y -= heroRunSpeed;
             }
             else if(element == "S"){
                 if(self.y < LGlobal.height - self.bitmap.getHeight())
-                self.y += heroRunSpeed || 10;
+                self.y += heroRunSpeed;
             }
             else if(element == "A"){
                 if(self.x > 0)
-                self.x -= heroRunSpeed || 10;
+                self.x -= heroRunSpeed;
             }
             else if(element == "D"){
                 if(self.x < LGlobal.width - self.bitmap.getWidth())
-                self.x += heroRunSpeed || 10;
+                self.x += heroRunSpeed;
             } 
         });
+    }
+    //英雄攻击
+    Hero.prototype.shoot = function(){
+        var self = this;
+        var bullet = new Bullet();
+        
+        //设置子弹初始位置
+        bullet.x = self.x + self.bitmap.getWidth()/2;
+        bullet.y = self.y + (self.bitmap.getHeight())/2;
+
+        //子弹添加到背景层
+        startBattleLayer.addChild(bullet);
+
+        //让子弹飞
+        var bulletRun = setInterval(function(){
+            bullet.x += 10;
+            if(bullet.x > LGlobal.width + bullet.bitmap.getWidth())
+            {
+                clearInterval(bulletRun);
+            }
+        },1000/bulletSpeed);
     }
     //添加英雄
     function addHero(){
@@ -400,9 +450,17 @@
     }
     //控制英雄事件
     function controlHeroKeyDownEvent(e){
+        //获取英雄移动方向的按键集合
         keyCodeArry = addKeyCodeArry(e.keyCode,keyCodeArry);
+        // console.log(e.keyCode);
+        // j 74
+        if(e.keyCode == 74){
+            hero.shoot();
+        }
+
     }
     function controlHeroKeyUpEvent(e){
+        //获取英雄移动方向的按键集合
         keyCodeArry = deletKeyCodeArry(e.keyCode,keyCodeArry);
         if(e.keyCode == 87 || e.keyCode == 83 || e.keyCode == 65 || e.keyCode == 68){
             hero.runMode = "static";
@@ -502,7 +560,7 @@
         //设置用户键盘按下事件
         LGlobal.stage.addEventListener(LKeyboardEvent.KEY_DOWN,keyDown);
         LGlobal.stage.addEventListener(LKeyboardEvent.KEY_UP,keyUp);
-        LGlobal.stage.addEventListener(LKeyboardEvent.KEY_PRESS,keyPress);
+        // LGlobal.stage.addEventListener(LKeyboardEvent.KEY_PRESS,keyPress);
     }
     
     //游戏运行时,不断调用
@@ -522,7 +580,7 @@
     function keyUp(e){
         controlHeroKeyUpEvent(e);
     }
-    function keyPress(e){
+    // function keyPress(e){
 
-    }
+    // }
 </script>
