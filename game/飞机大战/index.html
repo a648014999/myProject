@@ -611,6 +611,7 @@
         //判断是否发生碰撞
         var ishit = false;
         if(enemyLayer.childList.length>0){
+           
             enemyLayer.childList.forEach(enemy => {
                 if(LGlobal.hitTestRect(hero,enemy,
                 [hero.bitmap.getWidth(),hero.bitmap.getHeight()],
@@ -620,7 +621,7 @@
                     createBoom(enemy);
 
                     //删除敌人
-                    enemyLayer.removeChild(self);
+                    enemyLayer.removeChild(enemy);
                     startBattleLayer.addChild(enemyLayer);
 
                     ishit = true;
