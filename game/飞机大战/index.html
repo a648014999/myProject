@@ -29,6 +29,7 @@
         {path:"./images/o_bullet1.png",name:"bullet1"},
         {path:"./images/o_bullet2.png",name:"bullet2"},
         {path:"./images/o_enemy.png",name:"enemy"},
+        {path:"./images/boom.png",name:"boom"},
         {path:"./images/o_gamebg0.png",name:"cloud1"},
         {path:"./images/o_gamebg1.png",name:"cloud2"},
         {path:"./images/o_startNormal.png",name:"startBtn1"},
@@ -37,8 +38,8 @@
     
     //-----------------变量的声明-----------------
 
-    //图片数据、游戏开始背景层、游戏开始战斗层
-    var imgData,gameStartBgLayer,startBattleLayer;
+    //图片数据、游戏开始背景层、游戏开始战斗层、子弹层、敌人层
+    var imgData,gameStartBgLayer,startBattleLayer,bulletLayer,enemyLayer;
 
     //英雄和敌人的移动速度
     var hero,heroRunSpeed = 20,enemyRunSpeed = 15;
@@ -49,8 +50,7 @@
     //敌人出现的间隔
     var enemyShowTime = 30,enemyShowIndex = 0;
 
-    //出现的所有敌人
-    var enemyArray = [];
+    
     //-----------------游戏初始化-----------------
 
     //游戏开始的初始化
@@ -294,6 +294,14 @@
         startBattleLayer = new LSprite();
         addChild(startBattleLayer);
 
+        //创建子弹层
+        bulletLayer = new LSprite();
+        // startBattleLayer.addChild(bulletLayer);
+
+        //创建敌人层
+        enemyLayer = new LSprite();
+        
+
         //设置云的飘动
         cloudInFlutter();
 
@@ -368,24 +376,6 @@
             self.addChild(self.bitmap);
         }
     }
-    //子弹类
-    function Bullet(){
-        base(this,LSprite,[]);
-        var self = this;
-        if(selectHero == "hero1"){
-            var bitmapData1 = new LBitmapData(imgData['bullet1']);
-            var bitmap1 = new LBitmap(bitmapData1);
-            self.bitmap = bitmap1;
-            self.addChild(self.bitmap);
-        }else if(selectHero == "hero2"){
-            var bitmapData2 = new LBitmapData(imgData['bullet2']);
-            var bitmap2 = new LBitmap(bitmapData2);
-            self.bitmap = bitmap2;
-            self.addChild(self.bitmap);
-        }
-        
-    }
-    
     //英雄移动
     Hero.prototype.run = function(){
         var self = this;
@@ -425,23 +415,13 @@
         bullet.x = self.x + self.bitmap.getWidth()/2;
         bullet.y = self.y + (self.bitmap.getHeight())/2;
 
-        //子弹添加到背景层
-        startBattleLayer.addChild(bullet);
+        //子弹添加到子弹层
+        bulletLayer.addChild(bullet);
+        startBattleLayer.addChild(bulletLayer);
 
         //让子弹飞
-        var bulletRun = setInterval(function(){
-            bullet.x += 10;
-            //检测子弹有没有撞到敌人
+        bullet.run();
 
-            //如果没有撞到敌人，子弹飞出屏幕外就销毁
-            if(bullet.x > LGlobal.width + bullet.bitmap.getWidth())
-            {
-                clearInterval(bulletRun);
-                startBattleLayer.removeChild(bullet);
-            }
-        },1000/bulletSpeed);
-
-        return bullet;
     }
     //添加英雄
     function addHero(){
@@ -473,6 +453,80 @@
         if(e.keyCode == 74){
             isShoot = false;
         }
+    }
+    
+    //子弹类
+    function Bullet(){
+        base(this,LSprite,[]);
+        var self = this;
+        self.mode = "";
+        if(selectHero == "hero1"){
+            var bitmapData1 = new LBitmapData(imgData['bullet1']);
+            var bitmap1 = new LBitmap(bitmapData1);
+            self.bitmap = bitmap1;
+            self.addChild(self.bitmap);
+        }else if(selectHero == "hero2"){
+            var bitmapData2 = new LBitmapData(imgData['bullet2']);
+            var bitmap2 = new LBitmap(bitmapData2);
+            self.bitmap = bitmap2;
+            self.addChild(self.bitmap);
+        }
+    }
+    //子弹飞
+    Bullet.prototype.run = function(){
+        var self = this;
+        
+        //让子弹飞
+        var bulletRun = setInterval(function(){
+            self.x += 10;
+            //检测子弹有没有撞到敌人
+            self.isHit();
+
+            //如果没有撞到敌人，子弹飞出屏幕外就销毁
+            if(self.x > LGlobal.width + self.bitmap.getWidth())
+            {
+                clearInterval(bulletRun);
+                startBattleLayer.removeChild(self);
+            }
+        },1000/bulletSpeed);
+    }
+    //检测子弹是否有撞击到敌人或者飞出屏幕外
+    Bullet.prototype.isHit = function (){
+        var self = this;
+        //检测子弹有没有撞到敌人
+        if(enemyLayer.childList.length>0){
+            enemyLayer.childList.forEach(enemy => {
+                if(LGlobal.hitTestRect(self,enemy,[self.bitmap.getWidth(),self.bitmap.getHeight()],[enemy.bitmap.getWidth(),enemy.bitmap.getHeight()])){
+
+                    //让子弹消失
+                    bulletLayer.removeChild(self);
+                    startBattleLayer.addChild(bulletLayer);
+
+                    //让敌人消失
+                    enemyLayer.removeChild(enemy);
+                    startBattleLayer.addChild(enemyLayer);
+                    
+                    //生成爆炸特效
+                    var boom = new Boom();
+                    boom.x = enemy.x - enemy.bitmap.getWidth()/2*1.5;
+                    boom.y = enemy.y - enemy.bitmap.getHeight()*1.7;
+                    startBattleLayer.addChild(boom);
+                    setInterval(function(){
+                        startBattleLayer.removeChild(boom);
+                    },300);
+                    
+
+                }
+            });
+        }
+    }
+    
+    //爆炸特效类
+    function Boom(){
+        base(this,LSprite,[]);
+        var self = this;        
+        self.bitmap = new LBitmap(new LBitmapData(imgData['boom']));
+        self.addChild(self.bitmap);
     }
     
     //获取组合键
@@ -518,7 +572,7 @@
         base(this,LSprite,[]);
         var self = this;    
         self.runSpeed = enemyRunSpeed;
-
+        self.mode = "";
         //获取图片
         var bitmapData = new LBitmapData(imgData['enemy']);
         var bitmap = new LBitmap(bitmapData);
@@ -530,6 +584,7 @@
     Enemy.prototype.run = function(){
         var self = this;
         // console.log("敌人的移动速度："+self.runSpeed);
+        
         self.x -= self.runSpeed;
     }
     //添加敌人
@@ -548,19 +603,18 @@
         {
             enemy.y = LGlobal.height-enemy.bitmap.getHeight()-Math.random()*(LGlobal.height/2);
         }
-        startBattleLayer.addChild(enemy);
-
         //让敌人不断行走
         var enemyRun = setInterval(function(){
             enemy.run();
             //如果敌人超出屏幕范围后，销毁
             if(enemy.x <= -(LGlobal.width + enemy.bitmap.getWidth())){
-                startBattleLayer.removeChild(enemy);
+                enemyLayer.removeChild(enemy);
                 clearInterval(enemyRun);
             }
         },1000/(enemy.runSpeed));
         
-        return enemy;
+        enemyLayer.addChild(enemy);
+        startBattleLayer.addChild(enemyLayer);
     }
 
     //-----------------设置事件-----------------
@@ -581,7 +635,7 @@
        //生成敌人
        if(enemyShowIndex++ > enemyShowTime){
             enemyShowIndex = 0;
-            var generateEnemy = addEnemy();
+            addEnemy();
        }
     }
 
