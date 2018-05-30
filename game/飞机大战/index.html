@@ -7,6 +7,13 @@
     <title>Document</title>
     <script src="js/lufylegend-1.10.1.min.js"></script>
     <script src="js/lufylegend.ui.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            font-size: 0;
+        }
+    </style>
 </head>
 <body>
     <div id="gameframes"></div>
@@ -25,6 +32,8 @@
         {path:"./images/o_hero.png",name:"hero1"},
         {path:"./images/o_hero1.png",name:"hero2"},
         {path:"./images/o_startbg.png",name:"startBg"},
+        {path:"./images/o_overbg.png",name:"gameOver"},
+        {path:"./images/o_gameover.png",name:"gameOverText"},
         {path:"./images/o_bullet.png",name:"bullet"},
         {path:"./images/o_bullet1.png",name:"bullet1"},
         {path:"./images/o_bullet2.png",name:"bullet2"},
@@ -50,12 +59,21 @@
     //敌人出现的间隔
     var enemyShowTime = 20,enemyShowIndex = 0;
 
+    //计分板变量 杀敌数  英雄HP
+    var scorecardLayer,kills=0,heroHP=3;
+
+    //游戏结束层
+    var gameOverLayer;
     
     //-----------------游戏初始化-----------------
 
     //游戏开始的初始化
     LInit(50,'gameframes',850,480,main);
 
+    //所有游戏数据初始化
+    function initGameData(){
+        kills=0,heroHP=3;
+    }
     //游戏开始的初始化函数
     function main(){
         LGlobal.stageScale = LStageScaleMode.SHOW_ALL;
@@ -80,6 +98,7 @@
     //-----------------游戏第一个场景----------------- gameStartBgLayer 层
     //游戏开始
     function gameStart(getLoadData){
+        // if()
         removeChild(loadingLayer); //把之前的进度条层删除掉
         
         imgData = getLoadData;  //加载完成后，拿到的结果给imgData
@@ -99,7 +118,7 @@
 
     //给游戏开始背景层设置具体的图片
     function setGameStartBg(){
-        
+
         //LBitmapData可以理解为去遍历imgDataSource后得到的一个对象
         var bitmapData = new LBitmapData(imgData['startBg']);
         
@@ -259,7 +278,6 @@
 
             //游戏开始，并且进入下一个场景
             if(selectHero!=""){
-                console.log(selectHero);
                 var scrollPicture = setInterval(function(){
                     gameStartBgLayer.y -= 10;
                     // console.log(LGlobal.height);
@@ -272,6 +290,8 @@
                 },5);
             }else{
                 alert("请选择你的英雄！");
+
+                //重置按钮样式
                 gameStartBtnLayer.removeChild(gameStartBtn2);
                 gameStartBtnLayer.addChild(gameStartBtn1);
 
@@ -301,6 +321,8 @@
         //创建敌人层
         enemyLayer = new LSprite();
         
+        //创建计分板层
+        scorecardLayer = new LSprite();
 
         //设置云的飘动
         cloudInFlutter();
@@ -313,6 +335,7 @@
         
         //添加事件
         addEvent();
+
     }
 
     //设置云的飘动
@@ -349,6 +372,10 @@
             }
             if(bitmap2.x <= -bitmap2.width){
                 bitmap2.x = bitmap1.x + bitmap1.getWidth();
+            }
+            if(heroHP <= 0) //游戏结束时终止云的飘动
+            {
+                clearInterval(flutter);
             }
         },flutterSpeed);
     }
@@ -481,6 +508,7 @@
             self.x += 10;
             //检测子弹有没有撞到敌人
             if(self.isHit()){
+                kills+=1;
                 clearInterval(bulletRun);
             }else if(self.x > LGlobal.width + self.bitmap.getWidth())//如果没有撞到敌人，子弹飞出屏幕外就销毁
             {
@@ -595,12 +623,15 @@
 
             //判断是否和英雄发生碰撞
             if(self.isHit()){
-                console.log("碰到敌人了");
-                clearInterval(enemyRun);
+                heroHP-=1;
+                kills+=1;
             }else if(self.x <= -(LGlobal.width + self.bitmap.getWidth())){//如果敌人超出屏幕范围后，销毁
-                console.log("超出屏幕了");
+                // console.log("超出屏幕了");
                 enemyLayer.removeChild(self);
                 startBattleLayer.addChild(enemyLayer);
+                clearInterval(enemyRun);
+            }
+            if(heroHP<=0){ //当游戏结束的时候，终止敌人移动
                 clearInterval(enemyRun);
             }
         },1000/(self.runSpeed));
@@ -623,7 +654,7 @@
                     //删除敌人
                     enemyLayer.removeChild(enemy);
                     startBattleLayer.addChild(enemyLayer);
-
+                    
                     ishit = true;
                 }
             });
@@ -651,7 +682,26 @@
 
         enemy.run();
     }
-
+    //-----------------计分板-----------------
+    //创建一个计分板
+    function createScorecard(){
+        //判断计分板里有没有内容，有的话就删掉，方便更新新的内容
+        if(scorecardLayer.childList.length>0)
+        {
+            scorecardLayer.childList.forEach(text => {
+                scorecardLayer.removeChild(text);
+            });
+        }
+        //设置文本属性
+        var textField = new LTextField();
+        textField.text = "HP："+heroHP+" 杀敌数："+kills;
+        textField.x = 10;
+        textField.y = 10;
+        
+        //添加文字到层
+        scorecardLayer.addChild(textField);
+        startBattleLayer.addChild(scorecardLayer);
+    }
     //-----------------设置事件-----------------
     //添加事件
     function addEvent(){
@@ -672,6 +722,13 @@
             enemyShowIndex = 0;
             addEnemy();
        }
+       //设置计分板
+       createScorecard();
+       
+       //英雄血量低于0的时候 游戏结束
+       if(heroHP <= 0){
+            gameOver();
+       }
     }
 
     function keyDown(e){
@@ -683,4 +740,53 @@
     // function keyPress(e){
 
     // }
+    //-----------------游戏结束-----------------
+    function gameOver(){
+        //定义层
+        gameOverLayer = new LSprite();
+        //获取游戏结束背景图片
+        var bitmapData = new LBitmapData(imgData['gameOver']);
+        var bitmap = new LBitmap(bitmapData);
+        
+
+        //游戏结束文字
+        var bitmapDataText = new LBitmapData(imgData['gameOverText']);
+        var bitmapText = new LBitmap(bitmapDataText);
+        var gameOverTextLayer = new LSprite();
+        gameOverTextLayer.addChild(bitmapText);
+        //设置文字图片位置
+        gameOverTextLayer.x = LGlobal.width/2 - bitmapText.getWidth()/2;
+        gameOverTextLayer.y = LGlobal.height/2 - bitmapText.getHeight()/2;
+
+        //把图添加到层上
+        gameOverLayer.addChild(bitmap);
+        gameOverLayer.addChild(gameOverTextLayer);
+        addChild(gameOverLayer);
+
+        //设置背景层位置
+        gameOverLayer.y = -LGlobal.height;
+        
+        //停止游戏里所有物体的动作
+        startBattleLayer.die();
+        
+        //让游戏结束的画面慢慢滑动下来
+        var gameOverDown = setInterval(function(){
+            gameOverLayer.y += 10;
+            if(gameOverLayer.y >= 0){
+                
+                clearInterval(gameOverDown);
+
+                //删除开始战斗层
+                removeChild(startBattleLayer);
+
+                //添加跳转画面事件
+                gameOverLayer.addEventListener(LMouseEvent.MOUSE_DOWN,function(){
+                    initGameData();
+                    main();
+                });
+            }
+        },50);
+    }
+
+    
 </script>
