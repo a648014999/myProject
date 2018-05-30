@@ -16,6 +16,9 @@
     <canvas id="canvas" width="800" height="500"></canvas>
 </body>
 <script>
+    window.focus();
+</script>
+<script>
     var canvas = document.getElementById('canvas');
     var context = canvas.getContext('2d');
 
@@ -182,7 +185,9 @@
             initData(); //初始化数据
             timer = setInterval(gameStart, speed)
         } else {
-            window.close();
+            location.href = "xxx.com";
+            // window.close();
+
         }
     }
 
