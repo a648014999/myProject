@@ -48,7 +48,7 @@
     var bulletSpeed = 60 ,bulletShootTime = 1 ,bulletShowIndex = 0;
 
     //敌人出现的间隔
-    var enemyShowTime = 30,enemyShowIndex = 0;
+    var enemyShowTime = 20,enemyShowIndex = 0;
 
     
     //-----------------游戏初始化-----------------
@@ -480,10 +480,9 @@
         var bulletRun = setInterval(function(){
             self.x += 10;
             //检测子弹有没有撞到敌人
-            self.isHit();
-
-            //如果没有撞到敌人，子弹飞出屏幕外就销毁
-            if(self.x > LGlobal.width + self.bitmap.getWidth())
+            if(self.isHit()){
+                clearInterval(bulletRun);
+            }else if(self.x > LGlobal.width + self.bitmap.getWidth())//如果没有撞到敌人，子弹飞出屏幕外就销毁
             {
                 clearInterval(bulletRun);
                 startBattleLayer.removeChild(self);
@@ -493,6 +492,7 @@
     //检测子弹是否有撞击到敌人或者飞出屏幕外
     Bullet.prototype.isHit = function (){
         var self = this;
+        var ishit = false;
         //检测子弹有没有撞到敌人
         if(enemyLayer.childList.length>0){
             enemyLayer.childList.forEach(enemy => {
@@ -514,11 +514,14 @@
                     setInterval(function(){
                         startBattleLayer.removeChild(boom);
                     },300);
-                    
+                  
+                    // console.log("运行到这里了");
 
+                    ishit =  true;
                 }
             });
         }
+        return ishit;
     }
     
     //爆炸特效类
