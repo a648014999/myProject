@@ -1,0 +1,130 @@
+@import "Myfunction.scss"; 
+@import "common.scss";
+
+
+.menu{
+    background:#685e55;
+    width:4.94rem;
+    // width:0rem;
+    text-align:center;
+    padding-top:.67rem;
+    // position:fixed;
+    //搜索框
+    .search{
+        position:relative;
+        display:inline-block;
+        
+        input{
+            width:4.54rem;
+            height:.58rem;
+            @include fontset(.28rem,#a49f99,"AvenirBook");
+            border-radius:.35rem;
+            text-indent:.6rem;
+            background:#5e564d;
+            border:2px solid #595148;
+            outline: none;
+        }
+        img{
+
+            display:block;
+            position:absolute;
+            left:.19rem;
+            top:.17rem;
+            width:.25rem;
+            height:.25rem;
+            background:url(../images/menu_searchlog.png);
+            background-size:.25rem .25rem;
+            &:hover{
+                cursor:pointer;
+            }
+        }
+        
+    }
+
+    //轮播图
+    .sideshow{
+        margin-top:.32rem;
+        .itembox{
+            position:relative;
+            .item{
+                width:100%;
+                transition:all .5s;
+                .headportrait{
+                    border:0.1rem solid #5b534b;
+                    width:1.9rem;
+                    height:1.9rem;
+                    border-radius:50%;
+                    margin:auto;
+                    img{
+                        
+                    }
+                }
+                h3{
+                    margin-top:.28rem;
+                    @include fontset(0.3rem,#fff,"AvenirMedium");
+                    margin-bottom:.1rem;
+                }
+                span{
+                    display:inline-block;
+                    @include fontset(.24rem,#a49f99,"AvenirBook");
+                    background:url(../images/log_position.png)no-repeat left center;
+                    background-size:.14rem .18rem;
+                    text-indent:0.25rem;
+                }
+            }
+            .item:not(:first-of-type){
+                position:absolute;
+                left:0;
+                top:0;
+                opacity:0;
+            }
+        }
+        
+        .btns{
+            margin-top:0.3rem;
+            span{
+                display:inline-block;
+                width:0.1rem;
+                height:0.1rem;
+                background:#534b44;
+                border-radius:50%;
+                &:hover{
+                    cursor:pointer;
+                }
+                &:first-of-type{
+                    background:#fff;
+                    margin-right:0.05rem;
+                }
+            }
+        }
+    }
+
+    //功能模块
+    ul{
+        padding-bottom:1.26rem;
+        margin-top:0.45rem;
+        @for $i from 1 to 6{
+            li:nth-of-type(#{$i}){
+                background:url(../images/menu_logFunction#{$i}.png)no-repeat .31rem .27rem;
+                background-size:.44rem .42rem;
+                @if($i == 3)
+                {
+                    background-size:.43rem .32rem;
+                }
+            }
+        }
+        li{
+            width:4.55rem;
+            height:.92rem;
+            line-height:.92rem;
+            text-align:left;
+            text-indent:1.23rem;
+            @include fontset(.3rem,#fff,"AvenirMedium");
+            border-top:2px solid #5e554d;
+            &:last-of-type{
+                border-bottom:2px solid #5e554d;
+            }
+        }
+    }
+
+}

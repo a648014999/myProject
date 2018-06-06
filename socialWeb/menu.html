@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/menu.css">
+</head>
+
+<body>
+    <div class="menu">
+        <!-- 搜索 -->
+        <div class="search">
+            <img src="images/menu_searchlog.png" alt="">
+            <input type="text" placeholder="Search">
+        </div>
+        <!-- 轮播图 -->
+        <div class="sideshow">
+            <div class="itembox">
+                <div class="item">
+                    <div class="headportrait">
+                        <img src="images/menu_HeadPortrait.png" alt="">
+                    </div>
+                    <h3>Carmen Electra</h3>
+                    <span>Los Angeles, CA</span>
+                </div>
+                <div class="item">
+                    <div class="headportrait">
+                        <img src="images/menu_HeadPortrait.png" alt="">
+                    </div>
+                    <h3>Carmen </h3>
+                    <span>Los </span>
+                </div>
+                
+            </div>
+            <div class="btns">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <ul>
+            <li>Feed</li>
+            <li>Explore</li>
+            <li>Friends</li>
+            <li>Rewards</li>
+            <li>Settings</li>
+        </ul>
+
+    </div>
+</body>
+
+</html>
+<script src="js/jquery-3.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/response.js"></script>
+<script>
+    var itembox;
+    var sideshowbtns;
+    var btnInitBgcolor = '#534b44';
+    var selectBgcolor = '#fff';
+    function sideshow() {
+        itembox = $(".sideshow .itembox .item");
+        // console.log(itembox.length);
+        sideshowbtns = $(".sideshow .itembox ~ .btns");
+        sideshowbtns.children().click(function () {
+            clearInterval(T);
+            var currindex = $(this).index();
+            i = currindex;
+            $(itembox[currindex]).siblings().css('opacity', '0');
+            $(itembox[currindex]).css('opacity', '1');
+            $(this).css('background', selectBgcolor);
+            $(this).siblings().css('background', btnInitBgcolor);
+            T = setInterval(autosideshow, 2000);
+        });
+
+    }
+    sideshow();
+    var i = 0;
+
+    function autosideshow() {
+        i++;
+        $(itembox[i]).siblings().css('opacity', '0');
+        $(itembox[i]).css('opacity', '1');
+        $(sideshowbtns.children()[i]).siblings().css('background', btnInitBgcolor);
+        $(sideshowbtns.children()[i]).css('background', selectBgcolor);
+        // console.log(i);
+        if (i >= itembox.length - 1) {
+            i = -1;
+        }
+    }
+    var T = setInterval(autosideshow, 2000);
+</script>

@@ -1,0 +1,9 @@
+@charset "UTF-8";
+@import "Myfunction.scss"; 
+@import "commonVariable.scss";
+html{
+    font-size: $fontsize;
+}
+body{
+    width:6.4rem;
+}
