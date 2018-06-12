@@ -1,0 +1,95 @@
+@charset "UTF-8";
+@import "Myfunction.scss"; 
+@import "common.scss";
+
+
+.header{
+    
+    padding-bottom:.1rem;
+    .log{
+        width:1.23rem;
+        height:1.23rem;
+        margin-left:.23rem;
+        margin-top:.17rem;
+    }
+    .search{
+        @include searchstyle();
+    }
+    @include citySelectStyle();
+}
+
+.content{
+    .middle{
+        @include titlestyle();
+        .middle_contentflex{
+            display:flex;
+            justify-content:space-between;
+            padding-left:.79rem;
+            padding-right:.89rem;
+            flex-wrap:wrap;
+            .item{
+                width:2.39rem;
+                height:.93rem;
+                @for $i from 1 to 3{
+                    &:nth-of-type(#{$i}){
+                        margin-bottom:.3rem;
+                    }
+                }
+            }
+        }
+    }
+    .bottom{
+        // .title{
+        //     .lefttitle{}
+        //     .more{}
+        // }
+        @include titlestyle("../images/index_logtitle2.png");
+        .footlstflex{
+            display:flex;
+            flex-direction:column;
+            .item{
+                padding-left:.21rem;
+                height:1.64rem;
+                margin-bottom:.3rem;
+                .left{
+                    width:2.1rem;
+                    height:1.64rem;
+                }
+                .right{
+                    width:5.19rem;
+                    padding-top:.28rem;
+                    padding-left:.21rem;
+                    padding-right:.14rem;
+                    padding-bottom:.16rem;
+                    >div:nth-of-type(1){
+                        span:nth-of-type(1){
+                            @include fontset(.3rem,#000000);
+                        }
+                        span:nth-of-type(2){
+                            @include fontset(.22rem,#494949);
+                        }
+                    }
+                    >div:nth-of-type(2){
+                        margin:.05rem 0rem;
+                        @include fontset(.22rem,#494949);
+                        span{
+                            @include fontset(.22rem,#494949);
+                        }
+                    }
+                    >div:nth-of-type(3){
+                        span:nth-of-type(1){
+                            @include fontset(.32rem,#ff9344);
+                        }
+                        span:nth-of-type(2){
+                            @include fontset(.22rem,#494949);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.footer{
+    @include currpagebtnselected(1);
+}

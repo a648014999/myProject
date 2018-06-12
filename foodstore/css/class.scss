@@ -1,0 +1,79 @@
+
+@import "Myfunction.scss"; 
+@import "common.scss";
+
+
+@include findheadstyle();
+.header{
+    @include citySelectStyle();
+}
+.content{
+    .sideshow{
+        margin-top:.15rem;
+        .flex{
+            position:relative;
+            .itembox{
+
+                width:100%;
+                display:flex;
+                justify-content:space-between;
+                padding:0rem .26rem;
+                transition:all .5s;
+                opacity:1;
+                .item{
+                    @include fontset(.26rem,#000000);
+                    text-align: center;
+                    .img{
+                        width:1.49rem;
+                        height:1.49rem;
+                    }
+                    span{
+                        display: inline-block;
+                    }
+                }
+                &:not(:first-of-type){
+                    position:absolute;
+                    left:0;
+                    top:0;
+                    opacity:0;
+                }
+            }    
+        }
+        .btns{
+            font-size: 0%;
+            text-align:center;
+            margin-top:.16rem;
+            span{
+                display:inline-block;
+                width:.18rem;
+                height:.18rem;
+                border-radius:100%; 
+                background:#ffc9a1;
+                margin-left:.07rem;
+                &:first-of-type{
+                    background:#ff9344;
+                    margin-left:0rem;
+                }
+            }
+        }
+    }
+    .bottomflex{
+        @for $i from 1 to 4{
+            .item:nth-of-type(#{$i}){
+                @include titlestyle("../images/class_title#{$i}.png");
+            }
+        }
+        .imglstflex{
+            padding:0rem .21rem;
+            display:flex;
+            justify-content:space-between;
+            .img{
+                width:1.33rem;
+                height:1.33rem;
+            }
+        }
+    }
+}
+.footer{
+    @include currpagebtnselected(2);
+}

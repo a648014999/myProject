@@ -1,0 +1,251 @@
+
+@import "Myfunction.scss"; 
+@import "commonVariable.scss";
+
+
+body{
+    width:7.5rem;
+}
+@mixin titlestyleNoClasstitle_hforyou($url:"../images/index_logtitle1.png",$w:.56rem,$h:.54rem,$indent:.74rem,$url1:"../images/index_logmore.png"){
+    .lefttitle{
+        background:url($url)no-repeat left center;
+        background-size:$w $h;
+        height:$h;
+        line-height:$h;
+        @include fontset(.3rem,#000000);
+        
+        text-indent:$indent;
+        margin-left:.21rem;
+    }
+    .more{
+        background:url($url1)no-repeat right center;
+        background-size:.25rem .26rem;
+        @include fontset(.24rem , #000000);
+        
+        padding-right:.33rem;
+        margin-top:$h/2.5;
+        &:hover{
+            cursor:pointer;
+            opacity:.5;
+        }
+    }
+}
+@mixin titlestyleNoClasstitle($url:"../images/index_logtitle1.png",$w:.56rem,$h:.54rem,$indent:.74rem,$url1:"../images/index_logmore.png"){
+        height:1.05rem;
+        .lefttitle{
+            background:url($url)no-repeat left center;
+            background-size:$w $h;
+            height:.6rem;
+            line-height:.6rem;
+            @include fontset(.3rem,#000000);
+            
+            text-indent:$indent;
+            margin-top:.34rem;
+            margin-left:.21rem;
+        }
+        .more{
+            background:url($url1)no-repeat right center;
+            background-size:.25rem .26rem;
+            @include fontset(.24rem , #000000);
+            
+            padding-right:.33rem;
+            margin-right:.21rem;
+            margin-top:.54rem;
+            &:hover{
+                cursor:pointer;
+                opacity:.5;
+            }
+        }
+    
+}
+@mixin titlestyle($url:"../images/index_logtitle1.png",$w:.56rem,$h:.54rem,$indent:.74rem,$url1:"../images/index_logmore.png"){
+    .title{
+        height:1.05rem;
+        .lefttitle{
+            background:url($url)no-repeat left center;
+            background-size:$w $h;
+            height:.6rem;
+            line-height:.6rem;
+            @include fontset(.3rem,#000000);
+            
+            text-indent:$indent;
+            margin-top:.34rem;
+            margin-left:.21rem;
+        }
+        .more{
+            background:url($url1)no-repeat right center;
+            background-size:.25rem .26rem;
+            @include fontset(.24rem , #000000);
+            
+            padding-right:.33rem;
+            margin-right:.21rem;
+            margin-top:.54rem;
+            &:hover{
+                cursor:pointer;
+                opacity:.5;
+            }
+        }
+    }
+}
+@mixin citySelectStyle(){
+    .citylst{
+        border:.03rem solid #ff9344;
+        margin-top:.47rem;
+        margin-right:.21rem;
+        
+        width:1.63rem;
+        height:.60rem;
+        position:relative;
+        select{
+            @include fontset(.26rem,#000000);
+            width:100%;
+            height:100%;
+            padding-left:.16rem;
+
+            border: none;
+            outline: none;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            
+        }
+        span{
+            position:absolute;
+            right:0;
+            top:0;
+            display:inline-block;
+            width:0;
+            height:0;
+            border-top:.16rem solid #ff9344;
+            border-left:.16rem solid transparent;
+            border-right:.16rem solid transparent;
+            margin-top:.22rem;
+            margin-right:.14rem;
+            pointer-events: none;
+        }
+    }
+}
+
+@mixin searchstyle(){
+    position:relative;
+    width:2.70rem;
+    height:.55rem;
+    margin-left:.72rem;
+    margin-top:.51rem;
+    input{
+        width:2.70rem;
+        height:.55rem;
+        outline:none;
+        border:.03rem solid #ff9344;
+        border-radius:.35rem;
+        @include fontset(.24rem,#777777);
+        text-indent:.32rem;
+    }
+    img{
+        position:absolute;
+        right:.19rem;
+        top:.1rem;
+        width:.36rem;
+        height:.34rem;
+    }
+}
+@mixin backbtnstyle(){
+        width:1.23rem;
+        height:.57rem;
+        line-height:.52rem;
+        border:.02rem solid #ff9344;
+        border-radius:.15rem;
+        margin-top:.48rem;
+        margin-left:.23rem;
+}
+
+@mixin findheadstyle(){
+    .header{
+        @include fontset(.26rem,#000000);
+        text-align:center;
+    
+        a{
+            @include fontset(.26rem,#000000);
+        }
+        .back{
+           width:1.23rem;
+           height:.57rem;
+           line-height:.52rem;
+           border:.02rem solid #ff9344;
+           border-radius:.15rem;
+           margin-top:.48rem;
+           margin-left:.23rem;
+        }
+        span{
+            display:inline-block;
+            margin-top:.65rem;
+        }
+    }
+}
+@mixin currpagebtnselected($i){
+    .item:nth-of-type(#{$i}){
+        a{
+             .img{
+                 background:url(../images/footer_btn#{$i}Selected.png)no-repeat center center;
+             }
+        } 
+     }
+}
+@mixin buybtnstyle(){
+    display:inline-block;
+    width:1.11rem;
+    height:.59rem;
+    line-height:.59rem;
+    text-align:center;
+    background:#ff9344;
+    border-radius:.15rem;
+    @include fontset(.3rem,#ffffff);
+}
+@mixin clearf(){
+    &:after{
+        content:"";
+        display:block;
+        clear:both;
+    }
+}
+.content{
+    padding-bottom:1.36rem;
+}
+
+
+.footer{
+    position:fixed;
+    bottom:0;
+    width:7.5rem ;
+    padding-top:.07rem;
+    background:#fff;
+    display:flex;
+    height:1.36rem;
+    justify-content: space-around;
+    .item{
+        height:1.09rem;
+        width:.77rem;
+        @include fontset(.26rem,#000000);
+        text-align: center;
+        a{
+            color:#000;
+            .img{   
+                background-size:100% 100% !important;
+            }
+        }
+        
+    }
+    @for $i from 1 to 5{
+        .item:nth-of-type(#{$i}){
+            &:hover .img{
+                background:url(../images/footer_btn#{$i}Selected.png)no-repeat center center;
+            }
+            .img{
+                width:.77rem;
+                height:.77rem;
+                background:url(../images/footer_btn#{$i}.png)no-repeat center center;
+            }
+    
+        }
+    }
+}
