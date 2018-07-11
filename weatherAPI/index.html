@@ -109,7 +109,7 @@
         // console.log(loca);
         //跨域请求
         $.ajax({
-            url: "http://api.map.baidu.com/telematics/v3/weather", //服务器地址要注意是ipv4的，ipv6测试暂时没成功。
+            url: "https://api.map.baidu.com/telematics/v3/weather", //服务器地址要注意是ipv4的，ipv6测试暂时没成功。
             type: 'get',
             data: "location=" + loca + "&output=json&ak=xbbPh7m3me5BlWUrCttGLNYz",
             async: false,
